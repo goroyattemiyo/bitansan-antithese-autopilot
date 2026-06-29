@@ -26,7 +26,10 @@ jobs:
           python-version: "3.11"
       - run: pip install -r requirements.txt
       - name: Collect insights
-        run: python -m src.collect_insights --limit "${{ github.event.inputs.limit }}"
+        run: |
+          LIMIT="${{ github.event.inputs.limit }}"
+          if [ -z "$LIMIT" ]; then LIMIT=30; fi
+          python -m src.collect_insights --limit "$LIMIT"
         env:
           BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
           BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
