@@ -1,0 +1,3 @@
+# Prepare Weekly Posts workflow が生成する投稿予定。
+# status: ready の投稿だけ Post Daily workflow が対象にする。
+[]
