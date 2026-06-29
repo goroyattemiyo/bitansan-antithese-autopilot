@@ -1,2 +1,10 @@
-# 手動削除対象のメモ。通常は Delete Threads Post workflow の input post_id を使う。
-[]
+- post_id: '18170778610426848'
+  deleted_at: ''
+  status: error
+  result:
+    error:
+      message: Application does not have permission for this action
+      code: 10
+      type: THApiException
+      fbtrace_id: ADvkL9DoiE8OZ4HBCu2RsCe
+    status_code: 500
