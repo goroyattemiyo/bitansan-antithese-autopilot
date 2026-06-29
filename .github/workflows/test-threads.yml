@@ -1,0 +1,24 @@
+name: Test Threads API
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_text:
+        description: "Optional test post text. Leave empty to only check /me."
+        required: false
+        default: ""
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Check Threads token
+        run: python -m src.test_threads --post-text "${{ github.event.inputs.post_text }}"
+        env:
+          BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
+          BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
