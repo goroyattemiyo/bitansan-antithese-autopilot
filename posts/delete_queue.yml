@@ -15,3 +15,13 @@
     error: 'HTTP 400: Unsupported delete request. Object with ID ''18170778610426848''
       does not exist, cannot be loaded due to missing permissions, or does not support
       this operation'
+- post_id: '17954638839177425'
+  deleted_at: ''
+  status: error
+  result:
+    error:
+      message: Application does not have permission for this action
+      code: 10
+      type: THApiException
+      fbtrace_id: Auf1Hk7YCzdb51I5awg9gNE
+    status_code: 500
