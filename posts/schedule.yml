@@ -1,3 +1,18 @@
-# Prepare Weekly Posts workflow が生成する投稿予定。
-# status: ready の投稿だけ Post Daily workflow が対象にする。
-[]
+- date: "2026-06-29"
+  time_slot: "image_test"
+  category: "test"
+  character: "netami_sonemi"
+  theme: "画像付き投稿API確認"
+  text: |
+    微炭酸アンチテーゼ、画像付き投稿テストです。
+    ねたみとそねみ、ちゃんと表示されるかな？
+
+    #微炭酸アンチテーゼ
+  image_prompt: "manual test image"
+  local_webp: ""
+  image_url: "https://files.catbox.moe/wqre4i.png"
+  alt: "紫ツインテールのねたみと緑ショートのそねみが並ぶ、微炭酸アンチテーゼのダークアイドル風イラスト"
+  status: "ready"
+  threads_post_id: ""
+  generated_at: "2026-06-29T00:00:00+09:00"
+  posted_at: ""
