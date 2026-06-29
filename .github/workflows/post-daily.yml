@@ -1,0 +1,69 @@
+name: Post Daily
+
+on:
+  schedule:
+    # JST 20:07. GitHub Actions cron is UTC.
+    - cron: "7 11 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "YYYY-MM-DD. Empty means today in JST."
+        required: false
+        default: ""
+      time_slot:
+        description: "time slot"
+        required: false
+        default: "evening"
+      dry_run:
+        description: "Do not publish"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-daily
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Post to Threads
+        run: |
+          DATE_INPUT="${{ github.event.inputs.date }}"
+          if [ -z "$DATE_INPUT" ]; then
+            if [ "${{ github.event_name }}" = "schedule" ]; then
+              python -m src.post_daily --time-slot evening
+            else
+              python -m src.post_daily --time-slot "${{ github.event.inputs.time_slot }}" $([ "${{ github.event.inputs.dry_run }}" = "true" ] && echo "--dry-run")
+            fi
+          else
+            python -m src.post_daily --date "$DATE_INPUT" --time-slot "${{ github.event.inputs.time_slot }}" $([ "${{ github.event.inputs.dry_run }}" = "true" ] && echo "--dry-run")
+          fi
+        env:
+          BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
+          BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
+      - name: Commit post result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts/schedule.yml posts/posted_log.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: record bikansan Threads post result"
+            git push
+          fi
