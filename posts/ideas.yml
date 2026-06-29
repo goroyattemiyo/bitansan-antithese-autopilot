@@ -1,0 +1,18 @@
+# 微炭酸アンチテーゼ 投稿ネタ入力欄
+# ここに人間が大まかなテーマだけ入れる。
+# Prepare Weekly Posts workflow が text / image_prompt / image_url を schedule.yml に生成する。
+
+- date: "2026-07-01"
+  time_slot: "evening"
+  category: "daily"
+  character: "netami_sonemi"
+  theme: "通常投稿。ねたみとそねみがファンをからかう。曲紹介はしない。"
+  outfit: "黒ベース、紫と緑の差し色、普段着寄りのダークアイドル"
+  mood: "あざとい、少し病み、でもかわいい"
+  must_include:
+    - "ねたみとそねみの掛け合い"
+    - "微炭酸アンチテーゼという名前"
+  avoid:
+    - "実在アイドル風"
+    - "過度な性的表現"
+    - "怖すぎるホラー"
