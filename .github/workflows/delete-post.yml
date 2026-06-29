@@ -1,0 +1,54 @@
+name: Delete Threads Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_id:
+        description: "Threads post id to delete"
+        required: true
+      confirm:
+        description: "Type true to confirm deletion"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Delete post
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "true" ]; then
+            echo "Deletion was not confirmed."
+            exit 1
+          fi
+          python -m src.delete_post --post-id "${{ github.event.inputs.post_id }}" --confirm
+        env:
+          BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
+          BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
+          ALLOW_THREADS_DELETE: ${{ secrets.ALLOW_THREADS_DELETE }}
+      - name: Commit delete log
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts/delete_queue.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: record bikansan delete result"
+            git push
+          fi
