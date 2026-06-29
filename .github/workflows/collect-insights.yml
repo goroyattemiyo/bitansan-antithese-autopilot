@@ -1,0 +1,43 @@
+name: Collect Insights
+
+on:
+  schedule:
+    # JST Monday 21:07. GitHub Actions cron is UTC.
+    - cron: "7 12 * * 1"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Number of recent posted logs to inspect"
+        required: false
+        default: "30"
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Collect insights
+        run: python -m src.collect_insights --limit "${{ github.event.inputs.limit }}"
+        env:
+          BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
+          BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
+      - name: Commit insights
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts/insights_log.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: collect bikansan Threads insights"
+            git push
+          fi
