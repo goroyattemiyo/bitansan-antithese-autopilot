@@ -13,6 +13,7 @@ from PIL import Image
 
 CATBOX_API_URL = "https://catbox.moe/user/api.php"
 SUPPORTED_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
+DEFAULT_TIME_SLOT = "evening"
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 INCOMING_DIR = REPO_ROOT / "incoming"
@@ -20,9 +21,13 @@ WEBP_DIR = REPO_ROOT / "assets" / "webp"
 SCHEDULE_PATH = REPO_ROOT / "posts" / "schedule.yml"
 IMAGE_URLS_PATH = REPO_ROOT / "posts" / "image_urls.yml"
 
-FILENAME_RE = re.compile(
+FULL_FILENAME_RE = re.compile(
     r"^(?P<date>\d{4}-\d{2}-\d{2})_(?P<time_slot>[a-zA-Z0-9-]+)_bitansan_(?P<category>[a-zA-Z0-9_-]+)$"
 )
+DATE_SLOT_RE = re.compile(
+    r"^(?P<date>\d{4}-\d{2}-\d{2})_(?P<time_slot>[a-zA-Z0-9-]+)$"
+)
+DATE_ONLY_RE = re.compile(r"^(?P<date>\d{4}-\d{2}-\d{2})$")
 
 
 def load_yaml(path: Path, default: Any) -> Any:
@@ -72,17 +77,41 @@ def list_images(base_dir: Path) -> list[Path]:
 
 
 def parse_filename(stem: str) -> dict[str, str]:
-    match = FILENAME_RE.match(stem)
-    if not match:
-        raise ValueError(
-            f"Invalid filename format: {stem} "
-            "(expected YYYY-MM-DD_evening_bitansan_category)"
-        )
-    return {
-        "date": match.group("date"),
-        "time_slot": match.group("time_slot"),
-        "category": match.group("category"),
-    }
+    """Parse image filename stem.
+
+    Accepted formats:
+    - 2026-07-01
+    - 2026-07-01_evening
+    - 2026-07-01_evening_bitansan_intro
+    """
+    full_match = FULL_FILENAME_RE.match(stem)
+    if full_match:
+        return {
+            "date": full_match.group("date"),
+            "time_slot": full_match.group("time_slot"),
+            "category": full_match.group("category"),
+        }
+
+    slot_match = DATE_SLOT_RE.match(stem)
+    if slot_match:
+        return {
+            "date": slot_match.group("date"),
+            "time_slot": slot_match.group("time_slot"),
+            "category": "",
+        }
+
+    date_match = DATE_ONLY_RE.match(stem)
+    if date_match:
+        return {
+            "date": date_match.group("date"),
+            "time_slot": DEFAULT_TIME_SLOT,
+            "category": "",
+        }
+
+    raise ValueError(
+        f"Invalid filename format: {stem} "
+        "(accepted: YYYY-MM-DD, YYYY-MM-DD_evening, or YYYY-MM-DD_evening_bitansan_category)"
+    )
 
 
 def convert_to_webp(src_path: Path, dst_path: Path, quality: int = 90) -> Path:
@@ -108,7 +137,7 @@ def update_schedule(
     for entry in entries:
         target_date = entry["date"]
         target_slot = entry["time_slot"]
-        target_category = entry["category"]
+        target_category = entry.get("category", "")
 
         matched = False
         for item in schedule:
@@ -120,7 +149,8 @@ def update_schedule(
             if str(item.get("time_slot", "")) != target_slot:
                 continue
 
-            if item.get("category") and str(item.get("category")) != target_category:
+            # categoryが指定されている場合だけ照合。日付だけの画像名なら警告なしで更新する。
+            if target_category and item.get("category") and str(item.get("category")) != target_category:
                 print(
                     f"warning: category mismatch for {target_date} {target_slot}: "
                     f"schedule={item.get('category')} zip={target_category}"
