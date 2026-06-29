@@ -8,3 +8,10 @@
       type: THApiException
       fbtrace_id: ADvkL9DoiE8OZ4HBCu2RsCe
     status_code: 500
+- post_id: '18170778610426848'
+  deleted_at: ''
+  status: error
+  result:
+    error: 'HTTP 400: Unsupported delete request. Object with ID ''18170778610426848''
+      does not exist, cannot be loaded due to missing permissions, or does not support
+      this operation'
