@@ -128,7 +128,8 @@ def update_schedule(
 
             item["local_webp"] = entry["local_webp"]
             item["image_url"] = entry["image_url"]
-            item["status"] = "ready"
+            # Catbox URLがあるときだけ投稿可能にする。--no-upload時は誤投稿防止のためdraftのまま。
+            item["status"] = "ready" if entry.get("image_url") else "draft"
             item["error"] = ""
             matched = True
             updated_count += 1
