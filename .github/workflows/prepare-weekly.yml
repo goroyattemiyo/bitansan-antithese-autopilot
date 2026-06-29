@@ -1,0 +1,60 @@
+name: Prepare Weekly Posts
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Number of ideas to prepare"
+        required: false
+        default: "7"
+      force:
+        description: "Regenerate existing date/time_slot entries"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      upload:
+        description: "Upload WebP to Catbox"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Generate schedule and assets
+        run: |
+          ARGS="--limit ${{ github.event.inputs.limit }}"
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ "${{ github.event.inputs.upload }}" = "false" ]; then ARGS="$ARGS --no-upload"; fi
+          python -m src.prepare_weekly $ARGS
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CATBOX_USERHASH: ${{ secrets.CATBOX_USERHASH }}
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts/schedule.yml assets/webp posts/posted_log.yml posts/insights_log.yml posts/delete_queue.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: prepare bikansan scheduled posts"
+            git push
+          fi
