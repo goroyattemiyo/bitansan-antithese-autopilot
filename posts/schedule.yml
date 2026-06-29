@@ -14,9 +14,972 @@
   image_prompt: manual test image
   local_webp: ''
   image_url: https://files.catbox.moe/wqre4i.png
-  alt: 紫ツインテールのねたみと緑ショートのそねみが並ぶ、微炭酸アンチテーゼのダークアイドル風イラスト
+  alt: 紫ツインテールのねたみと青髪ツインテールのそねみが並ぶ、微炭酸アンチテーゼのダークアイドル風イラスト
   status: posted
   threads_post_id: '17892175455377838'
   generated_at: '2026-06-29T00:00:00+09:00'
   posted_at: '2026-06-29T14:11:48+09:00'
+  error: ''
+- date: '2026-06-29'
+  time_slot: evening
+  category: intro
+  character: netami_sonemi
+  theme: intro
+  text: '微炭酸アンチテーゼ、始動。
+
+
+    ねたみ
+
+    誰よりも一番になりたい、紫の嫉妬。
+
+
+    そねみ
+
+    愛されたいのに選ばれない、青い羨望。
+
+
+    きれいごとでは歌えない感情を鳴らす、
+
+    ダークアイドルユニットです。
+
+
+    共犯者、募集中。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-06-30'
+  time_slot: evening
+  category: character_netami
+  character: netami_sonemi
+  theme: character_netami
+  text: 'ねたみ。
+
+
+    誰かが褒められていると、
+
+    少しだけ機嫌が悪くなる。
+
+
+    でもステージに立つと、
+
+    その嫉妬まで全部パフォーマンスに変えてしまう。
+
+
+    Sは Spite。
+
+    それから、Spotlight。
+
+
+    一番眩しい場所は、
+
+    自分のものだと思っている子です。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-01'
+  time_slot: evening
+  category: character_sonemi
+  character: netami_sonemi
+  theme: character_sonemi
+  text: 'そねみ。
+
+
+    誰かが愛されているのを見ると、
+
+    胸の奥が少しだけ苦しくなる。
+
+
+    でもその寂しさを、
+
+    静かに歌に変えてしまう。
+
+
+    Mは Melancholy。
+
+    それから、Mirror。
+
+
+    誰かと自分を比べながら、
+
+    それでも見つけてほしい子です。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-02'
+  time_slot: evening
+  category: disclosure
+  character: netami_sonemi
+  theme: disclosure
+  text: '微炭酸アンチテーゼは、
+
+    AI音楽発のダークアイドルユニットです。
+
+
+    企画、キャラクター設計、歌詞、構成、編集は人間側で設計。
+
+    音源生成にはSunoを使用しています。
+
+
+    AIで作るからこそ、
+
+    どこに人間の意図があるかを大事にしていきます。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-03'
+  time_slot: evening
+  category: song_01
+  character: netami_sonemi
+  theme: song_01
+  text: '微炭酸アンチテーゼ
+
+    01「いいね、奪ってあげる。」
+
+
+    嫉妬と承認欲求を、
+
+    毒かわいく鳴らしました。
+
+
+    そのハート、
+
+    少しだけこちらにください。
+
+
+    共犯者たち、
+
+    まずはこの曲から。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-04'
+  time_slot: evening
+  category: song_01_note
+  character: netami_sonemi
+  theme: song_01_note
+  text: '01「いいね、奪ってあげる。」は、
+
+    微炭酸アンチテーゼの始まりの曲です。
+
+
+    ねたみの「奪いたい」
+
+    そねみの「愛されたい」
+
+
+    その2つを混ぜたら、
+
+    かわいい顔をした少し面倒くさい曲になりました。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-05'
+  time_slot: evening
+  category: daily
+  character: netami_sonemi
+  theme: daily
+  text: '本日の微炭酸アンチテーゼ。
+
+
+    ねたみ：エゴサ中。
+
+    そねみ：通知待ち中。
+
+
+    ステージを降りても、
+
+    だいたい承認欲求で動いています。
+
+
+    マネージャーは見守っています。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-06'
+  time_slot: evening
+  category: dialogue
+  character: netami_sonemi
+  theme: dialogue
+  text: 'ねたみ「今日のいいね、少なくない？」
+
+
+    そねみ「私のせいかな……」
+
+
+    ねたみ「そういうところよ」
+
+
+    そねみ「でも、見てくれてる人はいるもん……」
+
+
+    共犯者たち、
+
+    今日も見守ってください。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-07'
+  time_slot: evening
+  category: seasonal
+  character: netami_sonemi
+  theme: seasonal
+  text: '七夕の願いごと。
+
+
+    ねたみ
+
+    「もっと私を見なさい」
+
+
+    そねみ
+
+    「私だけを見てくれますように」
+
+
+    微炭酸アンチテーゼ、
+
+    願いごとまで少し重いです。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-08'
+  time_slot: evening
+  category: teaser_02
+  character: netami_sonemi
+  theme: teaser_02
+  text: '次の曲は、
+
+    ねたみの感情がかなり強めです。
+
+
+    一番じゃなきゃ息できない。
+
+    センターじゃなきゃ納得できない。
+
+
+    02「センター病棟」
+
+
+    まもなく開院します。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-09'
+  time_slot: evening
+  category: song_02
+  character: netami_sonemi
+  theme: song_02
+  text: '微炭酸アンチテーゼ
+
+    02「センター病棟」
+
+
+    一番じゃなきゃ息できない。
+
+    センターへの執着と承認欲求を、
+
+    病みかわアイドルロックにしました。
+
+
+    ねたみ全開の1曲です。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-10'
+  time_slot: evening
+  category: character_netami_deep
+  character: netami_sonemi
+  theme: character_netami_deep
+  text: 'ねたみは、
+
+    誰かの成功を素直に喜べない。
+
+
+    でもその感情を隠さない。
+
+
+    悔しい。
+
+    奪いたい。
+
+    私が一番になりたい。
+
+
+    それを全部ステージに持っていくから、
+
+    ねたみは強いのかもしれません。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-11'
+  time_slot: evening
+  category: manager
+  character: netami_sonemi
+  theme: manager
+  text: '【マネージャーより】
+
+
+    ねたみが、
+
+    「センター病棟なのに投稿の主語がユニットなのは納得いかない」
+
+    と言っています。
+
+
+    そねみは横で静かに落ち込んでいます。
+
+
+    今日も楽屋の空気は微炭酸です。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-12'
+  time_slot: evening
+  category: dialogue
+  character: netami_sonemi
+  theme: dialogue
+  text: 'リハ前の2人。
+
+
+    ねたみ「ここ、私が真ん中でしょ」
+
+
+    そねみ「……私、少しだけ前に出てもいい？」
+
+
+    ねたみ「少しだけならね」
+
+
+    そねみ「ほんとに少しだけ？」
+
+
+    立ち位置確認だけで、
+
+    かなり時間がかかります。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-13'
+  time_slot: evening
+  category: teaser_03
+  character: netami_sonemi
+  theme: teaser_03
+  text: '次の曲は、
+
+    そねみの本音です。
+
+
+    愛されたいのに、選ばれない。
+
+    見てほしいのに、言えない。
+
+    笑っているのに、少し苦しい。
+
+
+    03「わたしじゃダメなの？」
+
+
+    まもなく。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-14'
+  time_slot: evening
+  category: song_03
+  character: netami_sonemi
+  theme: song_03
+  text: '微炭酸アンチテーゼ
+
+    03「わたしじゃダメなの？」
+
+
+    愛されたいのに、選ばれない。
+
+    比べられる痛みと、
+
+    置いていかれる寂しさを歌にしました。
+
+
+    そねみの本音がにじむ1曲です。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-15'
+  time_slot: evening
+  category: character_sonemi_deep
+  character: netami_sonemi
+  theme: character_sonemi_deep
+  text: 'そねみは、
+
+    誰かに勝ちたいというより、
+
+    誰かみたいに愛されたい子です。
+
+
+    でもその気持ちは、
+
+    ときどき嫉妬になって、
+
+    ときどき歌になります。
+
+
+    「わたしじゃダメなの？」
+
+
+    その一言に、
+
+    そねみの全部が入っています。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-16'
+  time_slot: evening
+  category: song_03_quote
+  character: netami_sonemi
+  theme: song_03_quote
+  text: 'わたしじゃダメなの？
+
+
+    こんなに見てるのに。
+
+    こんなに待ってるのに。
+
+    こんなに笑っているのに。
+
+
+    そねみの歌は、
+
+    かわいいだけでは終われない。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-17'
+  time_slot: evening
+  category: daily
+  character: netami_sonemi
+  theme: daily
+  text: '雨の日の微炭酸アンチテーゼ。
+
+
+    そねみは少し元気がありません。
+
+    ねたみは「雨でも私の髪は崩れない」と言っています。
+
+
+    でも帰り道、
+
+    ちゃんと同じ傘に入っていました。
+
+
+    たぶん仲は悪いです。
+
+    たぶん。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-18'
+  time_slot: evening
+  category: dialogue
+  character: netami_sonemi
+  theme: dialogue
+  text: 'そねみ「私じゃダメなのかな」
+
+
+    ねたみ「ダメならステージに立ててないでしょ」
+
+
+    そねみ「……励ましてる？」
+
+
+    ねたみ「事実を言っただけ」
+
+
+    そねみ「そういうところ、ちょっと好き」
+
+
+    ねたみ「重い」'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-19'
+  time_slot: evening
+  category: teaser_04
+  character: netami_sonemi
+  theme: teaser_04
+  text: '次の曲は、
+
+    甘いけど、ちゃんと毒です。
+
+
+    優しさ。
+
+    依存。
+
+    好きという言葉の賞味期限。
+
+
+    04「毒蜜シンドローム」
+
+
+    飲んだら最後。
+
+    たぶん戻れません。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-20'
+  time_slot: evening
+  category: song_04
+  character: netami_sonemi
+  theme: song_04
+  text: '微炭酸アンチテーゼ
+
+    04「毒蜜シンドローム」
+
+
+    甘いけど、ちゃんと毒。
+
+    愛情と依存を、
+
+    キャンディみたいなダークポップにしました。
+
+
+    かわいい顔で逃がさない1曲です。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-21'
+  time_slot: evening
+  category: song_04_note
+  character: netami_sonemi
+  theme: song_04_note
+  text: '毒蜜は、
+
+    甘い愛情と、少し危ない依存のこと。
+
+
+    ねたみは奪う毒。
+
+    そねみは縋る蜜。
+
+
+    2人で歌うと、
+
+    かわいいのに逃げ道のない曲になります。
+
+
+    04「毒蜜シンドローム」'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-22'
+  time_slot: evening
+  category: daily_dialogue
+  character: netami_sonemi
+  theme: daily_dialogue
+  text: 'カフェで作戦会議。
+
+
+    ねたみ「次はもっと私を目立たせるべき」
+
+
+    そねみ「私も……少しだけ……」
+
+
+    ねたみ「少しだけって言う人ほど重いのよ」
+
+
+    そねみ「ねたみちゃんも十分重いよ」
+
+
+    会議はまだ終わりません。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-23'
+  time_slot: evening
+  category: design_note
+  character: netami_sonemi
+  theme: design_note
+  text: '微炭酸アンチテーゼは、
+
+    曲ごとに衣装や表情を変えていきます。
+
+
+    でも変わらないものがあります。
+
+
+    ねたみは紫の嫉妬。
+
+    そねみは青い羨望。
+
+
+    どんな衣装でも、
+
+    2人の面倒くささはそのままです。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-24'
+  time_slot: evening
+  category: fan_question
+  character: netami_sonemi
+  theme: fan_question
+  text: '共犯者たちに質問です。
+
+
+    あなたはどちら寄りですか？
+
+
+    ねたみ派
+
+    一番になりたい。奪いたい。見返したい。
+
+
+    そねみ派
+
+    愛されたい。選ばれたい。見つけてほしい。
+
+
+    どちらでも大丈夫です。
+
+    ここでは、きれいじゃない感情も歓迎します。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-25'
+  time_slot: evening
+  category: teaser_05
+  character: netami_sonemi
+  theme: teaser_05
+  text: '最後の曲は、
+
+    ライブで叫ぶための曲です。
+
+
+    妬みも、嫉みも、承認欲求も、
+
+    全部まとめて声にする。
+
+
+    05「共犯者コール」
+
+
+    共犯者たち、
+
+    準備はいいですか。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-26'
+  time_slot: evening
+  category: call_practice
+  character: netami_sonemi
+  theme: call_practice
+  text: 'コール練習です。
+
+
+    ね・た・み！
+
+    一番は誰？
+
+
+    そ・ね・み！
+
+    ちゃんと見てる？
+
+
+    微炭酸アンチテーゼのライブは、
+
+    客席も少しだけ共犯です。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-27'
+  time_slot: evening
+  category: manager
+  character: netami_sonemi
+  theme: manager
+  text: '【マネージャーより】
+
+
+    05公開前だからか、
+
+    今日の2人は妙に本気です。
+
+
+    ねたみはずっと客席を煽る練習をしています。
+
+    そねみは「ちゃんと来てくれるかな」と心配しています。
+
+
+    たぶん、いいライブになります。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-28'
+  time_slot: evening
+  category: song_05
+  character: netami_sonemi
+  theme: song_05
+  text: '微炭酸アンチテーゼ
+
+    05「共犯者コール」
+
+
+    妬みも、嫉みも、承認欲求も。
+
+    全部まとめて叫べるライブアンセムを作りました。
+
+
+    聴いたらもう、
+
+    あなたも共犯者です。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-29'
+  time_slot: evening
+  category: chapter_summary
+  character: netami_sonemi
+  theme: chapter_summary
+  text: '微炭酸アンチテーゼ
+
+    01〜05、出そろいました。
+
+
+    01「いいね、奪ってあげる。」
+
+    02「センター病棟」
+
+    03「わたしじゃダメなの？」
+
+    04「毒蜜シンドローム」
+
+    05「共犯者コール」
+
+
+    嫉妬と羨望で歌う、
+
+    2人の最初の物語です。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-30'
+  time_slot: evening
+  category: chapter_01
+  character: netami_sonemi
+  theme: chapter_01
+  text: '微炭酸アンチテーゼ、
+
+    第1章はここからです。
+
+
+    ねたみとそねみ。
+
+    面倒くさくて、痛くて、でもステージでは強い2人。
+
+
+    これから少しずつ、
+
+    共犯者を増やしていきます。
+
+
+    見つけてくれてありがとう。
+
+    よそ見は、ほどほどに。'
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: draft
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
   error: ''
