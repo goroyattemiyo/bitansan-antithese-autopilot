@@ -5,8 +5,9 @@ import argparse
 import sys
 from typing import Any
 
+from .schedule_store import load_schedule_for_date, save_schedule_file
 from .threads_api import ThreadsAPI
-from .utils import append_yaml_list, load_yaml, repo_path, require_env, save_yaml, timestamp_jst, today_jst_str
+from .utils import append_yaml_list, repo_path, require_env, timestamp_jst, today_jst_str
 
 
 def find_post(schedule: list[dict[str, Any]], date: str, time_slot: str) -> dict[str, Any] | None:
@@ -42,14 +43,7 @@ def normalize_thread_posts(raw: Any) -> list[dict[str, Any]]:
         alt = str(part.get("alt", "")).strip()
         if not text and not image_url:
             continue
-        results.append(
-            {
-                "text": text,
-                "image_url": image_url,
-                "alt": alt,
-                "index": index,
-            }
-        )
+        results.append({"text": text, "image_url": image_url, "alt": alt, "index": index})
     return results
 
 
@@ -59,12 +53,15 @@ def publish_one(api: ThreadsAPI, text: str, image_url: str = "", alt: str = "", 
     return api.post_text(text, reply_to_id=reply_to_id)
 
 
+def save_current_schedule(schedule_file) -> None:
+    save_schedule_file(schedule_file)
+
+
 def post_daily(date: str, time_slot: str, dry_run: bool = False) -> int:
-    schedule_path = repo_path("posts", "schedule.yml")
     posted_log_path = repo_path("posts", "posted_log.yml")
-    schedule = load_yaml(schedule_path, default=[])
-    if not isinstance(schedule, list):
-        raise ValueError("posts/schedule.yml must be a YAML list.")
+    schedule_file = load_schedule_for_date(date)
+    schedule = schedule_file.entries
+    print(f"schedule file: {schedule_file.path.relative_to(repo_path())}")
 
     item = find_post(schedule, date, time_slot)
     if not item:
@@ -92,17 +89,14 @@ def post_daily(date: str, time_slot: str, dry_run: bool = False) -> int:
         print("Dry run. No post was published.")
         return 0
 
-    api = ThreadsAPI(
-        access_token=require_env("BIKANSAN_ACCESS_TOKEN"),
-        user_id=require_env("BIKANSAN_USER_ID"),
-    )
+    api = ThreadsAPI(access_token=require_env("BIKANSAN_ACCESS_TOKEN"), user_id=require_env("BIKANSAN_USER_ID"))
 
     root_result = publish_one(api, text, image_url=image_url, alt=alt)
     if "error" in root_result:
         item["status"] = "error"
         item["error"] = str(root_result["error"])[:500]
         item["error_at"] = timestamp_jst()
-        save_yaml(schedule_path, schedule)
+        save_current_schedule(schedule_file)
         print(f"ERROR: {root_result}")
         return 1
 
@@ -111,7 +105,7 @@ def post_daily(date: str, time_slot: str, dry_run: bool = False) -> int:
         item["status"] = "error"
         item["error"] = f"No post id in result: {root_result}"
         item["error_at"] = timestamp_jst()
-        save_yaml(schedule_path, schedule)
+        save_current_schedule(schedule_file)
         print(f"ERROR: {root_result}")
         return 1
 
@@ -154,7 +148,7 @@ def post_daily(date: str, time_slot: str, dry_run: bool = False) -> int:
             item["error"] = f"Thread reply {part['index']} failed: {str(result['error'])[:400]}"
             item["error_at"] = timestamp_jst()
             item["thread_post_ids"] = reply_ids
-            save_yaml(schedule_path, schedule)
+            save_current_schedule(schedule_file)
             print(f"ERROR: {result}")
             return 1
 
@@ -164,7 +158,7 @@ def post_daily(date: str, time_slot: str, dry_run: bool = False) -> int:
             item["error"] = f"No reply post id in result: {result}"
             item["error_at"] = timestamp_jst()
             item["thread_post_ids"] = reply_ids
-            save_yaml(schedule_path, schedule)
+            save_current_schedule(schedule_file)
             print(f"ERROR: {result}")
             return 1
 
@@ -192,7 +186,7 @@ def post_daily(date: str, time_slot: str, dry_run: bool = False) -> int:
     item["status"] = "posted"
     item["thread_post_ids"] = reply_ids
     item["thread_count"] = 1 + len(reply_ids)
-    save_yaml(schedule_path, schedule)
+    save_current_schedule(schedule_file)
 
     print(f"Posted thread root={root_post_id} replies={len(reply_ids)}")
     return 0
