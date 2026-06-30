@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       upload:
-        description: "Upload converted WebP files to Catbox"
+        description: "Write public GitHub raw image URLs to schedule files"
         required: false
         default: "true"
         type: choice
@@ -55,14 +55,14 @@ jobs:
             ARGS="$ARGS --delete-zip"
           fi
 
-          python -m src.process_image_zip $ARGS --userhash "${{ secrets.CATBOX_USERHASH }}"
+          python -m src.process_image_zip $ARGS
 
       - name: Commit processed files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/webp posts/image_urls.yml posts/schedule.yml incoming
+          git add assets/webp posts/image_urls.yml posts/schedule.yml posts/schedules incoming
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
