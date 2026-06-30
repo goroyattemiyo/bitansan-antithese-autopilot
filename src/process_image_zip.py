@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import tempfile
 import zipfile
@@ -15,6 +16,8 @@ from PIL import Image
 CATBOX_API_URL = "https://catbox.moe/user/api.php"
 SUPPORTED_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
 DEFAULT_TIME_SLOT = "evening"
+DEFAULT_REPOSITORY = "goroyattemiyo/bitansan-antithese-autopilot"
+DEFAULT_BRANCH = "main"
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 INCOMING_DIR = REPO_ROOT / "incoming"
@@ -62,6 +65,18 @@ def upload_to_catbox(file_path: Path, userhash: str = "") -> str:
     if not result.startswith("http"):
         raise RuntimeError(f"Catbox upload failed: {result}")
     return result
+
+
+def github_raw_url(file_path: Path) -> str:
+    repo = os.environ.get("GITHUB_REPOSITORY", DEFAULT_REPOSITORY)
+    branch = os.environ.get("GITHUB_REF_NAME", DEFAULT_BRANCH)
+    if branch.startswith("refs/heads/"):
+        branch = branch.removeprefix("refs/heads/")
+    if not branch:
+        branch = DEFAULT_BRANCH
+
+    relative_path = str(file_path.relative_to(REPO_ROOT)).replace("\\", "/")
+    return f"https://raw.githubusercontent.com/{repo}/{branch}/{relative_path}"
 
 
 def find_zip_files(incoming_dir: Path) -> list[Path]:
@@ -206,6 +221,7 @@ def build_entry(
     quality: int = 90,
     upload: bool = True,
     fallback_meta: dict[str, str] | None = None,
+    github_raw_fallback: bool = True,
 ) -> dict[str, Any]:
     meta = try_parse_filename(src.stem)
     inferred_from = "image_filename"
@@ -226,11 +242,26 @@ def build_entry(
 
     image_url = ""
     status = "converted"
+    image_host = "local"
+    upload_error = ""
 
     if upload:
-        image_url = upload_to_catbox(dst, userhash=userhash)
-        status = "uploaded"
-        print(f"uploaded: {dst.name} -> {image_url}")
+        try:
+            image_url = upload_to_catbox(dst, userhash=userhash)
+            status = "uploaded"
+            image_host = "catbox"
+            print(f"uploaded: {dst.name} -> {image_url}")
+        except Exception as exc:
+            upload_error = f"{type(exc).__name__}: {exc}"
+            if not github_raw_fallback:
+                raise
+            image_url = github_raw_url(dst)
+            status = "github_raw_fallback"
+            image_host = "github_raw"
+            print(
+                f"warning: Catbox upload failed for {dst.name}; "
+                f"using GitHub raw URL instead: {image_url}"
+            )
     else:
         print(f"converted: {dst.name}")
 
@@ -245,7 +276,9 @@ def build_entry(
         "category": meta["category"],
         "local_webp": str(dst.relative_to(REPO_ROOT)).replace("\\", "/"),
         "image_url": image_url,
+        "image_host": image_host,
         "status": status,
+        "upload_error": upload_error,
     }
 
 
@@ -311,6 +344,7 @@ def process_zip(
     userhash: str = "",
     quality: int = 90,
     upload: bool = True,
+    github_raw_fallback: bool = True,
 ) -> list[dict[str, Any]]:
     print(f"Processing zip: {zip_path}")
 
@@ -338,6 +372,7 @@ def process_zip(
                 quality=quality,
                 upload=upload,
                 fallback_meta=fallback_meta,
+                github_raw_fallback=github_raw_fallback,
             )
             entry["zip_file"] = zip_path.name
             entry["zip_index"] = index + 1
@@ -351,6 +386,7 @@ def process_standalone_image(
     userhash: str = "",
     quality: int = 90,
     upload: bool = True,
+    github_raw_fallback: bool = True,
 ) -> dict[str, Any]:
     print(f"Processing image: {image_path}")
     return build_entry(
@@ -359,6 +395,7 @@ def process_standalone_image(
         userhash=userhash,
         quality=quality,
         upload=upload,
+        github_raw_fallback=github_raw_fallback,
     )
 
 
@@ -369,6 +406,11 @@ def main() -> None:
     parser.add_argument("--userhash", default="")
     parser.add_argument("--quality", type=int, default=90)
     parser.add_argument("--no-upload", action="store_true")
+    parser.add_argument(
+        "--no-github-raw-fallback",
+        action="store_true",
+        help="Fail the workflow if Catbox upload fails instead of using GitHub raw URLs.",
+    )
     parser.add_argument(
         "--delete-zip",
         action="store_true",
@@ -394,6 +436,7 @@ def main() -> None:
             userhash=args.userhash,
             quality=args.quality,
             upload=not args.no_upload,
+            github_raw_fallback=not args.no_github_raw_fallback,
         )
         all_entries.extend(entries)
         processed_inputs.append(zip_path)
@@ -404,6 +447,7 @@ def main() -> None:
             userhash=args.userhash,
             quality=args.quality,
             upload=not args.no_upload,
+            github_raw_fallback=not args.no_github_raw_fallback,
         )
         all_entries.append(entry)
         processed_inputs.append(image_path)
