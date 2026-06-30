@@ -48,10 +48,10 @@
   local_webp: assets/webp/2026-06-29_evening_bitansan_intro.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-06-29_evening_bitansan_intro.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: ready
+  status: posted
   threads_post_id: ''
   generated_at: ''
-  posted_at: ''
+  posted_at: manual
   error: ''
 - date: '2026-06-30'
   time_slot: evening
@@ -83,10 +83,10 @@
   local_webp: assets/webp/2026-06-30_evening_bitansan_netami.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-06-30_evening_bitansan_netami.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: ready
+  status: posted
   threads_post_id: ''
   generated_at: ''
-  posted_at: ''
+  posted_at: manual
   error: ''
 - date: '2026-07-01'
   time_slot: evening
