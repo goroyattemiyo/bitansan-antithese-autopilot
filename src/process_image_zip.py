@@ -68,6 +68,21 @@ def find_zip_files(incoming_dir: Path) -> list[Path]:
     return sorted(p for p in incoming_dir.glob("*.zip") if p.is_file())
 
 
+def find_standalone_images(incoming_dir: Path) -> list[Path]:
+    """Find images directly under incoming/.
+
+    This avoids large ZIP uploads. Put files like incoming/2026-07-01.png directly.
+    Images inside subfolders are ignored here; ZIP extraction still scans recursively.
+    """
+    if not incoming_dir.exists():
+        return []
+    return sorted(
+        p
+        for p in incoming_dir.iterdir()
+        if p.is_file() and p.suffix.lower() in SUPPORTED_EXTS
+    )
+
+
 def list_images(base_dir: Path) -> list[Path]:
     results: list[Path] = []
     for path in base_dir.rglob("*"):
@@ -129,6 +144,41 @@ def convert_to_webp(src_path: Path, dst_path: Path, quality: int = 90) -> Path:
     return dst_path
 
 
+def build_entry(
+    src: Path,
+    source_label: str,
+    userhash: str = "",
+    quality: int = 90,
+    upload: bool = True,
+) -> dict[str, Any]:
+    meta = parse_filename(src.stem)
+    webp_name = f"{src.stem}.webp"
+    dst = WEBP_DIR / webp_name
+    convert_to_webp(src, dst, quality=quality)
+
+    image_url = ""
+    status = "converted"
+
+    if upload:
+        image_url = upload_to_catbox(dst, userhash=userhash)
+        status = "uploaded"
+        print(f"uploaded: {dst.name} -> {image_url}")
+    else:
+        print(f"converted: {dst.name}")
+
+    return {
+        "source": source_label,
+        "file": src.name,
+        "stem": src.stem,
+        "date": meta["date"],
+        "time_slot": meta["time_slot"],
+        "category": meta["category"],
+        "local_webp": str(dst.relative_to(REPO_ROOT)).replace("\\", "/"),
+        "image_url": image_url,
+        "status": status,
+    }
+
+
 def update_schedule(
     schedule: list[dict[str, Any]], entries: list[dict[str, Any]]
 ) -> tuple[list[dict[str, Any]], int]:
@@ -179,8 +229,6 @@ def process_zip(
 ) -> list[dict[str, Any]]:
     print(f"Processing zip: {zip_path}")
 
-    WEBP_DIR.mkdir(parents=True, exist_ok=True)
-
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp_path = Path(tmpdir)
         extract_dir = tmp_path / "extracted"
@@ -196,54 +244,60 @@ def process_zip(
         entries: list[dict[str, Any]] = []
 
         for src in image_files:
-            meta = parse_filename(src.stem)
-            webp_name = f"{src.stem}.webp"
-            dst = WEBP_DIR / webp_name
-            convert_to_webp(src, dst, quality=quality)
-
-            image_url = ""
-            status = "converted"
-
-            if upload:
-                image_url = upload_to_catbox(dst, userhash=userhash)
-                status = "uploaded"
-                print(f"uploaded: {dst.name} -> {image_url}")
-            else:
-                print(f"converted: {dst.name}")
-
-            entries.append(
-                {
-                    "zip_file": zip_path.name,
-                    "file": src.name,
-                    "stem": src.stem,
-                    "date": meta["date"],
-                    "time_slot": meta["time_slot"],
-                    "category": meta["category"],
-                    "local_webp": str(dst.relative_to(REPO_ROOT)).replace("\\", "/"),
-                    "image_url": image_url,
-                    "status": status,
-                }
+            entry = build_entry(
+                src=src,
+                source_label=zip_path.name,
+                userhash=userhash,
+                quality=quality,
+                upload=upload,
             )
+            entry["zip_file"] = zip_path.name
+            entries.append(entry)
 
         return entries
 
 
+def process_standalone_image(
+    image_path: Path,
+    userhash: str = "",
+    quality: int = 90,
+    upload: bool = True,
+) -> dict[str, Any]:
+    print(f"Processing image: {image_path}")
+    return build_entry(
+        src=image_path,
+        source_label="incoming",
+        userhash=userhash,
+        quality=quality,
+        upload=upload,
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Process incoming image ZIP files into WebP files, Catbox URLs, and schedule.yml updates."
+        description="Process incoming ZIP or standalone image files into WebP files, Catbox URLs, and schedule.yml updates."
     )
     parser.add_argument("--userhash", default="")
     parser.add_argument("--quality", type=int, default=90)
     parser.add_argument("--no-upload", action="store_true")
-    parser.add_argument("--delete-zip", action="store_true")
+    parser.add_argument(
+        "--delete-zip",
+        action="store_true",
+        help="Delete processed incoming ZIP/image files after successful processing.",
+    )
     args = parser.parse_args()
 
+    WEBP_DIR.mkdir(parents=True, exist_ok=True)
+
     zip_files = find_zip_files(INCOMING_DIR)
-    if not zip_files:
-        print("No zip files found in incoming/.")
+    standalone_images = find_standalone_images(INCOMING_DIR)
+
+    if not zip_files and not standalone_images:
+        print("No zip or image files found in incoming/.")
         return
 
     all_entries: list[dict[str, Any]] = []
+    processed_inputs: list[Path] = []
 
     for zip_path in zip_files:
         entries = process_zip(
@@ -253,10 +307,22 @@ def main() -> None:
             upload=not args.no_upload,
         )
         all_entries.extend(entries)
+        processed_inputs.append(zip_path)
 
-        if args.delete_zip:
-            zip_path.unlink(missing_ok=True)
-            print(f"deleted zip: {zip_path.name}")
+    for image_path in standalone_images:
+        entry = process_standalone_image(
+            image_path=image_path,
+            userhash=args.userhash,
+            quality=args.quality,
+            upload=not args.no_upload,
+        )
+        all_entries.append(entry)
+        processed_inputs.append(image_path)
+
+    if args.delete_zip:
+        for path in processed_inputs:
+            path.unlink(missing_ok=True)
+            print(f"deleted incoming file: {path.name}")
 
     existing_urls = load_yaml(IMAGE_URLS_PATH, default=[])
     if not isinstance(existing_urls, list):
