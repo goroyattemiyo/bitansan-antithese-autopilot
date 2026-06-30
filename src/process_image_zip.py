@@ -9,11 +9,9 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
-import requests
 import yaml
 from PIL import Image
 
-CATBOX_API_URL = "https://catbox.moe/user/api.php"
 SUPPORTED_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
 DEFAULT_TIME_SLOT = "evening"
 DEFAULT_REPOSITORY = "goroyattemiyo/bitansan-antithese-autopilot"
@@ -51,22 +49,6 @@ def save_yaml(path: Path, data: Any) -> None:
     path.write_text(text, encoding="utf-8")
 
 
-def upload_to_catbox(file_path: Path, userhash: str = "") -> str:
-    data: dict[str, Any] = {"reqtype": "fileupload"}
-    if userhash:
-        data["userhash"] = userhash
-
-    with file_path.open("rb") as f:
-        files = {"fileToUpload": (file_path.name, f)}
-        resp = requests.post(CATBOX_API_URL, data=data, files=files, timeout=120)
-
-    resp.raise_for_status()
-    result = resp.text.strip()
-    if not result.startswith("http"):
-        raise RuntimeError(f"Catbox upload failed: {result}")
-    return result
-
-
 def github_raw_url(file_path: Path) -> str:
     repo = os.environ.get("GITHUB_REPOSITORY", DEFAULT_REPOSITORY)
     branch = os.environ.get("GITHUB_REF_NAME", DEFAULT_BRANCH)
@@ -93,14 +75,6 @@ def find_standalone_images(incoming_dir: Path) -> list[Path]:
         for p in incoming_dir.iterdir()
         if p.is_file() and p.suffix.lower() in SUPPORTED_EXTS
     )
-
-
-def list_images(base_dir: Path) -> list[Path]:
-    results: list[Path] = []
-    for path in base_dir.rglob("*"):
-        if path.is_file() and path.suffix.lower() in SUPPORTED_EXTS:
-            results.append(path)
-    return sorted(results)
 
 
 def parse_filename(stem: str) -> dict[str, str]:
@@ -217,11 +191,9 @@ def convert_to_webp(src_path: Path, dst_path: Path, quality: int = 90) -> Path:
 def build_entry(
     src: Path,
     source_label: str,
-    userhash: str = "",
     quality: int = 90,
-    upload: bool = True,
+    publish_url: bool = True,
     fallback_meta: dict[str, str] | None = None,
-    github_raw_fallback: bool = True,
 ) -> dict[str, Any]:
     meta = try_parse_filename(src.stem)
     inferred_from = "image_filename"
@@ -243,25 +215,12 @@ def build_entry(
     image_url = ""
     status = "converted"
     image_host = "local"
-    upload_error = ""
 
-    if upload:
-        try:
-            image_url = upload_to_catbox(dst, userhash=userhash)
-            status = "uploaded"
-            image_host = "catbox"
-            print(f"uploaded: {dst.name} -> {image_url}")
-        except Exception as exc:
-            upload_error = f"{type(exc).__name__}: {exc}"
-            if not github_raw_fallback:
-                raise
-            image_url = github_raw_url(dst)
-            status = "github_raw_fallback"
-            image_host = "github_raw"
-            print(
-                f"warning: Catbox upload failed for {dst.name}; "
-                f"using GitHub raw URL instead: {image_url}"
-            )
+    if publish_url:
+        image_url = github_raw_url(dst)
+        status = "github_raw"
+        image_host = "github_raw"
+        print(f"public image URL: {dst.name} -> {image_url}")
     else:
         print(f"converted: {dst.name}")
 
@@ -278,7 +237,6 @@ def build_entry(
         "image_url": image_url,
         "image_host": image_host,
         "status": status,
-        "upload_error": upload_error,
     }
 
 
@@ -341,10 +299,8 @@ def zip_image_members_in_order(zf: zipfile.ZipFile, extract_dir: Path) -> list[P
 
 def process_zip(
     zip_path: Path,
-    userhash: str = "",
     quality: int = 90,
-    upload: bool = True,
-    github_raw_fallback: bool = True,
+    publish_url: bool = True,
 ) -> list[dict[str, Any]]:
     print(f"Processing zip: {zip_path}")
 
@@ -368,11 +324,9 @@ def process_zip(
             entry = build_entry(
                 src=src,
                 source_label=zip_path.name,
-                userhash=userhash,
                 quality=quality,
-                upload=upload,
+                publish_url=publish_url,
                 fallback_meta=fallback_meta,
-                github_raw_fallback=github_raw_fallback,
             )
             entry["zip_file"] = zip_path.name
             entry["zip_index"] = index + 1
@@ -383,34 +337,25 @@ def process_zip(
 
 def process_standalone_image(
     image_path: Path,
-    userhash: str = "",
     quality: int = 90,
-    upload: bool = True,
-    github_raw_fallback: bool = True,
+    publish_url: bool = True,
 ) -> dict[str, Any]:
     print(f"Processing image: {image_path}")
     return build_entry(
         src=image_path,
         source_label="incoming",
-        userhash=userhash,
         quality=quality,
-        upload=upload,
-        github_raw_fallback=github_raw_fallback,
+        publish_url=publish_url,
     )
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Process incoming ZIP or standalone image files into WebP files, Catbox URLs, and schedule.yml updates."
+        description="Process incoming ZIP or standalone image files into WebP files, public GitHub raw URLs, and schedule.yml updates."
     )
-    parser.add_argument("--userhash", default="")
+    parser.add_argument("--userhash", default="", help="Ignored. Kept for backward compatibility with old Catbox workflow.")
     parser.add_argument("--quality", type=int, default=90)
-    parser.add_argument("--no-upload", action="store_true")
-    parser.add_argument(
-        "--no-github-raw-fallback",
-        action="store_true",
-        help="Fail the workflow if Catbox upload fails instead of using GitHub raw URLs.",
-    )
+    parser.add_argument("--no-upload", action="store_true", help="Convert only. Do not write public image URLs; schedule stays draft.")
     parser.add_argument(
         "--delete-zip",
         action="store_true",
@@ -429,14 +374,13 @@ def main() -> None:
 
     all_entries: list[dict[str, Any]] = []
     processed_inputs: list[Path] = []
+    publish_url = not args.no_upload
 
     for zip_path in zip_files:
         entries = process_zip(
             zip_path=zip_path,
-            userhash=args.userhash,
             quality=args.quality,
-            upload=not args.no_upload,
-            github_raw_fallback=not args.no_github_raw_fallback,
+            publish_url=publish_url,
         )
         all_entries.extend(entries)
         processed_inputs.append(zip_path)
@@ -444,10 +388,8 @@ def main() -> None:
     for image_path in standalone_images:
         entry = process_standalone_image(
             image_path=image_path,
-            userhash=args.userhash,
             quality=args.quality,
-            upload=not args.no_upload,
-            github_raw_fallback=not args.no_github_raw_fallback,
+            publish_url=publish_url,
         )
         all_entries.append(entry)
         processed_inputs.append(image_path)
