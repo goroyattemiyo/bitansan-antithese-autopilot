@@ -177,10 +177,10 @@
   local_webp: assets/webp/2026-07-03_evening_bitansan_song01.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-03_evening_bitansan_song01.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: ready
-  threads_post_id: ''
+  status: posted
+  threads_post_id: '17998303046971553'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-06-30T11:41:16+09:00'
   error: ''
   song_url: https://suno.com/s/cVsGi56XmJtlAdwf
   song_no: '01'
@@ -194,6 +194,10 @@
 
 
       共犯者たちの反応、マネージャーが見ています。'
+  thread_post_ids:
+  - '18128181997621299'
+  - '18382473337161714'
+  thread_count: 3
 - date: '2026-07-04'
   time_slot: evening
   category: song_01_note
