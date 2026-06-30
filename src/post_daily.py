@@ -141,12 +141,13 @@ def post_daily(date: str, time_slot: str, dry_run: bool = False) -> int:
     parent_id = root_post_id
 
     for part in thread_posts:
+        reply_to_id = parent_id
         result = publish_one(
             api,
             str(part.get("text", "")).strip(),
             image_url=str(part.get("image_url", "")).strip(),
             alt=str(part.get("alt", "")).strip(),
-            reply_to_id=parent_id,
+            reply_to_id=reply_to_id,
         )
         if "error" in result:
             item["status"] = "error"
@@ -180,7 +181,7 @@ def post_daily(date: str, time_slot: str, dry_run: bool = False) -> int:
                 "character": item.get("character", ""),
                 "thread_index": int(part["index"]) + 1,
                 "thread_role": "reply",
-                "reply_to_id": parent_id,
+                "reply_to_id": reply_to_id,
                 "text_head": str(part.get("text", ""))[:80],
                 "image_url": str(part.get("image_url", "")),
                 "posted_at": reply_posted_at,
