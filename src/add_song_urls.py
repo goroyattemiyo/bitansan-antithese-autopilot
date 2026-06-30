@@ -1,11 +1,9 @@
 from __future__ import annotations
 
-from pathlib import Path
+import argparse
 from typing import Any
 
-import yaml
-
-SCHEDULE_PATH = Path("posts/schedule.yml")
+from .schedule_store import load_active_schedule_files, save_schedule_file
 
 SONG_URLS = {
     "01": "https://suno.com/s/cVsGi56XmJtlAdwf",
@@ -32,20 +30,6 @@ TITLE_KEYS = {
 }
 
 
-def load_schedule() -> list[dict[str, Any]]:
-    data = yaml.safe_load(SCHEDULE_PATH.read_text(encoding="utf-8"))
-    if not isinstance(data, list):
-        raise ValueError("posts/schedule.yml must be a YAML list")
-    return data
-
-
-def dump_schedule(data: list[dict[str, Any]]) -> None:
-    SCHEDULE_PATH.write_text(
-        yaml.safe_dump(data, allow_unicode=True, sort_keys=False),
-        encoding="utf-8",
-    )
-
-
 def find_song_no(item: dict[str, Any]) -> str | None:
     category = str(item.get("category", ""))
     theme = str(item.get("theme", ""))
@@ -59,7 +43,6 @@ def find_song_no(item: dict[str, Any]) -> str | None:
 
 
 def strip_inline_suno_url(text: str) -> str:
-    """Remove an older inline Suno URL block if it exists."""
     lines = text.rstrip().splitlines()
     cleaned: list[str] = []
     skip_next_url = False
@@ -99,11 +82,9 @@ def thread_has_url(thread_posts: list[Any], url: str) -> bool:
     return False
 
 
-def main() -> None:
-    schedule = load_schedule()
+def update_entries(entries: list[dict[str, Any]]) -> int:
     updated = 0
-
-    for item in schedule:
+    for item in entries:
         if not isinstance(item, dict):
             continue
         song_no = find_song_no(item)
@@ -126,9 +107,25 @@ def main() -> None:
             updated += 1
         else:
             item["thread_posts"] = thread_posts
+    return updated
 
-    dump_schedule(schedule)
-    print(f"updated song thread entries: {updated}")
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--all", action="store_true", help="Also process past weekly schedule files.")
+    args = parser.parse_args()
+
+    schedule_files = load_active_schedule_files(include_past=args.all)
+    total = 0
+
+    for schedule_file in schedule_files:
+        updated = update_entries(schedule_file.entries)
+        if updated:
+            save_schedule_file(schedule_file)
+        print(f"{schedule_file.path}: updated={updated}")
+        total += updated
+
+    print(f"updated song thread entries: {total}")
 
 
 if __name__ == "__main__":
