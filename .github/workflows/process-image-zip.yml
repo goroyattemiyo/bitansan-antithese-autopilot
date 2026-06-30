@@ -12,7 +12,7 @@ on:
           - "true"
           - "false"
       delete_zip:
-        description: "Delete processed zip files from incoming/"
+        description: "Delete processed ZIP/image files from incoming/"
         required: false
         default: "true"
         type: choice
@@ -45,7 +45,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Process zip
+      - name: Process incoming ZIP/images
         run: |
           ARGS="--quality ${{ github.event.inputs.quality }}"
           if [ "${{ github.event.inputs.upload }}" = "false" ]; then
@@ -67,6 +67,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: process uploaded image zip"
+            git commit -m "chore: process incoming images"
             git push
           fi
