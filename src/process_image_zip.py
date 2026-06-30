@@ -12,6 +12,8 @@ from typing import Any
 import yaml
 from PIL import Image
 
+from .schedule_store import load_schedule_files_for_dates, parse_date, save_schedule_file
+
 SUPPORTED_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
 DEFAULT_TIME_SLOT = "evening"
 DEFAULT_REPOSITORY = "goroyattemiyo/bitansan-antithese-autopilot"
@@ -20,15 +22,12 @@ DEFAULT_BRANCH = "main"
 REPO_ROOT = Path(__file__).resolve().parents[1]
 INCOMING_DIR = REPO_ROOT / "incoming"
 WEBP_DIR = REPO_ROOT / "assets" / "webp"
-SCHEDULE_PATH = REPO_ROOT / "posts" / "schedule.yml"
 IMAGE_URLS_PATH = REPO_ROOT / "posts" / "image_urls.yml"
 
 FULL_FILENAME_RE = re.compile(
     r"^(?P<date>\d{4}-\d{2}-\d{2})_(?P<time_slot>[a-zA-Z0-9-]+)_bitansan_(?P<category>[a-zA-Z0-9_-]+)$"
 )
-DATE_SLOT_RE = re.compile(
-    r"^(?P<date>\d{4}-\d{2}-\d{2})_(?P<time_slot>[a-zA-Z0-9-]+)$"
-)
+DATE_SLOT_RE = re.compile(r"^(?P<date>\d{4}-\d{2}-\d{2})_(?P<time_slot>[a-zA-Z0-9-]+)$")
 DATE_ONLY_RE = re.compile(r"^(?P<date>\d{4}-\d{2}-\d{2})$")
 DATE_ANY_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 
@@ -70,21 +69,10 @@ def find_zip_files(incoming_dir: Path) -> list[Path]:
 def find_standalone_images(incoming_dir: Path) -> list[Path]:
     if not incoming_dir.exists():
         return []
-    return sorted(
-        p
-        for p in incoming_dir.iterdir()
-        if p.is_file() and p.suffix.lower() in SUPPORTED_EXTS
-    )
+    return sorted(p for p in incoming_dir.iterdir() if p.is_file() and p.suffix.lower() in SUPPORTED_EXTS)
 
 
 def parse_filename(stem: str) -> dict[str, str]:
-    """Parse image or zip filename stem.
-
-    Accepted formats:
-    - 2026-07-01
-    - 2026-07-01_evening
-    - 2026-07-01_evening_bitansan_intro
-    """
     full_match = FULL_FILENAME_RE.match(stem)
     if full_match:
         return {
@@ -95,19 +83,11 @@ def parse_filename(stem: str) -> dict[str, str]:
 
     slot_match = DATE_SLOT_RE.match(stem)
     if slot_match:
-        return {
-            "date": slot_match.group("date"),
-            "time_slot": slot_match.group("time_slot"),
-            "category": "",
-        }
+        return {"date": slot_match.group("date"), "time_slot": slot_match.group("time_slot"), "category": ""}
 
     date_match = DATE_ONLY_RE.match(stem)
     if date_match:
-        return {
-            "date": date_match.group("date"),
-            "time_slot": DEFAULT_TIME_SLOT,
-            "category": "",
-        }
+        return {"date": date_match.group("date"), "time_slot": DEFAULT_TIME_SLOT, "category": ""}
 
     raise ValueError(
         f"Invalid filename format: {stem} "
@@ -130,13 +110,6 @@ def daterange(start: date, end: date) -> list[date]:
 
 
 def infer_metas_from_zip_stem(zip_stem: str, image_count: int) -> list[dict[str, str]] | None:
-    """Infer posting dates from a ZIP filename.
-
-    Supported examples:
-    - 2026-07-01.zip with one image
-    - 2026-07-01_evening.zip with one image
-    - bitansan_images_2026-06-29_to_2026-07-03.zip with five images
-    """
     direct_meta = try_parse_filename(zip_stem)
     if direct_meta is not None and image_count == 1:
         return [direct_meta]
@@ -155,17 +128,13 @@ def infer_metas_from_zip_stem(zip_stem: str, image_count: int) -> list[dict[str,
         )
         return None
 
-    return [
-        {"date": d.isoformat(), "time_slot": DEFAULT_TIME_SLOT, "category": ""}
-        for d in dates
-    ]
+    return [{"date": d.isoformat(), "time_slot": DEFAULT_TIME_SLOT, "category": ""} for d in dates]
 
 
 def meta_to_stem(meta: dict[str, str]) -> str:
     date_part = meta["date"]
     time_slot = meta.get("time_slot", DEFAULT_TIME_SLOT) or DEFAULT_TIME_SLOT
     category = meta.get("category", "")
-
     if category:
         return f"{date_part}_{time_slot}_bitansan_{category}"
     if time_slot != DEFAULT_TIME_SLOT:
@@ -188,22 +157,13 @@ def convert_to_webp(src_path: Path, dst_path: Path, quality: int = 90) -> Path:
     return dst_path
 
 
-def build_entry(
-    src: Path,
-    source_label: str,
-    quality: int = 90,
-    publish_url: bool = True,
-    fallback_meta: dict[str, str] | None = None,
-) -> dict[str, Any]:
+def build_entry(src: Path, source_label: str, quality: int = 90, publish_url: bool = True, fallback_meta: dict[str, str] | None = None) -> dict[str, Any]:
     meta = try_parse_filename(src.stem)
     inferred_from = "image_filename"
 
     if meta is None:
         if fallback_meta is None:
-            raise ValueError(
-                f"Invalid filename format: {src.stem} "
-                "and no usable ZIP filename fallback was available."
-            )
+            raise ValueError(f"Invalid filename format: {src.stem} and no usable ZIP filename fallback was available.")
         meta = fallback_meta
         inferred_from = "zip_filename"
 
@@ -215,7 +175,6 @@ def build_entry(
     image_url = ""
     status = "converted"
     image_host = "local"
-
     if publish_url:
         image_url = github_raw_url(dst)
         status = "github_raw"
@@ -240,11 +199,8 @@ def build_entry(
     }
 
 
-def update_schedule(
-    schedule: list[dict[str, Any]], entries: list[dict[str, Any]]
-) -> tuple[list[dict[str, Any]], int]:
+def update_schedule_entries(schedule: list[dict[str, Any]], entries: list[dict[str, Any]]) -> int:
     updated_count = 0
-
     for entry in entries:
         target_date = entry["date"]
         target_slot = entry["time_slot"]
@@ -254,7 +210,6 @@ def update_schedule(
         for item in schedule:
             if not isinstance(item, dict):
                 continue
-
             if str(item.get("date", "")) != target_date:
                 continue
             if str(item.get("time_slot", "")) != target_slot:
@@ -276,14 +231,28 @@ def update_schedule(
 
         if not matched:
             print(f"warning: no matching schedule entry found for {target_date} {target_slot}")
+    return updated_count
 
-    return schedule, updated_count
+
+def update_schedule_files(entries: list[dict[str, Any]]) -> int:
+    dates = sorted({entry["date"] for entry in entries if entry.get("date")})
+    schedule_files = load_schedule_files_for_dates(dates)
+    total = 0
+
+    for schedule_file in schedule_files:
+        scoped_entries = [entry for entry in entries if schedule_file.contains(parse_date(entry["date"]))]
+        if not scoped_entries:
+            continue
+        count = update_schedule_entries(schedule_file.entries, scoped_entries)
+        save_schedule_file(schedule_file)
+        print(f"updated schedule file: {schedule_file.path} count={count}")
+        total += count
+    return total
 
 
 def zip_image_members_in_order(zf: zipfile.ZipFile, extract_dir: Path) -> list[Path]:
     zf.extractall(extract_dir)
     image_files: list[Path] = []
-
     for info in zf.infolist():
         if info.is_dir():
             continue
@@ -293,17 +262,11 @@ def zip_image_members_in_order(zf: zipfile.ZipFile, extract_dir: Path) -> list[P
         extracted_path = extract_dir / member_path
         if extracted_path.exists() and extracted_path.is_file():
             image_files.append(extracted_path)
-
     return image_files
 
 
-def process_zip(
-    zip_path: Path,
-    quality: int = 90,
-    publish_url: bool = True,
-) -> list[dict[str, Any]]:
+def process_zip(zip_path: Path, quality: int = 90, publish_url: bool = True) -> list[dict[str, Any]]:
     print(f"Processing zip: {zip_path}")
-
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp_path = Path(tmpdir)
         extract_dir = tmp_path / "extracted"
@@ -316,55 +279,30 @@ def process_zip(
             raise RuntimeError(f"No image files found in zip: {zip_path.name}")
 
         fallback_metas = infer_metas_from_zip_stem(zip_path.stem, len(image_files))
-
         entries: list[dict[str, Any]] = []
-
         for index, src in enumerate(image_files):
             fallback_meta = fallback_metas[index] if fallback_metas else None
-            entry = build_entry(
-                src=src,
-                source_label=zip_path.name,
-                quality=quality,
-                publish_url=publish_url,
-                fallback_meta=fallback_meta,
-            )
+            entry = build_entry(src=src, source_label=zip_path.name, quality=quality, publish_url=publish_url, fallback_meta=fallback_meta)
             entry["zip_file"] = zip_path.name
             entry["zip_index"] = index + 1
             entries.append(entry)
-
         return entries
 
 
-def process_standalone_image(
-    image_path: Path,
-    quality: int = 90,
-    publish_url: bool = True,
-) -> dict[str, Any]:
+def process_standalone_image(image_path: Path, quality: int = 90, publish_url: bool = True) -> dict[str, Any]:
     print(f"Processing image: {image_path}")
-    return build_entry(
-        src=image_path,
-        source_label="incoming",
-        quality=quality,
-        publish_url=publish_url,
-    )
+    return build_entry(src=image_path, source_label="incoming", quality=quality, publish_url=publish_url)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Process incoming ZIP or standalone image files into WebP files, public GitHub raw URLs, and schedule.yml updates."
-    )
+    parser = argparse.ArgumentParser(description="Process incoming ZIP or standalone image files into WebP files, public GitHub raw URLs, and schedule updates.")
     parser.add_argument("--userhash", default="", help="Ignored. Kept for backward compatibility with old Catbox workflow.")
     parser.add_argument("--quality", type=int, default=90)
     parser.add_argument("--no-upload", action="store_true", help="Convert only. Do not write public image URLs; schedule stays draft.")
-    parser.add_argument(
-        "--delete-zip",
-        action="store_true",
-        help="Delete processed incoming ZIP/image files after successful processing.",
-    )
+    parser.add_argument("--delete-zip", action="store_true", help="Delete processed incoming ZIP/image files after successful processing.")
     args = parser.parse_args()
 
     WEBP_DIR.mkdir(parents=True, exist_ok=True)
-
     zip_files = find_zip_files(INCOMING_DIR)
     standalone_images = find_standalone_images(INCOMING_DIR)
 
@@ -377,20 +315,12 @@ def main() -> None:
     publish_url = not args.no_upload
 
     for zip_path in zip_files:
-        entries = process_zip(
-            zip_path=zip_path,
-            quality=args.quality,
-            publish_url=publish_url,
-        )
+        entries = process_zip(zip_path=zip_path, quality=args.quality, publish_url=publish_url)
         all_entries.extend(entries)
         processed_inputs.append(zip_path)
 
     for image_path in standalone_images:
-        entry = process_standalone_image(
-            image_path=image_path,
-            quality=args.quality,
-            publish_url=publish_url,
-        )
+        entry = process_standalone_image(image_path=image_path, quality=args.quality, publish_url=publish_url)
         all_entries.append(entry)
         processed_inputs.append(image_path)
 
@@ -402,16 +332,10 @@ def main() -> None:
     existing_urls = load_yaml(IMAGE_URLS_PATH, default=[])
     if not isinstance(existing_urls, list):
         existing_urls = []
-    merged_urls = existing_urls + all_entries
-    save_yaml(IMAGE_URLS_PATH, merged_urls)
+    save_yaml(IMAGE_URLS_PATH, existing_urls + all_entries)
     print(f"saved: {IMAGE_URLS_PATH}")
 
-    schedule = load_yaml(SCHEDULE_PATH, default=[])
-    if not isinstance(schedule, list):
-        raise ValueError("posts/schedule.yml must be a YAML list.")
-
-    updated_schedule, updated_count = update_schedule(schedule, all_entries)
-    save_yaml(SCHEDULE_PATH, updated_schedule)
+    updated_count = update_schedule_files(all_entries)
     print(f"updated schedule count: {updated_count}")
 
 
