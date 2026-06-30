@@ -1,0 +1,206 @@
+- date: '2026-07-06'
+  time_slot: evening
+  category: dialogue
+  character: netami_sonemi
+  theme: dialogue
+  text: 'ねたみ「今日のいいね、少なくない？」
+
+
+    そねみ「私のせいかな……」
+
+
+    ねたみ「そういうところよ」
+
+
+    そねみ「でも、見てくれてる人はいるもん……」
+
+
+    共犯者たち、
+
+    今日も見守ってください。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-06_evening_bitansan_dialogue01.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-06_evening_bitansan_dialogue01.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-07'
+  time_slot: evening
+  category: seasonal
+  character: netami_sonemi
+  theme: seasonal
+  text: '七夕の願いごと。
+
+
+    ねたみ
+
+    「もっと私を見なさい」
+
+
+    そねみ
+
+    「私だけを見てくれますように」
+
+
+    微炭酸アンチテーゼ、
+
+    願いごとまで少し重いです。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-07_evening_bitansan_tanabata.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-07_evening_bitansan_tanabata.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-08'
+  time_slot: evening
+  category: teaser_02
+  character: netami_sonemi
+  theme: teaser_02
+  text: '次の曲は、
+
+    ねたみの感情がかなり強めです。
+
+
+    一番じゃなきゃ息できない。
+
+    センターじゃなきゃ納得できない。
+
+
+    02「センター病棟」
+
+
+    まもなく開院します。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-08_evening_bitansan_song02_teaser.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-08_evening_bitansan_song02_teaser.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-09'
+  time_slot: evening
+  category: song_02
+  character: netami_sonemi
+  theme: song_02
+  text: '微炭酸アンチテーゼ
+
+    02「センター病棟」
+
+
+    一番じゃなきゃ息できない。
+
+    センターへの執着と承認欲求を、
+
+    病みかわアイドルロックにしました。
+
+
+    ねたみ全開の1曲です。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-09_evening_bitansan_song02.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-09_evening_bitansan_song02.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-10'
+  time_slot: evening
+  category: character_netami_deep
+  character: netami_sonemi
+  theme: character_netami_deep
+  text: 'ねたみは、
+
+    誰かの成功を素直に喜べない。
+
+
+    でもその感情を隠さない。
+
+
+    悔しい。
+
+    奪いたい。
+
+    私が一番になりたい。
+
+
+    それを全部ステージに持っていくから、
+
+    ねたみは強いのかもしれません。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-10_evening_bitansan_netami_deepdive.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-10_evening_bitansan_netami_deepdive.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-11'
+  time_slot: evening
+  category: manager
+  character: netami_sonemi
+  theme: manager
+  text: '【マネージャーより】
+
+
+    ねたみが、
+
+    「センター病棟なのに投稿の主語がユニットなのは納得いかない」
+
+    と言っています。
+
+
+    そねみは横で静かに落ち込んでいます。
+
+
+    今日も楽屋の空気は微炭酸です。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-11_evening_bitansan_manager01.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-11_evening_bitansan_manager01.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-12'
+  time_slot: evening
+  category: dialogue
+  character: netami_sonemi
+  theme: dialogue
+  text: 'リハ前の2人。
+
+
+    ねたみ「ここ、私が真ん中でしょ」
+
+
+    そねみ「……私、少しだけ前に出てもいい？」
+
+
+    ねたみ「少しだけならね」
+
+
+    そねみ「ほんとに少しだけ？」
+
+
+    立ち位置確認だけで、
+
+    かなり時間がかかります。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-12_evening_bitansan_rehearsal01.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-12_evening_bitansan_rehearsal01.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''

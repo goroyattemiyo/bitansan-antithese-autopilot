@@ -1,0 +1,239 @@
+- date: '2026-06-29'
+  time_slot: image_test
+  category: test
+  character: netami_sonemi
+  theme: 画像付き投稿API確認
+  text: '微炭酸アンチテーゼ、画像付き投稿テストです。
+
+    ねたみとそねみ、ちゃんと表示されるかな？
+
+
+    #微炭酸アンチテーゼ
+
+    '
+  image_prompt: manual test image
+  local_webp: ''
+  image_url: https://files.catbox.moe/wqre4i.png
+  alt: 紫ツインテールのねたみと青髪ツインテールのそねみが並ぶ、微炭酸アンチテーゼのダークアイドル風イラスト
+  status: posted
+  threads_post_id: '17892175455377838'
+  generated_at: '2026-06-29T00:00:00+09:00'
+  posted_at: '2026-06-29T14:11:48+09:00'
+  error: ''
+- date: '2026-06-29'
+  time_slot: evening
+  category: intro
+  character: netami_sonemi
+  theme: intro
+  text: '微炭酸アンチテーゼ、始動。
+
+
+    ねたみ
+
+    誰よりも一番になりたい、紫の嫉妬。
+
+
+    そねみ
+
+    愛されたいのに選ばれない、青い羨望。
+
+
+    きれいごとでは歌えない感情を鳴らす、
+
+    ダークアイドルユニットです。
+
+
+    共犯者、募集中。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-06-29_evening_bitansan_intro.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-06-29_evening_bitansan_intro.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-06-30'
+  time_slot: evening
+  category: character_netami
+  character: netami_sonemi
+  theme: character_netami
+  text: 'ねたみ。
+
+
+    誰かが褒められていると、
+
+    少しだけ機嫌が悪くなる。
+
+
+    でもステージに立つと、
+
+    その嫉妬まで全部パフォーマンスに変えてしまう。
+
+
+    Sは Spite。
+
+    それから、Spotlight。
+
+
+    一番眩しい場所は、
+
+    自分のものだと思っている子です。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-06-30_evening_bitansan_netami.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-06-30_evening_bitansan_netami.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-01'
+  time_slot: evening
+  category: character_sonemi
+  character: netami_sonemi
+  theme: character_sonemi
+  text: 'そねみ。
+
+
+    誰かが愛されているのを見ると、
+
+    胸の奥が少しだけ苦しくなる。
+
+
+    でもその寂しさを、
+
+    静かに歌に変えてしまう。
+
+
+    Mは Melancholy。
+
+    それから、Mirror。
+
+
+    誰かと自分を比べながら、
+
+    それでも見つけてほしい子です。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-01_evening_bitansan_sonemi.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-01_evening_bitansan_sonemi.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-02'
+  time_slot: evening
+  category: disclosure
+  character: netami_sonemi
+  theme: disclosure
+  text: '微炭酸アンチテーゼは、
+
+    AI音楽発のダークアイドルユニットです。
+
+
+    企画、キャラクター設計、歌詞、構成、編集は人間側で設計。
+
+    音源生成にはSunoを使用しています。
+
+
+    AIで作るからこそ、
+
+    どこに人間の意図があるかを大事にしていきます。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-02_evening_bitansan_ai_music.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-02_evening_bitansan_ai_music.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-03'
+  time_slot: evening
+  category: song_01
+  character: netami_sonemi
+  theme: song_01
+  text: '微炭酸アンチテーゼ
+
+    01「いいね、奪ってあげる。」
+
+
+    嫉妬と承認欲求を、
+
+    毒かわいく鳴らしました。
+
+
+    そのハート、
+
+    少しだけこちらにください。
+
+
+    共犯者たち、
+
+    まずはこの曲から。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-03_evening_bitansan_song01.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-03_evening_bitansan_song01.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-04'
+  time_slot: evening
+  category: song_01_note
+  character: netami_sonemi
+  theme: song_01_note
+  text: '01「いいね、奪ってあげる。」は、
+
+    微炭酸アンチテーゼの始まりの曲です。
+
+
+    ねたみの「奪いたい」
+
+    そねみの「愛されたい」
+
+
+    その2つを混ぜたら、
+
+    かわいい顔をした少し面倒くさい曲になりました。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-04_evening_bitansan_song01_memo.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-04_evening_bitansan_song01_memo.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-05'
+  time_slot: evening
+  category: daily
+  character: netami_sonemi
+  theme: daily
+  text: '本日の微炭酸アンチテーゼ。
+
+
+    ねたみ：エゴサ中。
+
+    そねみ：通知待ち中。
+
+
+    ステージを降りても、
+
+    だいたい承認欲求で動いています。
+
+
+    マネージャーは見守っています。'
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-05_evening_bitansan_casual01.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-05_evening_bitansan_casual01.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
