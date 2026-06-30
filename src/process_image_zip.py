@@ -4,6 +4,7 @@ import argparse
 import re
 import tempfile
 import zipfile
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -28,6 +29,7 @@ DATE_SLOT_RE = re.compile(
     r"^(?P<date>\d{4}-\d{2}-\d{2})_(?P<time_slot>[a-zA-Z0-9-]+)$"
 )
 DATE_ONLY_RE = re.compile(r"^(?P<date>\d{4}-\d{2}-\d{2})$")
+DATE_ANY_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 
 
 def load_yaml(path: Path, default: Any) -> Any:
@@ -69,11 +71,6 @@ def find_zip_files(incoming_dir: Path) -> list[Path]:
 
 
 def find_standalone_images(incoming_dir: Path) -> list[Path]:
-    """Find images directly under incoming/.
-
-    This avoids large ZIP uploads. Put files like incoming/2026-07-01.png directly.
-    Images inside subfolders are ignored here; ZIP extraction still scans recursively.
-    """
     if not incoming_dir.exists():
         return []
     return sorted(
@@ -92,7 +89,7 @@ def list_images(base_dir: Path) -> list[Path]:
 
 
 def parse_filename(stem: str) -> dict[str, str]:
-    """Parse image filename stem.
+    """Parse image or zip filename stem.
 
     Accepted formats:
     - 2026-07-01
@@ -129,6 +126,64 @@ def parse_filename(stem: str) -> dict[str, str]:
     )
 
 
+def try_parse_filename(stem: str) -> dict[str, str] | None:
+    try:
+        return parse_filename(stem)
+    except ValueError:
+        return None
+
+
+def daterange(start: date, end: date) -> list[date]:
+    if end < start:
+        return []
+    days = (end - start).days + 1
+    return [start + timedelta(days=i) for i in range(days)]
+
+
+def infer_metas_from_zip_stem(zip_stem: str, image_count: int) -> list[dict[str, str]] | None:
+    """Infer posting dates from a ZIP filename.
+
+    Supported examples:
+    - 2026-07-01.zip with one image
+    - 2026-07-01_evening.zip with one image
+    - bitansan_images_2026-06-29_to_2026-07-03.zip with five images
+    """
+    direct_meta = try_parse_filename(zip_stem)
+    if direct_meta is not None and image_count == 1:
+        return [direct_meta]
+
+    date_strings = DATE_ANY_RE.findall(zip_stem)
+    if len(date_strings) < 2:
+        return None
+
+    start = datetime.strptime(date_strings[0], "%Y-%m-%d").date()
+    end = datetime.strptime(date_strings[1], "%Y-%m-%d").date()
+    dates = daterange(start, end)
+    if len(dates) != image_count:
+        print(
+            f"warning: zip date range {date_strings[0]} to {date_strings[1]} "
+            f"contains {len(dates)} days, but zip has {image_count} image(s)."
+        )
+        return None
+
+    return [
+        {"date": d.isoformat(), "time_slot": DEFAULT_TIME_SLOT, "category": ""}
+        for d in dates
+    ]
+
+
+def meta_to_stem(meta: dict[str, str]) -> str:
+    date_part = meta["date"]
+    time_slot = meta.get("time_slot", DEFAULT_TIME_SLOT) or DEFAULT_TIME_SLOT
+    category = meta.get("category", "")
+
+    if category:
+        return f"{date_part}_{time_slot}_bitansan_{category}"
+    if time_slot != DEFAULT_TIME_SLOT:
+        return f"{date_part}_{time_slot}"
+    return date_part
+
+
 def convert_to_webp(src_path: Path, dst_path: Path, quality: int = 90) -> Path:
     dst_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -150,9 +205,22 @@ def build_entry(
     userhash: str = "",
     quality: int = 90,
     upload: bool = True,
+    fallback_meta: dict[str, str] | None = None,
 ) -> dict[str, Any]:
-    meta = parse_filename(src.stem)
-    webp_name = f"{src.stem}.webp"
+    meta = try_parse_filename(src.stem)
+    inferred_from = "image_filename"
+
+    if meta is None:
+        if fallback_meta is None:
+            raise ValueError(
+                f"Invalid filename format: {src.stem} "
+                "and no usable ZIP filename fallback was available."
+            )
+        meta = fallback_meta
+        inferred_from = "zip_filename"
+
+    final_stem = src.stem if inferred_from == "image_filename" else meta_to_stem(meta)
+    webp_name = f"{final_stem}.webp"
     dst = WEBP_DIR / webp_name
     convert_to_webp(src, dst, quality=quality)
 
@@ -169,7 +237,9 @@ def build_entry(
     return {
         "source": source_label,
         "file": src.name,
-        "stem": src.stem,
+        "stem": final_stem,
+        "original_stem": src.stem,
+        "inferred_from": inferred_from,
         "date": meta["date"],
         "time_slot": meta["time_slot"],
         "category": meta["category"],
@@ -199,7 +269,6 @@ def update_schedule(
             if str(item.get("time_slot", "")) != target_slot:
                 continue
 
-            # categoryが指定されている場合だけ照合。日付だけの画像名なら警告なしで更新する。
             if target_category and item.get("category") and str(item.get("category")) != target_category:
                 print(
                     f"warning: category mismatch for {target_date} {target_slot}: "
@@ -208,7 +277,6 @@ def update_schedule(
 
             item["local_webp"] = entry["local_webp"]
             item["image_url"] = entry["image_url"]
-            # Catbox URLがあるときだけ投稿可能にする。--no-upload時は誤投稿防止のためdraftのまま。
             item["status"] = "ready" if entry.get("image_url") else "draft"
             item["error"] = ""
             matched = True
@@ -219,6 +287,23 @@ def update_schedule(
             print(f"warning: no matching schedule entry found for {target_date} {target_slot}")
 
     return schedule, updated_count
+
+
+def zip_image_members_in_order(zf: zipfile.ZipFile, extract_dir: Path) -> list[Path]:
+    zf.extractall(extract_dir)
+    image_files: list[Path] = []
+
+    for info in zf.infolist():
+        if info.is_dir():
+            continue
+        member_path = Path(info.filename)
+        if member_path.suffix.lower() not in SUPPORTED_EXTS:
+            continue
+        extracted_path = extract_dir / member_path
+        if extracted_path.exists() and extracted_path.is_file():
+            image_files.append(extracted_path)
+
+    return image_files
 
 
 def process_zip(
@@ -235,23 +320,27 @@ def process_zip(
         extract_dir.mkdir(parents=True, exist_ok=True)
 
         with zipfile.ZipFile(zip_path, "r") as zf:
-            zf.extractall(extract_dir)
+            image_files = zip_image_members_in_order(zf, extract_dir)
 
-        image_files = list_images(extract_dir)
         if not image_files:
             raise RuntimeError(f"No image files found in zip: {zip_path.name}")
 
+        fallback_metas = infer_metas_from_zip_stem(zip_path.stem, len(image_files))
+
         entries: list[dict[str, Any]] = []
 
-        for src in image_files:
+        for index, src in enumerate(image_files):
+            fallback_meta = fallback_metas[index] if fallback_metas else None
             entry = build_entry(
                 src=src,
                 source_label=zip_path.name,
                 userhash=userhash,
                 quality=quality,
                 upload=upload,
+                fallback_meta=fallback_meta,
             )
             entry["zip_file"] = zip_path.name
+            entry["zip_index"] = index + 1
             entries.append(entry)
 
         return entries
