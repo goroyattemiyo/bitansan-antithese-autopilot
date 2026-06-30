@@ -73,14 +73,16 @@ class ThreadsAPI:
         }
         return self._request_with_retry("GET", url, params=params)
 
-    def create_text_container(self, text: str) -> dict[str, Any]:
-        """Create a text post container."""
+    def create_text_container(self, text: str, reply_to_id: str = "") -> dict[str, Any]:
+        """Create a text post or reply container."""
         url = f"{self.BASE_URL}/{self._require_user_id()}/threads"
         data = {
             "media_type": "TEXT",
             "text": text,
             "access_token": self.access_token,
         }
+        if reply_to_id:
+            data["reply_to_id"] = reply_to_id
         return self._request_with_retry("POST", url, data=data)
 
     def create_image_container(
@@ -89,8 +91,9 @@ class ThreadsAPI:
         image_url: str,
         alt_text: str = "",
         location_id: str = "",
+        reply_to_id: str = "",
     ) -> dict[str, Any]:
-        """Create an image post container."""
+        """Create an image post or reply container."""
         url = f"{self.BASE_URL}/{self._require_user_id()}/threads"
         data = {
             "media_type": "IMAGE",
@@ -102,6 +105,8 @@ class ThreadsAPI:
             data["alt_text"] = alt_text
         if location_id:
             data["location_id"] = location_id
+        if reply_to_id:
+            data["reply_to_id"] = reply_to_id
         return self._request_with_retry("POST", url, data=data)
 
     def publish(self, creation_id: str) -> dict[str, Any]:
@@ -113,9 +118,14 @@ class ThreadsAPI:
         }
         return self._request_with_retry("POST", url, data=data)
 
-    def post_text(self, text: str, wait_seconds: int = 2) -> dict[str, Any]:
-        """Create and publish a text post."""
-        container = self.create_text_container(text)
+    def post_text(
+        self,
+        text: str,
+        wait_seconds: int = 2,
+        reply_to_id: str = "",
+    ) -> dict[str, Any]:
+        """Create and publish a text post or reply."""
+        container = self.create_text_container(text, reply_to_id=reply_to_id)
         if "error" in container:
             return container
 
@@ -132,9 +142,10 @@ class ThreadsAPI:
         image_url: str,
         alt_text: str = "",
         wait_seconds: int = 2,
+        reply_to_id: str = "",
     ) -> dict[str, Any]:
-        """Create and publish an image post."""
-        container = self.create_image_container(text, image_url, alt_text)
+        """Create and publish an image post or reply."""
+        container = self.create_image_container(text, image_url, alt_text, reply_to_id=reply_to_id)
         if "error" in container:
             return container
 
