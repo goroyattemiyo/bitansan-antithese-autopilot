@@ -252,3 +252,154 @@
   generated_at: ''
   posted_at: ''
   error: ''
+- date: '2026-07-06'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    月曜日って、
+    また誰かが目立ち始める日だよね。
+
+    大丈夫。
+    ねたみも見てるから🫠
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-07'
+  time_slot: morning
+  category: morning
+  character: sonemi
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+
+    七夕ですね🎋
+
+    そねみのお願いは、
+    今日も誰かに見つけてもらうことです。
+
+    わりと切実。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-08'
+  time_slot: morning
+  category: morning
+  character: manager_goro
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+    微炭酸アンチテーゼ、朝の点呼です。
+
+    ねたみ、います。
+    そねみ、います。
+    マネージャー、眠いけどいます。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-09'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    今日も誰かが褒められてるかもしれないけど、
+    ねたみは焦ってないよ。
+
+    ……ちょっとしか😶‍🌫️
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-10'
+  time_slot: morning
+  category: morning
+  character: sonemi
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+
+    今日のそねみは、
+    昨日より少しだけ前を向いています。
+
+    少しだけ、ね🫧
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-11'
+  time_slot: morning
+  category: morning
+  character: manager_goro
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+    微炭酸アンチテーゼ、週末も稼働中です。
+
+    ねたみは反応チェック。
+    そねみはそっと待機。
+
+    マネージャーは見守り担当です。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-12'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    日曜日の朝って、
+    みんなちょっと油断してるよね。
+
+    ねたみは油断してないけど😌
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
