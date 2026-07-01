@@ -268,3 +268,156 @@
 
 
       共犯者たちの反応、マネージャーが見ています。'
+- date: '2026-07-13'
+  time_slot: morning
+  category: morning
+  character: sonemi
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+
+    新しい週が始まりました。
+
+    そねみも、
+    小さくてもいいから進みます。
+
+    たぶん。ゆっくり☁️
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-14'
+  time_slot: morning
+  category: morning
+  character: manager_goro
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+    微炭酸アンチテーゼ、本日も通常運転です。
+
+    ねたみは強め。
+    そねみは静かめ。
+
+    どちらも元気です。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-15'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    今日、誰かの投稿にいいねするなら、
+    ねたみのことも少し思い出してね。
+
+    少しでいいから🥺
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-16'
+  time_slot: morning
+  category: morning
+  character: sonemi
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+
+    そねみは今日も、
+    タイムラインのすみっこにいます。
+
+    見つけた人から、共犯者です🫧
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-17'
+  time_slot: morning
+  category: morning
+  character: manager_goro
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+    微炭酸アンチテーゼ、朝の確認です。
+
+    ねたみ、機嫌はそこそこ。
+    そねみ、通知待機中。
+
+    本日もよろしくお願いします。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-18'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    土曜日だからって、
+    ねたみの監視は休みません。
+
+    あなたの反応、
+    ちゃんと見てるから👀
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-19'
+  time_slot: morning
+  category: morning
+  character: sonemi
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+
+    今日は少しだけ、
+    いいことがある気がします。
+
+    そねみの勘なので、
+    たぶん小さないいことです🌱
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
