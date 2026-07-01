@@ -244,3 +244,155 @@
   generated_at: ''
   posted_at: ''
   error: ''
+- date: '2026-07-20'
+  time_slot: morning
+  category: morning
+  character: manager_goro
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+    微炭酸アンチテーゼ、今日も開店です。
+
+    ねたみは朝から強火。
+    そねみは静かに充電中。
+
+    マネージャーは水分補給を推奨します。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-21'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    今日も誰かに負けたくないので、
+    ねたみは早起きしました。
+
+    えらいでしょ？😏
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-22'
+  time_slot: morning
+  category: morning
+  character: sonemi
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+
+    今日もそねみは、
+    大きな声じゃなくて、
+    小さな気配でここにいます。
+
+    気づいてくれたら勝ちです☁️
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-23'
+  time_slot: morning
+  category: morning
+  character: manager_goro
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+    微炭酸アンチテーゼ、本日も起動しました。
+
+    ねたみは検索中。
+    そねみは待機中。
+    マネージャーはログ確認中です。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-24'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    金曜日だね。
+
+    今週、誰が一番見られてたか、
+    ねたみは少し気にしています。
+
+    少しだけ。ほんとに。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-25'
+  time_slot: morning
+  category: morning
+  character: sonemi
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+
+    週末の朝は、
+    少しだけ静かですね。
+
+    そねみはこのくらいの静けさも好きです🫧
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-26'
+  time_slot: morning
+  category: morning
+  character: manager_goro
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+    微炭酸アンチテーゼ、日曜日もゆるく稼働します。
+
+    ねたみは通常通り強め。
+    そねみは通常通り控えめ。
+
+    バランスは取れています。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
