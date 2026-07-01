@@ -1,0 +1,61 @@
+name: Post Morning
+
+on:
+  schedule:
+    # JST 08:07. GitHub Actions cron is UTC.
+    - cron: "7 23 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "YYYY-MM-DD. Empty means today in JST."
+        required: false
+        default: ""
+      dry_run:
+        description: "Do not publish"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-morning
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Post morning greeting
+        run: |
+          DATE_INPUT="${{ github.event.inputs.date }}"
+          if [ -z "$DATE_INPUT" ]; then
+            python -m src.post_daily --time-slot morning $([ "${{ github.event.inputs.dry_run }}" = "true" ] && echo "--dry-run")
+          else
+            python -m src.post_daily --date "$DATE_INPUT" --time-slot morning $([ "${{ github.event.inputs.dry_run }}" = "true" ] && echo "--dry-run")
+          fi
+        env:
+          BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
+          BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
+      - name: Commit post result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts/schedule.yml posts/schedules posts/posted_log.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: record bitansan morning post result"
+            git push
+          fi
