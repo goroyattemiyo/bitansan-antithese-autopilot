@@ -24,3 +24,28 @@
   image_url: ''
   posted_at: manual
   note: manual posted
+- post_id: '18020601056726232'
+  date: '2026-07-01'
+  time_slot: evening
+  category: character_sonemi
+  character: netami_sonemi
+  thread_index: 1
+  thread_role: root
+  text_head: 'そねみ。
+
+
+    誰かが愛されているのを見ると、
+
+    胸の奥が少しだけ苦しくなる。
+
+
+    でもその寂しさを、
+
+    静かに歌に変えてしまう。
+
+
+    Mは Melancholy。
+
+    それか'
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-01_evening_bitansan_sonemi.webp
+  posted_at: '2026-07-01T22:40:06+09:00'
