@@ -292,3 +292,68 @@
   generated_at: ''
   posted_at: ''
   error: ''
+- date: '2026-07-03'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    昨日の反応、ねたみはちゃんと見てたよ。
+
+    今日のいいねも、
+    見逃さないからね👀
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-04'
+  time_slot: morning
+  category: morning
+  character: sonemi
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+
+    今日もそねみは、
+    通知をそっと待っています。
+
+    見つけてくれたら、
+    ちょっとだけ元気出るかも☁️
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-05'
+  time_slot: morning
+  category: morning
+  character: manager_goro
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+    微炭酸アンチテーゼ、今日も稼働します。
+
+    ねたみはエゴサ中。
+    そねみは通知待ち中。
+
+    マネージャーはコーヒー2杯目です。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
