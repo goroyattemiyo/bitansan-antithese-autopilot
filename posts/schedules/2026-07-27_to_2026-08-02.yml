@@ -142,3 +142,92 @@
   generated_at: ''
   posted_at: ''
   error: ''
+- date: '2026-07-27'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    また新しい週が始まったね。
+
+    ねたみは今日も、
+    一番近くで見られたいです。
+
+    欲張りなので😌
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-28'
+  time_slot: morning
+  category: morning
+  character: sonemi
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+
+    そねみは今日も、
+    誰かの朝に少しだけ混ざりたいです。
+
+    見つけてくれたらうれしいな🌱
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-29'
+  time_slot: morning
+  category: morning
+  character: manager_goro
+  theme: morning_greeting
+  text: |-
+    おはようございます。
+    微炭酸アンチテーゼ、朝の巡回です。
+
+    ねたみは元気。
+    そねみも元気。
+
+    マネージャーはだいたい元気です。
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+- date: '2026-07-30'
+  time_slot: morning
+  category: morning
+  character: netami
+  theme: morning_greeting
+  text: |-
+    おはよ。
+
+    7月も終わりが近いね。
+
+    でも、ねたみのことは、
+    まだ終わらせないでね。
+
+    まだいるよ👀
+  image_prompt: ''
+  local_webp: ''
+  image_url: ''
+  alt: ''
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
