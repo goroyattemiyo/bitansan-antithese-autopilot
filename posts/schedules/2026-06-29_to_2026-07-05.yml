@@ -145,11 +145,13 @@
   local_webp: ''
   image_url: ''
   alt: ''
-  status: ready
-  threads_post_id: ''
+  status: posted
+  threads_post_id: '18159055423462983'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-02T08:11:22+09:00'
   error: ''
+  thread_post_ids: []
+  thread_count: 1
 - date: '2026-07-02'
   time_slot: evening
   category: disclosure
