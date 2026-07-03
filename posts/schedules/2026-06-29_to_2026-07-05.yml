@@ -208,6 +208,13 @@
   local_webp: assets/webp/2026-07-03_evening_bitansan_song01.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-03_evening_bitansan_song01.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
+  scheduled_at: '2026-07-03T19:00:00+09:00'
+  delay_min_minutes: 0
+  delay_max_minutes: 0
+  delay_minutes: 0
+  publish_after: '2026-07-03T19:00:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
   status: ready
   threads_post_id: ''
   generated_at: ''
