@@ -131,3 +131,12 @@
   thread_role: reply
   reply_to_id: '18105811337326035'
   posted_at: '2026-07-03T20:48:05+09:00'
+- post_id: '18126543424727895'
+  schedule_id: post_e0f1bc053899
+  date: '2026-07-04'
+  time_slot: morning
+  category: morning
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-04T07:44:40+09:00'
