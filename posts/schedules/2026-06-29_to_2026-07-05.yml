@@ -240,8 +240,10 @@
       共犯者たちの反応、マネージャーが見ています。'
   id: post_b3ef6dc94b40
   thread_progress:
-    updated_at: '2026-07-03T20:46:56+09:00'
+    updated_at: '2026-07-03T20:46:57+09:00'
   error_at: '2026-07-03T20:41:36+09:00'
+  image_host: catbox
+  image_rehosted_at: '2026-07-03T20:46:57+09:00'
 - date: '2026-07-04'
   time_slot: evening
   category: song_01_note
