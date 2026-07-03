@@ -221,7 +221,7 @@
   publish_after: '2026-07-03T19:00:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
-  status: ready
+  status: posting
   threads_post_id: ''
   generated_at: ''
   posted_at: ''
@@ -239,6 +239,8 @@
 
       共犯者たちの反応、マネージャーが見ています。'
   id: post_b3ef6dc94b40
+  thread_progress:
+    updated_at: '2026-07-03T20:23:54+09:00'
 - date: '2026-07-04'
   time_slot: evening
   category: song_01_note
