@@ -41,6 +41,10 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
+      - name: Configure progress commits
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - name: Check schedules and post at most one parent
         shell: bash
         run: |
@@ -58,8 +62,6 @@ jobs:
       - name: Commit remaining schedule changes
         if: always()
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git pull --rebase
           git add posts/schedule.yml posts/schedules posts/posted_log.yml
           if git diff --cached --quiet; then
