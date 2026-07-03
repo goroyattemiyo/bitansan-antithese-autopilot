@@ -62,7 +62,6 @@ jobs:
       - name: Commit remaining schedule changes
         if: always()
         run: |
-          git pull --rebase
           git add posts/schedule.yml posts/schedules posts/posted_log.yml
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
