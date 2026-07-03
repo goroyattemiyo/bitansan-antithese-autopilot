@@ -1,0 +1,61 @@
+name: Retry Post with GitHub Raw
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_id:
+        description: 'Stable schedule id'
+        required: true
+        default: 'post_b3ef6dc94b40'
+      dry_run:
+        description: 'Do not publish or update YAML'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bitansan-post-scheduler
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Configure progress commits
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Retry selected post using GitHub raw image URL
+        shell: bash
+        run: |
+          args=(--id "${{ github.event.inputs.post_id }}")
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then args+=(--dry-run); fi
+          python -m src.post_scheduler_public "${args[@]}"
+        env:
+          BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
+          BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
+          AUTO_COMMIT_PROGRESS: 'true'
+      - name: Commit remaining schedule changes
+        if: always()
+        run: |
+          git add posts/schedules posts/posted_log.yml
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+          else
+            git commit -m 'chore: record raw-image retry result'
+            git push
+          fi
