@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 from .schedule_store import ScheduleFile
 
 JST = ZoneInfo("Asia/Tokyo")
+CUTOFF = datetime.fromisoformat("2026-07-03T18:31:49+09:00").astimezone(JST)
 SLOT_TIMES = {
     "morning": "07:00:00",
     "noon": "12:00:00",
@@ -54,9 +55,14 @@ def materialize(sf: ScheduleFile, rng: random.Random) -> bool:
             changed = True
         if str(item.get("status", "")).lower() not in {"ready", "posting"}:
             continue
-        if not item.get("scheduled_at"):
-            item["scheduled_at"] = iso_jst(legacy_time(item))
+        was_legacy = not item.get("scheduled_at")
+        scheduled = legacy_time(item) if was_legacy else parse_dt(item["scheduled_at"])
+        if was_legacy:
+            item["scheduled_at"] = iso_jst(scheduled)
             changed = True
+            if scheduled <= CUTOFF and "migration_hold" not in item:
+                item["migration_hold"] = True
+                changed = True
         if "delay_min_minutes" not in item:
             item["delay_min_minutes"] = 2
             changed = True
@@ -111,6 +117,8 @@ def select_candidate(items: list[dict[str, Any]], now: datetime, requested_id: s
         if status not in {"ready", "posting"}:
             continue
         if requested_id and item.get("id") != requested_id:
+            continue
+        if item.get("migration_hold") and not requested_id:
             continue
         if not requested_id and parse_dt(item["publish_after"]) > now:
             continue
