@@ -221,10 +221,10 @@
   publish_after: '2026-07-03T19:00:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
-  status: posting
+  status: posted
   threads_post_id: '17866610118580739'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-03T20:48:06+09:00'
   error: ''
   song_url: https://suno.com/s/cVsGi56XmJtlAdwf
   song_no: '01'
@@ -240,15 +240,17 @@
       共犯者たちの反応、マネージャーが見ています。'
   id: post_b3ef6dc94b40
   thread_progress:
-    updated_at: '2026-07-03T20:48:05+09:00'
+    updated_at: '2026-07-03T20:48:06+09:00'
     root_post_id: '17866610118580739'
-    reply_ids:
+    reply_ids: &id001
     - '18105811337326035'
     - '17974912347056858'
     completed_replies: 2
   error_at: '2026-07-03T20:41:36+09:00'
   image_host: catbox
   image_rehosted_at: '2026-07-03T20:46:57+09:00'
+  thread_post_ids: *id001
+  thread_count: 3
 - date: '2026-07-04'
   time_slot: evening
   category: song_01_note
