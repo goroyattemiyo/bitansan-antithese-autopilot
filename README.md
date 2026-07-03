@@ -1,66 +1,89 @@
 # 微炭酸アンチテーゼ Threads Autopilot
 
-微炭酸アンチテーゼ（ねたみ・そねみ）の Threads 毎日画像付き投稿を自動化するための専用リポジトリです。
+微炭酸アンチテーゼ（ねたみ・そねみ）のThreads投稿を、GitHub ActionsとThreads APIで自動化する専用リポジトリです。
 
-## 目的
+## 現在の投稿方式
 
-- 投稿ネタを `posts/ideas.yml` で管理
-- OpenAI API で投稿文・画像プロンプト・WebP画像を生成
-- WebP画像を GitHub に保存
-- WebP画像を Catbox にアップロード
-- Catbox の画像URLを使って Threads API へ画像付き投稿
-- 投稿ログ、インサイト、削除操作を管理
+`Post Scheduler` が5分間隔で全スケジュールを確認し、期限を過ぎた候補から親投稿を1件だけ処理します。
 
-## 保存方針
+```yaml
+scheduled_at: '2026-07-06T07:00:00+09:00'
+delay_min_minutes: 2
+delay_max_minutes: 14
+delay_minutes: 9
+publish_after: '2026-07-06T07:09:00+09:00'
+status: ready
+```
 
-- PNG / JPG 原本は GitHub に保存しない
-- GitHub に保存する画像は WebP のみ
-- 投稿用の `image_url` は Catbox の WebP URL を使う
-- 投稿予定は `posts/schedule.yml` で管理
+`delay_minutes` と `publish_after` は最初の通常実行時に一度だけ決まり、以後は再抽選されません。手動のdry runはAPI投稿もYAML更新も行いません。
 
-## 必要な GitHub Secrets
+### 後方互換
 
-Settings → Secrets and variables → Actions → Repository secrets に以下を登録してください。
+`scheduled_at` がない投稿は、`date` と `time_slot` から次のJST時刻を生成します。
 
-| Secret | 用途 |
-|---|---|
-| `BIKANSAN_ACCESS_TOKEN` | Threads 長期アクセストークン |
-| `BIKANSAN_USER_ID` | Threads user id |
-| `OPENAI_API_KEY` | 投稿文・画像生成用 OpenAI API key |
-| `CATBOX_USERHASH` | Catbox userhash。匿名アップロードなら未登録でも可 |
-| `ALLOW_THREADS_DELETE` | 削除ワークフロー用。削除時だけ `true` にする |
+| time_slot | JST |
+|---|---:|
+| morning | 07:00 |
+| noon | 12:00 |
+| afternoon | 15:00 |
+| evening | 17:00 |
+| night | 20:00 |
+| summary | 21:00 |
 
-## 最初の検証順
+### ツリー投稿
 
-1. `Test Threads API` workflow でプロフィール確認
-2. `Test Threads API` workflow で短いテキスト投稿
-3. `Delete Threads Post` workflow でテスト投稿を削除
-4. `Prepare Weekly Posts` workflow で `ideas.yml` から投稿予定・画像を生成
-5. `Post Daily` workflow で画像付き投稿をテスト
-6. `Collect Insights` workflow でインサイト取得
+親投稿と返信は同じActions内で直列処理します。返信間隔は投稿ごとに設定できます。
+
+```yaml
+thread_delay_min_seconds: 8
+thread_delay_max_seconds: 25
+```
+
+親投稿または返信の成功直後に `thread_progress` を保存し、次のAPI呼び出しより先にGitへcheckpointします。途中失敗後に `status: ready` へ戻すと、成功済みIDを再送せず未完了返信から再開します。
+
+### 順序保護
+
+同じ `series_id`、`series`、`sequence_group`、または曲投稿グループで、後続投稿がすでに `posted` の場合は古い未投稿を自動送信しません。必要な投稿だけ次で解除できます。
+
+```yaml
+allow_out_of_order: true
+```
+
+切替時点ですでに期限超過していた未投稿には `migration_hold: true` が自動設定されます。自動送信されず、安定IDを指定した手動実行でのみ対象にできます。
 
 ## ディレクトリ構成
 
 ```text
 .github/workflows/       GitHub Actions
-assets/webp/             GitHubに保存するWebP画像
-posts/                   投稿ネタ・投稿予定・ログ
-prompts/                 キャラ設定・生成プロンプト
+assets/webp/             投稿画像
+posts/schedules/         週単位の投稿予定
+posts/posted_log.yml     投稿ログ
 src/                     Python実装
+tests/                   スケジューラーテスト
 ```
 
 ## 主なワークフロー
 
 | Workflow | 実行方法 | 用途 |
 |---|---|---|
-| `test-threads.yml` | 手動 | Threads接続・テキスト投稿テスト |
-| `prepare-weekly.yml` | 手動 | ideas.yml から投稿文・WebP画像・Catbox URLを生成 |
-| `post-daily.yml` | cron / 手動 | 当日分をThreadsへ投稿 |
-| `collect-insights.yml` | cron / 手動 | 投稿済みIDのインサイト収集 |
-| `delete-post.yml` | 手動のみ | 指定投稿の削除 |
+| `Post Scheduler` | 5分間隔 / 手動 | 全予定確認、1件投稿、ツリー再開 |
+| `Post Morning (Legacy Manual Only)` | 手動 | 廃止案内のみ |
+| `Process Image Zip` | 手動 | 画像のWebP化と週YAML反映 |
+| `Add Song URLs` | 手動 | 曲投稿へのツリー返信追加 |
 
-## 注意
+## 必要なGitHub Secrets
 
-- アクセストークンや API key は絶対にコミットしないでください。
-- 削除ワークフローは `workflow_dispatch` の手動実行専用です。
-- 画像生成・Catboxアップロードは API / 外部サービスに依存します。初回は少数件でテストしてください。
+Secretsはリポジトリへ書かず、GitHub ActionsのRepository secretsで管理します。
+
+- `BIKANSAN_ACCESS_TOKEN`
+- `BIKANSAN_USER_ID`
+- 画像生成など別workflowで必要な既存Secret
+
+## 安全要件
+
+- `posted` は再送しない
+- `error` は自動再試行しない
+- 定期実行1回につき親投稿は1件だけ
+- workflowは `concurrency` で直列化
+- API成功後は投稿IDを保存・checkpointしてから次のAPIへ進む
+- アクセストークンやAPI keyをログ、YAML、READMEへ記録しない
