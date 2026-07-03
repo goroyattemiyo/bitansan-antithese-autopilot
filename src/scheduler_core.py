@@ -112,9 +112,13 @@ def out_of_order_blocked(item: dict[str, Any], items: list[dict[str, Any]]) -> b
 
 def select_candidate(items: list[dict[str, Any]], now: datetime, requested_id: str = "", force_order: bool = False) -> dict[str, Any] | None:
     due: list[dict[str, Any]] = []
+    allowed_statuses = {"ready", "posting"}
+    if requested_id:
+        allowed_statuses.add("error")
+
     for item in items:
         status = str(item.get("status", "")).lower()
-        if status not in {"ready", "posting"}:
+        if status not in allowed_statuses:
             continue
         if requested_id and item.get("id") != requested_id:
             continue
