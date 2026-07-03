@@ -222,7 +222,7 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   status: posting
-  threads_post_id: ''
+  threads_post_id: '17866610118580739'
   generated_at: ''
   posted_at: ''
   error: ''
@@ -240,7 +240,10 @@
       共犯者たちの反応、マネージャーが見ています。'
   id: post_b3ef6dc94b40
   thread_progress:
-    updated_at: '2026-07-03T20:46:57+09:00'
+    updated_at: '2026-07-03T20:47:08+09:00'
+    root_post_id: '17866610118580739'
+    reply_ids: []
+    completed_replies: 0
   error_at: '2026-07-03T20:41:36+09:00'
   image_host: catbox
   image_rehosted_at: '2026-07-03T20:46:57+09:00'
