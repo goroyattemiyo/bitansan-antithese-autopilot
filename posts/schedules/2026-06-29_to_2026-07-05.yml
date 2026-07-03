@@ -297,35 +297,42 @@
   category: morning
   character: netami
   theme: morning_greeting
-  text: |-
-    おはよ。
+  text: 'おはよ。
+
 
     昨日の反応、ねたみはちゃんと見てたよ。
 
+
     今日のいいねも、
-    見逃さないからね👀
+
+    見逃さないからね👀'
   image_prompt: ''
   local_webp: ''
   image_url: ''
   alt: ''
-  status: ready
-  threads_post_id: ''
+  status: posted
+  threads_post_id: '18053419811540433'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-03T09:17:08+09:00'
   error: ''
+  thread_post_ids: []
+  thread_count: 1
 - date: '2026-07-04'
   time_slot: morning
   category: morning
   character: sonemi
   theme: morning_greeting
-  text: |-
-    おはようございます。
+  text: 'おはようございます。
+
 
     今日もそねみは、
+
     通知をそっと待っています。
 
+
     見つけてくれたら、
-    ちょっとだけ元気出るかも☁️
+
+    ちょっとだけ元気出るかも☁️'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -340,14 +347,17 @@
   category: morning
   character: manager_goro
   theme: morning_greeting
-  text: |-
-    おはようございます。
+  text: 'おはようございます。
+
     微炭酸アンチテーゼ、今日も稼働します。
 
+
     ねたみはエゴサ中。
+
     そねみは通知待ち中。
 
-    マネージャーはコーヒー2杯目です。
+
+    マネージャーはコーヒー2杯目です。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
