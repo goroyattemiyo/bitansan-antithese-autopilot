@@ -20,7 +20,7 @@ class ThreadsAPI:
         self.user_id = user_id
 
     def _request_with_retry(self, method: str, url: str, **kwargs: Any) -> dict[str, Any]:
-        """HTTP request with simple exponential backoff."""
+        """Retry transient failures while preserving actionable 4xx responses."""
         last_error: Exception | None = None
 
         for attempt in range(self.MAX_RETRIES):
@@ -33,14 +33,18 @@ class ThreadsAPI:
                     data = {"raw": resp.text}
 
                 if resp.status_code >= 400:
-                    error = data.get("error", data)
-                    code = error.get("code") if isinstance(error, dict) else None
+                    error = data.get("error", data) if isinstance(data, dict) else data
+                    payload = {
+                        "error": error,
+                        "status_code": resp.status_code,
+                    }
+
+                    # Client-side failures will not improve by retrying.
+                    # 429 is transient and may be retried below.
+                    if 400 <= resp.status_code < 500 and resp.status_code != 429:
+                        return payload
+
                     message = error.get("message") if isinstance(error, dict) else str(error)
-
-                    # Auth / permission errors and rate limiting should fail fast.
-                    if code in (4, 10, 190, 200, 368):
-                        return {"error": error, "status_code": resp.status_code}
-
                     raise requests.exceptions.RequestException(
                         f"HTTP {resp.status_code}: {message}"
                     )
