@@ -58,6 +58,7 @@ jobs:
         env:
           BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
           BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
+          CATBOX_USERHASH: ${{ secrets.CATBOX_USERHASH }}
           AUTO_COMMIT_PROGRESS: 'true'
       - name: Commit remaining schedule changes
         if: always()
