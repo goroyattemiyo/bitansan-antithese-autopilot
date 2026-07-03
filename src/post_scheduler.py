@@ -12,10 +12,13 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
+from .catbox import upload_file
 from .schedule_store import ScheduleFile, load_active_schedule_files, save_schedule_file
 from .scheduler_core import JST, iso_jst, materialize, parse_dt, select_candidate
 from .threads_api import ThreadsAPI
 from .utils import append_yaml_list, repo_path, require_env
+
+PRIVATE_RAW_PREFIX = "https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/"
 
 
 def now_jst() -> datetime:
@@ -85,6 +88,25 @@ def find_file(files: list[ScheduleFile], item: dict[str, Any]) -> ScheduleFile:
     raise RuntimeError("schedule file not found")
 
 
+def ensure_public_root_image(item: dict[str, Any], sf: ScheduleFile) -> None:
+    image_url = str(item.get("image_url", "")).strip()
+    if not image_url or not image_url.startswith(PRIVATE_RAW_PREFIX):
+        return
+
+    local_webp = str(item.get("local_webp", "")).strip()
+    if not local_webp:
+        raise RuntimeError("Private GitHub image URL has no local_webp fallback")
+
+    local_path = repo_path() / local_webp
+    print(f"Rehosting private image through Catbox: {local_webp}")
+    public_url = upload_file(local_path, os.getenv("CATBOX_USERHASH", ""))
+    item["image_url"] = public_url
+    item["image_host"] = "catbox"
+    item["image_rehosted_at"] = iso_jst(now_jst())
+    save_checkpoint(sf, item, f"chore: rehost image for {item['id']}")
+    print(f"Public image URL ready: {public_url}")
+
+
 def publish(item: dict[str, Any], sf: ScheduleFile, api: ThreadsAPI, rng: random.Random) -> int:
     if str(item.get("status", "")).lower() == "posted":
         print("Already posted; skipped.")
@@ -104,6 +126,15 @@ def publish(item: dict[str, Any], sf: ScheduleFile, api: ThreadsAPI, rng: random
     save_checkpoint(sf, item, f"chore: mark {item['id']} posting")
 
     if not root_id:
+        try:
+            ensure_public_root_image(item, sf)
+        except Exception as exc:
+            item["status"] = "error"
+            item["error"] = f"Image rehost failed: {str(exc)[:500]}"
+            item["error_at"] = iso_jst(now_jst())
+            save_checkpoint(sf, item, f"chore: record {item['id']} image error")
+            return 1
+
         result = publish_one(api, text, str(item.get("image_url", "")).strip(), str(item.get("alt", "")).strip())
         if "error" in result or not result.get("id"):
             item["status"] = "error"
