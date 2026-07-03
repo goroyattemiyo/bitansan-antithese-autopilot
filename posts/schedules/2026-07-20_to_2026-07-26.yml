@@ -37,6 +37,7 @@
 
 
       共犯者たちの反応、マネージャーが見ています。'
+  id: post_b6cc5b614453
 - date: '2026-07-21'
   time_slot: evening
   category: song_04_note
@@ -79,6 +80,7 @@
 
 
       共犯者たちの反応、マネージャーが見ています。'
+  id: post_34606e219ad5
 - date: '2026-07-22'
   time_slot: evening
   category: daily_dialogue
@@ -109,6 +111,7 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_9a9889abf479
 - date: '2026-07-23'
   time_slot: evening
   category: design_note
@@ -139,6 +142,7 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_5129898a63c3
 - date: '2026-07-24'
   time_slot: evening
   category: fan_question
@@ -172,6 +176,7 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_23daf166cf94
 - date: '2026-07-25'
   time_slot: evening
   category: teaser_05
@@ -214,6 +219,7 @@
 
 
       共犯者たちの反応、マネージャーが見ています。'
+  id: post_a4779e652388
 - date: '2026-07-26'
   time_slot: evening
   category: call_practice
@@ -244,19 +250,23 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_6c97dad0fca4
 - date: '2026-07-20'
   time_slot: morning
   category: morning
   character: manager_goro
   theme: morning_greeting
-  text: |-
-    おはようございます。
+  text: 'おはようございます。
+
     微炭酸アンチテーゼ、今日も開店です。
 
+
     ねたみは朝から強火。
+
     そねみは静かに充電中。
 
-    マネージャーは水分補給を推奨します。
+
+    マネージャーは水分補給を推奨します。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -266,18 +276,28 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_7f60e00eea26
+  scheduled_at: '2026-07-20T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 12
+  publish_after: '2026-07-20T07:12:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-21'
   time_slot: morning
   category: morning
   character: netami
   theme: morning_greeting
-  text: |-
-    おはよ。
+  text: 'おはよ。
+
 
     今日も誰かに負けたくないので、
+
     ねたみは早起きしました。
 
-    えらいでしょ？😏
+
+    えらいでしょ？😏'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -287,19 +307,30 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_4e14eb9b1d44
+  scheduled_at: '2026-07-21T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 8
+  publish_after: '2026-07-21T07:08:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-22'
   time_slot: morning
   category: morning
   character: sonemi
   theme: morning_greeting
-  text: |-
-    おはようございます。
+  text: 'おはようございます。
+
 
     今日もそねみは、
+
     大きな声じゃなくて、
+
     小さな気配でここにいます。
 
-    気づいてくれたら勝ちです☁️
+
+    気づいてくれたら勝ちです☁️'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -309,18 +340,29 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_9b313661af46
+  scheduled_at: '2026-07-22T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 12
+  publish_after: '2026-07-22T07:12:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-23'
   time_slot: morning
   category: morning
   character: manager_goro
   theme: morning_greeting
-  text: |-
-    おはようございます。
+  text: 'おはようございます。
+
     微炭酸アンチテーゼ、本日も起動しました。
 
+
     ねたみは検索中。
+
     そねみは待機中。
-    マネージャーはログ確認中です。
+
+    マネージャーはログ確認中です。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -330,20 +372,31 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_5ff240267ac1
+  scheduled_at: '2026-07-23T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 12
+  publish_after: '2026-07-23T07:12:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-24'
   time_slot: morning
   category: morning
   character: netami
   theme: morning_greeting
-  text: |-
-    おはよ。
+  text: 'おはよ。
+
 
     金曜日だね。
 
+
     今週、誰が一番見られてたか、
+
     ねたみは少し気にしています。
 
-    少しだけ。ほんとに。
+
+    少しだけ。ほんとに。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -353,18 +406,28 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_efe9dc3d4193
+  scheduled_at: '2026-07-24T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 4
+  publish_after: '2026-07-24T07:04:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-25'
   time_slot: morning
   category: morning
   character: sonemi
   theme: morning_greeting
-  text: |-
-    おはようございます。
+  text: 'おはようございます。
+
 
     週末の朝は、
+
     少しだけ静かですね。
 
-    そねみはこのくらいの静けさも好きです🫧
+
+    そねみはこのくらいの静けさも好きです🫧'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -374,19 +437,30 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_a0caaa8dd6aa
+  scheduled_at: '2026-07-25T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 12
+  publish_after: '2026-07-25T07:12:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-26'
   time_slot: morning
   category: morning
   character: manager_goro
   theme: morning_greeting
-  text: |-
-    おはようございます。
+  text: 'おはようございます。
+
     微炭酸アンチテーゼ、日曜日もゆるく稼働します。
 
+
     ねたみは通常通り強め。
+
     そねみは通常通り控えめ。
 
-    バランスは取れています。
+
+    バランスは取れています。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -396,3 +470,11 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_fd7d110b1041
+  scheduled_at: '2026-07-26T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 10
+  publish_after: '2026-07-26T07:10:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25

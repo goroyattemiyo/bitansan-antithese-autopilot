@@ -20,6 +20,7 @@
   generated_at: '2026-06-29T00:00:00+09:00'
   posted_at: '2026-06-29T14:11:48+09:00'
   error: ''
+  id: post_a93910480a51
 - date: '2026-06-29'
   time_slot: evening
   category: intro
@@ -53,6 +54,7 @@
   generated_at: ''
   posted_at: manual
   error: ''
+  id: post_aeeacac88127
 - date: '2026-06-30'
   time_slot: evening
   category: character_netami
@@ -88,6 +90,7 @@
   generated_at: ''
   posted_at: manual
   error: ''
+  id: post_e5732a6c8fc8
 - date: '2026-07-01'
   time_slot: evening
   category: character_sonemi
@@ -125,6 +128,7 @@
   error: ''
   thread_post_ids: []
   thread_count: 1
+  id: post_e0ea3df27318
 - date: '2026-07-02'
   time_slot: morning
   category: morning
@@ -152,6 +156,7 @@
   error: ''
   thread_post_ids: []
   thread_count: 1
+  id: post_4d28ac39f432
 - date: '2026-07-02'
   time_slot: evening
   category: disclosure
@@ -181,6 +186,7 @@
   error: ''
   thread_post_ids: []
   thread_count: 1
+  id: post_64b6037fee2d
 - date: '2026-07-03'
   time_slot: evening
   category: song_01
@@ -232,6 +238,7 @@
 
 
       共犯者たちの反応、マネージャーが見ています。'
+  id: post_b3ef6dc94b40
 - date: '2026-07-04'
   time_slot: evening
   category: song_01_note
@@ -271,6 +278,14 @@
 
 
       共犯者たちの反応、マネージャーが見ています。'
+  id: post_eafce312972a
+  scheduled_at: '2026-07-04T17:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 3
+  publish_after: '2026-07-04T17:03:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-05'
   time_slot: evening
   category: daily
@@ -299,6 +314,14 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_4f15fa3ecf8e
+  scheduled_at: '2026-07-05T17:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 5
+  publish_after: '2026-07-05T17:05:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-03'
   time_slot: morning
   category: morning
@@ -324,6 +347,7 @@
   error: ''
   thread_post_ids: []
   thread_count: 1
+  id: post_ec5cb2800819
 - date: '2026-07-04'
   time_slot: morning
   category: morning
@@ -349,6 +373,14 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_e0f1bc053899
+  scheduled_at: '2026-07-04T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 9
+  publish_after: '2026-07-04T07:09:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-05'
   time_slot: morning
   category: morning
@@ -374,3 +406,11 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_46f6733c6800
+  scheduled_at: '2026-07-05T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 6
+  publish_after: '2026-07-05T07:06:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25

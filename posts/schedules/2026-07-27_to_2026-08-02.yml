@@ -26,6 +26,7 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_f8fc81918030
 - date: '2026-07-28'
   time_slot: evening
   category: song_05
@@ -65,6 +66,7 @@
 
 
       共犯者たちの反応、マネージャーが見ています。'
+  id: post_f2d291460aca
 - date: '2026-07-29'
   time_slot: evening
   category: chapter_summary
@@ -110,6 +112,7 @@
 
 
       共犯者たちの反応、マネージャーが見ています。'
+  id: post_ee0a251a6d27
 - date: '2026-07-30'
   time_slot: evening
   category: chapter_01
@@ -142,20 +145,24 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_99cb5216dc70
 - date: '2026-07-27'
   time_slot: morning
   category: morning
   character: netami
   theme: morning_greeting
-  text: |-
-    おはよ。
+  text: 'おはよ。
+
 
     また新しい週が始まったね。
 
+
     ねたみは今日も、
+
     一番近くで見られたいです。
 
-    欲張りなので😌
+
+    欲張りなので😌'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -165,18 +172,28 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_803aa28e1d4a
+  scheduled_at: '2026-07-27T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 14
+  publish_after: '2026-07-27T07:14:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-28'
   time_slot: morning
   category: morning
   character: sonemi
   theme: morning_greeting
-  text: |-
-    おはようございます。
+  text: 'おはようございます。
+
 
     そねみは今日も、
+
     誰かの朝に少しだけ混ざりたいです。
 
-    見つけてくれたらうれしいな🌱
+
+    見つけてくれたらうれしいな🌱'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -186,19 +203,30 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_554daf0f2d6e
+  scheduled_at: '2026-07-28T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 11
+  publish_after: '2026-07-28T07:11:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-29'
   time_slot: morning
   category: morning
   character: manager_goro
   theme: morning_greeting
-  text: |-
-    おはようございます。
+  text: 'おはようございます。
+
     微炭酸アンチテーゼ、朝の巡回です。
 
+
     ねたみは元気。
+
     そねみも元気。
 
-    マネージャーはだいたい元気です。
+
+    マネージャーはだいたい元気です。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -208,20 +236,31 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_f076dfe309a7
+  scheduled_at: '2026-07-29T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 3
+  publish_after: '2026-07-29T07:03:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
 - date: '2026-07-30'
   time_slot: morning
   category: morning
   character: netami
   theme: morning_greeting
-  text: |-
-    おはよ。
+  text: 'おはよ。
+
 
     7月も終わりが近いね。
 
+
     でも、ねたみのことは、
+
     まだ終わらせないでね。
 
-    まだいるよ👀
+
+    まだいるよ👀'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -231,3 +270,11 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_a16ff91c7749
+  scheduled_at: '2026-07-30T07:00:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 10
+  publish_after: '2026-07-30T07:10:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
