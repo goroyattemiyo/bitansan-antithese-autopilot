@@ -167,3 +167,12 @@
   thread_role: reply
   reply_to_id: '17902837932463081'
   posted_at: '2026-07-04T18:48:53+09:00'
+- post_id: '18429877135135859'
+  schedule_id: post_46f6733c6800
+  date: '2026-07-05'
+  time_slot: morning
+  category: morning
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-05T07:34:02+09:00'
