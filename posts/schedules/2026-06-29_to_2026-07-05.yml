@@ -432,7 +432,7 @@
   image_url: ''
   alt: ''
   status: posting
-  threads_post_id: ''
+  threads_post_id: '18429877135135859'
   generated_at: ''
   posted_at: ''
   error: ''
@@ -445,4 +445,7 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-05T07:33:52+09:00'
+    updated_at: '2026-07-05T07:34:02+09:00'
+    root_post_id: '18429877135135859'
+    reply_ids: []
+    completed_replies: 0
