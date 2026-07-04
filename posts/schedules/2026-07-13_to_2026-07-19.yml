@@ -2,23 +2,26 @@
   time_slot: evening
   category: teaser_03
   character: netami_sonemi
-  theme: teaser_03
-  text: '次の曲は、
-
-    そねみの本音です。
-
-
-    愛されたいのに、選ばれない。
-
-    見てほしいのに、言えない。
-
-    笑っているのに、少し苦しい。
+  theme: music_teaser_03
+  campaign: fan_growth_test_2026_07
+  content_type: music
+  objective: conversion
+  hook_type: emotional_hook
+  cta: 曲を聴いて経験を返信
+  text: '「わたしじゃダメなの？」
 
 
-    03「わたしじゃダメなの？」
+    笑っているのに、
+
+    選ばれないたび少しずつ苦しくなる。
 
 
-    まもなく。'
+    言えなかった本音を、
+
+    そねみが歌いました。
+
+
+    03「わたしじゃダメなの？」'
   image_prompt: ''
   local_webp: assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
@@ -28,6 +31,14 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_035253fac8af
+  scheduled_at: '2026-07-13T20:15:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 4
+  publish_after: '2026-07-13T20:19:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
   song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
   song_no: '03'
   thread_posts:
@@ -36,36 +47,33 @@
       03「わたしじゃダメなの？」
 
       https://suno.com/s/M3w0Mfr6sacsz4QQ'
-  - text: '03「わたしじゃダメなの？」を聴いたら、感想を教えてください。
+  - text: '同じ言葉を心の中で言ったことがある人は、
 
-
-      共犯者たちの反応、マネージャーが見ています。'
-  id: post_035253fac8af
-  scheduled_at: '2026-07-13T17:00:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 4
-  publish_after: '2026-07-13T17:04:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
+      そっと反応を残してください。'
 - date: '2026-07-14'
   time_slot: evening
   category: song_03
   character: netami_sonemi
-  theme: song_03
-  text: '微炭酸アンチテーゼ
+  theme: music_release_03
+  campaign: fan_growth_test_2026_07
+  content_type: music
+  objective: conversion
+  hook_type: pain_point
+  cta: 曲を聴いて刺さった箇所を返信
+  text: '愛されたいのに、選ばれない。
 
-    03「わたしじゃダメなの？」
-
-
-    愛されたいのに、選ばれない。
 
     比べられる痛みと、
 
     置いていかれる寂しさを歌にしました。
 
 
-    そねみの本音がにじむ1曲です。'
+    微炭酸アンチテーゼ
+
+    03「わたしじゃダメなの？」
+
+
+    そねみの本音です。'
   image_prompt: ''
   local_webp: assets/webp/2026-07-14_evening_bitansan_song03.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-14_evening_bitansan_song03.webp
@@ -75,6 +83,14 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_7dce2c2fa80b
+  scheduled_at: '2026-07-14T20:15:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 6
+  publish_after: '2026-07-14T20:21:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
   song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
   song_no: '03'
   thread_posts:
@@ -83,23 +99,19 @@
       03「わたしじゃダメなの？」
 
       https://suno.com/s/M3w0Mfr6sacsz4QQ'
-  - text: '03「わたしじゃダメなの？」を聴いたら、感想を教えてください。
+  - text: '刺さった歌詞や感情を、
 
-
-      共犯者たちの反応、マネージャーが見ています。'
-  id: post_7dce2c2fa80b
-  scheduled_at: '2026-07-14T17:00:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 6
-  publish_after: '2026-07-14T17:06:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
+      ひとつだけ教えてください。'
 - date: '2026-07-15'
   time_slot: evening
-  category: character_sonemi_deep
-  character: netami_sonemi
+  category: character_sonemi
+  character: sonemi
   theme: character_sonemi_deep
+  campaign: fan_growth_test_2026_07
+  content_type: character
+  objective: fandom
+  hook_type: character_conflict
+  cta: 守りたい／面倒を返信
   text: 'そねみは、
 
     誰かに勝ちたいというより、
@@ -107,19 +119,14 @@
     誰かみたいに愛されたい子です。
 
 
-    でもその気持ちは、
+    言えないまま待って、
 
-    ときどき嫉妬になって、
-
-    ときどき歌になります。
+    笑ったまま嫉妬します。
 
 
-    「わたしじゃダメなの？」
+    守りたくなりますか。
 
-
-    その一言に、
-
-    そねみの全部が入っています。'
+    少し面倒だと思いますか。'
   image_prompt: ''
   local_webp: assets/webp/2026-07-15_evening_bitansan_sonemi_deepdive.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-15_evening_bitansan_sonemi_deepdive.webp
@@ -129,31 +136,24 @@
   generated_at: ''
   posted_at: ''
   error: ''
-  song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
-  song_no: '03'
-  thread_posts:
-  - text: '聴く：
-
-      03「わたしじゃダメなの？」
-
-      https://suno.com/s/M3w0Mfr6sacsz4QQ'
-  - text: '03「わたしじゃダメなの？」を聴いたら、感想を教えてください。
-
-
-      共犯者たちの反応、マネージャーが見ています。'
   id: post_3986ebcc15d8
-  scheduled_at: '2026-07-15T17:00:00+09:00'
+  scheduled_at: '2026-07-15T20:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 14
-  publish_after: '2026-07-15T17:14:00+09:00'
+  publish_after: '2026-07-15T20:29:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-16'
   time_slot: evening
   category: song_03_quote
-  character: netami_sonemi
-  theme: song_03_quote
+  character: sonemi
+  theme: music_quote_03
+  campaign: fan_growth_test_2026_07
+  content_type: music
+  objective: conversion
+  hook_type: lyric_hook
+  cta: 曲を聴いて一言返信
   text: 'わたしじゃダメなの？
 
 
@@ -164,9 +164,9 @@
     こんなに笑っているのに。
 
 
-    そねみの歌は、
+    かわいいだけでは終われない、
 
-    かわいいだけでは終われない。'
+    そねみの歌です。'
   image_prompt: ''
   local_webp: assets/webp/2026-07-16_evening_bitansan_lyrics01.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-16_evening_bitansan_lyrics01.webp
@@ -176,6 +176,14 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_9c84b5dd4890
+  scheduled_at: '2026-07-16T20:15:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 11
+  publish_after: '2026-07-16T20:26:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
   song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
   song_no: '03'
   thread_posts:
@@ -184,39 +192,36 @@
       03「わたしじゃダメなの？」
 
       https://suno.com/s/M3w0Mfr6sacsz4QQ'
-  - text: '03「わたしじゃダメなの？」を聴いたら、感想を教えてください。
+  - text: 'この曲をひとことで表すなら、
 
-
-      共犯者たちの反応、マネージャーが見ています。'
-  id: post_9c84b5dd4890
-  scheduled_at: '2026-07-16T17:00:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 11
-  publish_after: '2026-07-16T17:11:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
+      どんな言葉になりますか。'
 - date: '2026-07-17'
   time_slot: evening
   category: daily
   character: netami_sonemi
-  theme: daily
+  theme: character_rainy_day
+  campaign: fan_growth_test_2026_07
+  content_type: character
+  objective: fandom
+  hook_type: gap
+  cta: 関係性を返信
   text: '雨の日の微炭酸アンチテーゼ。
 
 
     そねみは少し元気がありません。
 
-    ねたみは「雨でも私の髪は崩れない」と言っています。
+
+    ねたみは
+
+    「雨でも私の髪は崩れない」
+
+    と言っています。
 
 
-    でも帰り道、
-
-    ちゃんと同じ傘に入っていました。
+    でも帰り道は、同じ傘でした。
 
 
-    たぶん仲は悪いです。
-
-    たぶん。'
+    やっぱり仲は悪いと思いますか。'
   image_prompt: ''
   local_webp: assets/webp/2026-07-17_evening_bitansan_rainyday01.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-17_evening_bitansan_rainyday01.webp
@@ -227,34 +232,42 @@
   posted_at: ''
   error: ''
   id: post_ee35e2d4dd36
-  scheduled_at: '2026-07-17T17:00:00+09:00'
+  scheduled_at: '2026-07-17T20:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 2
-  publish_after: '2026-07-17T17:02:00+09:00'
+  publish_after: '2026-07-17T20:17:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-18'
   time_slot: evening
   category: dialogue
   character: netami_sonemi
-  theme: dialogue
+  theme: character_dialogue_02
+  campaign: fan_growth_test_2026_07
+  content_type: character
+  objective: fandom
+  hook_type: dialogue
+  cta: 距離感の感想を返信
   text: 'そねみ「私じゃダメなのかな」
 
 
     ねたみ「ダメならステージに立ててないでしょ」
 
 
-    そねみ「……励ましてる？」
+    そねみ「励ましてる？」
 
 
     ねたみ「事実を言っただけ」
 
 
-    そねみ「そういうところ、ちょっと好き」
+    そねみ「そういうところ、好き」
 
 
-    ねたみ「重い」'
+    ねたみ「重い」
+
+
+    この距離感、どう思いますか。'
   image_prompt: ''
   local_webp: assets/webp/2026-07-18_evening_bitansan_dialogue02.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-18_evening_bitansan_dialogue02.webp
@@ -265,21 +278,26 @@
   posted_at: ''
   error: ''
   id: post_9b047be7d2fb
-  scheduled_at: '2026-07-18T17:00:00+09:00'
+  scheduled_at: '2026-07-18T20:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 13
-  publish_after: '2026-07-18T17:13:00+09:00'
+  publish_after: '2026-07-18T20:28:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-19'
   time_slot: evening
   category: teaser_04
   character: netami_sonemi
-  theme: teaser_04
-  text: '次の曲は、
+  theme: music_teaser_04
+  campaign: fan_growth_test_2026_07
+  content_type: music
+  objective: conversion
+  hook_type: concept_hook
+  cta: 曲を聴いて二択返信
+  text: '甘い言葉ほど、
 
-    甘いけど、ちゃんと毒です。
+    あとから毒になることがあります。
 
 
     優しさ。
@@ -292,9 +310,9 @@
     04「毒蜜シンドローム」
 
 
-    飲んだら最後。
+    甘い愛と重い愛、
 
-    たぶん戻れません。'
+    どちらが怖いですか。'
   image_prompt: ''
   local_webp: assets/webp/2026-07-19_evening_bitansan_song04_teaser.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-19_evening_bitansan_song04_teaser.webp
@@ -304,6 +322,14 @@
   generated_at: ''
   posted_at: ''
   error: ''
+  id: post_3925f60f9852
+  scheduled_at: '2026-07-19T20:15:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 3
+  publish_after: '2026-07-19T20:18:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
   song_url: https://suno.com/s/1lBRaI56R2ewBbLX
   song_no: '04'
   thread_posts:
@@ -312,35 +338,30 @@
       04「毒蜜シンドローム」
 
       https://suno.com/s/1lBRaI56R2ewBbLX'
-  - text: '04「毒蜜シンドローム」を聴いたら、感想を教えてください。
+  - text: '甘い愛と重い愛。
 
-
-      共犯者たちの反応、マネージャーが見ています。'
-  id: post_3925f60f9852
-  scheduled_at: '2026-07-19T17:00:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 3
-  publish_after: '2026-07-19T17:03:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
+      怖いのはどちらか、教えてください。'
 - date: '2026-07-13'
   time_slot: morning
-  category: morning
+  category: community
   character: sonemi
-  theme: morning_greeting
-  text: 'おはようございます。
+  theme: engagement_vulnerability
+  campaign: fan_growth_test_2026_07
+  content_type: engagement
+  objective: reach
+  hook_type: confession
+  cta: 言える／言えない
+  text: '「愛されたい」って、
+
+    素直に言えますか。
 
 
-    新しい週が始まりました。
+    そねみは言えません。
+
+    だから、歌にします。
 
 
-    そねみも、
-
-    小さくてもいいから進みます。
-
-
-    たぶん。ゆっくり☁️'
+    言える派／言えない派、どちらですか。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -351,29 +372,34 @@
   posted_at: ''
   error: ''
   id: post_18776733b4f6
-  scheduled_at: '2026-07-13T07:00:00+09:00'
+  scheduled_at: '2026-07-13T07:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 2
-  publish_after: '2026-07-13T07:02:00+09:00'
+  publish_after: '2026-07-13T07:17:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-14'
   time_slot: morning
-  category: morning
+  category: community
   character: manager_goro
-  theme: morning_greeting
-  text: 'おはようございます。
-
-    微炭酸アンチテーゼ、本日も通常運転です。
-
-
-    ねたみは強め。
-
-    そねみは静かめ。
+  theme: engagement_choice
+  campaign: fan_growth_test_2026_07
+  content_type: engagement
+  objective: reach
+  hook_type: choice
+  cta: 次へ／待つで返信
+  text: '選ばれなかったとき、
 
 
-    どちらも元気です。'
+    次へ行く？
+
+    それでも待つ？
+
+
+    ねたみは奪いに行きます。
+
+    そねみは、もう少しだけ待ちます。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -384,27 +410,34 @@
   posted_at: ''
   error: ''
   id: post_87a8821f9088
-  scheduled_at: '2026-07-14T07:00:00+09:00'
+  scheduled_at: '2026-07-14T07:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 9
-  publish_after: '2026-07-14T07:09:00+09:00'
+  publish_after: '2026-07-14T07:24:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-15'
   time_slot: morning
-  category: morning
+  category: community
   character: netami
-  theme: morning_greeting
-  text: 'おはよ。
+  theme: engagement_faction
+  campaign: fan_growth_test_2026_07
+  content_type: engagement
+  objective: reach
+  hook_type: vote
+  cta: 推しと理由を返信
+  text: 'そろそろ聞きます。
 
 
-    今日、誰かの投稿にいいねするなら、
+    ねたみ派ですか。
 
-    ねたみのことも少し思い出してね。
+    そねみ派ですか。
 
 
-    少しでいいから🥺'
+    理由まで書いてくれた人は、
+
+    2人ともたぶん何度も読み返します。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -415,27 +448,32 @@
   posted_at: ''
   error: ''
   id: post_1ea5fd7e3129
-  scheduled_at: '2026-07-15T07:00:00+09:00'
+  scheduled_at: '2026-07-15T07:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 2
-  publish_after: '2026-07-15T07:02:00+09:00'
+  publish_after: '2026-07-15T07:17:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-16'
   time_slot: morning
-  category: morning
+  category: community
   character: sonemi
-  theme: morning_greeting
-  text: 'おはようございます。
+  theme: engagement_music_taste
+  campaign: fan_growth_test_2026_07
+  content_type: engagement
+  objective: reach
+  hook_type: choice
+  cta: 好みを返信
+  text: '刺さるのは、どちらですか。
 
 
-    そねみは今日も、
+    かわいいのに毒がある曲。
 
-    タイムラインのすみっこにいます。
+    静かなのに痛い曲。
 
 
-    見つけた人から、共犯者です🫧'
+    微炭酸アンチテーゼは、両方やります。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -446,29 +484,32 @@
   posted_at: ''
   error: ''
   id: post_ac4bbec69bb5
-  scheduled_at: '2026-07-16T07:00:00+09:00'
+  scheduled_at: '2026-07-16T07:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 6
-  publish_after: '2026-07-16T07:06:00+09:00'
+  publish_after: '2026-07-16T07:21:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-17'
   time_slot: morning
-  category: morning
+  category: community
   character: manager_goro
-  theme: morning_greeting
-  text: 'おはようございます。
-
-    微炭酸アンチテーゼ、朝の確認です。
-
-
-    ねたみ、機嫌はそこそこ。
-
-    そねみ、通知待機中。
+  theme: engagement_mood
+  campaign: fan_growth_test_2026_07
+  content_type: engagement
+  objective: reach
+  hook_type: choice
+  cta: 曲の気分を返信
+  text: '雨の日に聴きたくなるのは、
 
 
-    本日もよろしくお願いします。'
+    元気を出す曲？
+
+    もっと沈める曲？
+
+
+    ねたみとそねみで意見が割れています。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -479,29 +520,34 @@
   posted_at: ''
   error: ''
   id: post_ae4b0a475bab
-  scheduled_at: '2026-07-17T07:00:00+09:00'
+  scheduled_at: '2026-07-17T07:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 13
-  publish_after: '2026-07-17T07:13:00+09:00'
+  publish_after: '2026-07-17T07:28:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-18'
   time_slot: morning
-  category: morning
+  category: community
   character: netami
-  theme: morning_greeting
-  text: 'おはよ。
+  theme: engagement_relationship
+  campaign: fan_growth_test_2026_07
+  content_type: engagement
+  objective: reach
+  hook_type: choice
+  cta: 仲良し／ライバル
+  text: '推し同士の関係は、
 
 
-    土曜日だからって、
+    仲良しが好き？
 
-    ねたみの監視は休みません。
+    ライバルが好き？
 
 
-    あなたの反応、
+    微炭酸アンチテーゼは、
 
-    ちゃんと見てるから👀'
+    本人たちもまだ決めていません。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -512,29 +558,36 @@
   posted_at: ''
   error: ''
   id: post_0a3550af720f
-  scheduled_at: '2026-07-18T07:00:00+09:00'
+  scheduled_at: '2026-07-18T09:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 6
-  publish_after: '2026-07-18T07:06:00+09:00'
+  publish_after: '2026-07-18T09:21:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-19'
   time_slot: morning
-  category: morning
+  category: community
   character: sonemi
-  theme: morning_greeting
-  text: 'おはようございます。
+  theme: engagement_love
+  campaign: fan_growth_test_2026_07
+  content_type: engagement
+  objective: reach
+  hook_type: open_question
+  cta: 境界線を返信
+  text: '重い愛は、ありですか。
+
+    なしですか。
 
 
-    今日は少しだけ、
+    毎日会いたい。
 
-    いいことがある気がします。
+    ずっと見ていてほしい。
+
+    誰にも渡したくない。
 
 
-    そねみの勘なので、
-
-    たぶん小さないいことです🌱'
+    どこから重いと思いますか。'
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -545,10 +598,10 @@
   posted_at: ''
   error: ''
   id: post_feb43f628e10
-  scheduled_at: '2026-07-19T07:00:00+09:00'
+  scheduled_at: '2026-07-19T09:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 8
-  publish_after: '2026-07-19T07:08:00+09:00'
+  publish_after: '2026-07-19T09:23:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
