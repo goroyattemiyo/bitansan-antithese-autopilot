@@ -176,3 +176,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-05T07:34:02+09:00'
+- post_id: '18082194803215691'
+  schedule_id: post_4f15fa3ecf8e
+  date: '2026-07-05'
+  time_slot: evening
+  category: daily
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-05T17:16:25+09:00'
