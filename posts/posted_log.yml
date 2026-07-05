@@ -185,3 +185,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-05T17:16:25+09:00'
+- post_id: '18068518289415383'
+  schedule_id: post_61a0ef6e1192
+  date: '2026-07-06'
+  time_slot: morning
+  category: community
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-06T07:37:25+09:00'
