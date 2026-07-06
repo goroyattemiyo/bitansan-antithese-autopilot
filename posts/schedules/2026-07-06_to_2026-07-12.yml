@@ -400,7 +400,7 @@
   local_webp: ''
   image_url: ''
   alt: ''
-  status: ready
+  status: posting
   threads_post_id: ''
   generated_at: ''
   posted_at: ''
@@ -413,6 +413,8 @@
   publish_after: '2026-07-07T07:29:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
+  thread_progress:
+    updated_at: '2026-07-07T07:52:29+09:00'
 - date: '2026-07-08'
   time_slot: morning
   category: community
