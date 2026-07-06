@@ -203,3 +203,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-06T22:29:19+09:00'
+- post_id: '17919931836182819'
+  schedule_id: post_e0ede713acaa
+  date: '2026-07-07'
+  time_slot: morning
+  category: community
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-07T07:52:39+09:00'
