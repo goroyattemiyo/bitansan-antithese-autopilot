@@ -212,3 +212,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-07T07:52:39+09:00'
+- post_id: '17943547653251777'
+  schedule_id: post_3d49349b7696
+  date: '2026-07-07'
+  time_slot: evening
+  category: seasonal
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-07T20:48:03+09:00'
