@@ -453,10 +453,10 @@
   local_webp: ''
   image_url: ''
   alt: ''
-  status: posting
+  status: posted
   threads_post_id: '18401118754083259'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-08T07:45:18+09:00'
   error: ''
   id: post_b28e21245802
   scheduled_at: '2026-07-08T07:15:00+09:00'
@@ -467,10 +467,12 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-08T07:45:17+09:00'
+    updated_at: '2026-07-08T07:45:18+09:00'
     root_post_id: '18401118754083259'
-    reply_ids: []
+    reply_ids: &id005 []
     completed_replies: 0
+  thread_post_ids: *id005
+  thread_count: 1
 - date: '2026-07-09'
   time_slot: morning
   category: community
