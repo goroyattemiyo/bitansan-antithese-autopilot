@@ -221,3 +221,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-07T20:48:03+09:00'
+- post_id: '18401118754083259'
+  schedule_id: post_b28e21245802
+  date: '2026-07-08'
+  time_slot: morning
+  category: community
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-08T07:45:17+09:00'
