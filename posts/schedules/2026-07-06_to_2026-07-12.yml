@@ -92,7 +92,9 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-07T20:47:53+09:00'
+    updated_at: '2026-07-07T20:47:54+09:00'
+  image_host: catbox
+  image_rehosted_at: '2026-07-07T20:47:54+09:00'
 - date: '2026-07-08'
   time_slot: evening
   category: teaser_02
