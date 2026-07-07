@@ -79,7 +79,7 @@
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-07_evening_bitansan_tanabata.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
   status: posting
-  threads_post_id: ''
+  threads_post_id: '17943547653251777'
   generated_at: ''
   posted_at: ''
   error: ''
@@ -92,7 +92,10 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-07T20:47:54+09:00'
+    updated_at: '2026-07-07T20:48:03+09:00'
+    root_post_id: '17943547653251777'
+    reply_ids: []
+    completed_replies: 0
   image_host: catbox
   image_rehosted_at: '2026-07-07T20:47:54+09:00'
 - date: '2026-07-08'
