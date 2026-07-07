@@ -454,7 +454,7 @@
   image_url: ''
   alt: ''
   status: posting
-  threads_post_id: ''
+  threads_post_id: '18401118754083259'
   generated_at: ''
   posted_at: ''
   error: ''
@@ -467,7 +467,10 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-08T07:45:07+09:00'
+    updated_at: '2026-07-08T07:45:17+09:00'
+    root_post_id: '18401118754083259'
+    reply_ids: []
+    completed_replies: 0
 - date: '2026-07-09'
   time_slot: morning
   category: community
