@@ -151,11 +151,12 @@
 
       ひとことだけ教えてください。'
   thread_progress:
-    updated_at: '2026-07-08T20:25:03+09:00'
+    updated_at: '2026-07-08T20:25:33+09:00'
     root_post_id: '18120186964724025'
     reply_ids:
     - '18076209095690733'
-    completed_replies: 1
+    - '18210133252348836'
+    completed_replies: 2
   image_host: catbox
   image_rehosted_at: '2026-07-08T20:24:28+09:00'
 - date: '2026-07-09'
