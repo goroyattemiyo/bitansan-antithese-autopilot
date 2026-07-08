@@ -230,3 +230,30 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-08T07:45:17+09:00'
+- post_id: '18120186964724025'
+  schedule_id: post_b39219c601d1
+  date: '2026-07-08'
+  time_slot: evening
+  category: teaser_02
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-08T20:24:39+09:00'
+- post_id: '18076209095690733'
+  schedule_id: post_b39219c601d1
+  date: '2026-07-08'
+  time_slot: evening
+  category: teaser_02
+  thread_index: 2
+  thread_role: reply
+  reply_to_id: '18120186964724025'
+  posted_at: '2026-07-08T20:25:03+09:00'
+- post_id: '18210133252348836'
+  schedule_id: post_b39219c601d1
+  date: '2026-07-08'
+  time_slot: evening
+  category: teaser_02
+  thread_index: 3
+  thread_role: reply
+  reply_to_id: '18076209095690733'
+  posted_at: '2026-07-08T20:25:33+09:00'
