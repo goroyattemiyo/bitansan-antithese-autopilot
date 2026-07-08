@@ -152,6 +152,8 @@
       ひとことだけ教えてください。'
   thread_progress:
     updated_at: '2026-07-08T20:24:28+09:00'
+  image_host: catbox
+  image_rehosted_at: '2026-07-08T20:24:28+09:00'
 - date: '2026-07-09'
   time_slot: evening
   category: song_02
