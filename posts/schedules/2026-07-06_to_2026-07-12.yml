@@ -507,10 +507,10 @@
   local_webp: ''
   image_url: ''
   alt: ''
-  status: posting
+  status: posted
   threads_post_id: '18093830201458538'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-09T07:55:15+09:00'
   error: ''
   id: post_a36af7cb0e7b
   scheduled_at: '2026-07-09T07:15:00+09:00'
@@ -521,10 +521,12 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-09T07:55:14+09:00'
+    updated_at: '2026-07-09T07:55:15+09:00'
     root_post_id: '18093830201458538'
-    reply_ids: []
+    reply_ids: &id007 []
     completed_replies: 0
+  thread_post_ids: *id007
+  thread_count: 1
 - date: '2026-07-10'
   time_slot: morning
   category: community
