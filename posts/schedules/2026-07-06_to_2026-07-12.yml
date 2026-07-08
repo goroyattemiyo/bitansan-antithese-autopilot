@@ -126,7 +126,7 @@
   local_webp: assets/webp/2026-07-08_evening_bitansan_song02_teaser.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-08_evening_bitansan_song02_teaser.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: ready
+  status: posting
   threads_post_id: ''
   generated_at: ''
   posted_at: ''
@@ -150,6 +150,8 @@
   - text: '一番じゃなきゃ嫌だと思った瞬間があれば、
 
       ひとことだけ教えてください。'
+  thread_progress:
+    updated_at: '2026-07-08T20:24:28+09:00'
 - date: '2026-07-09'
   time_slot: evening
   category: song_02
