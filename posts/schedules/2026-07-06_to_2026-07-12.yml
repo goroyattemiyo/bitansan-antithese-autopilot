@@ -214,10 +214,11 @@
 
       短くてもいいので教えてください。'
   thread_progress:
-    updated_at: '2026-07-09T22:34:52+09:00'
+    updated_at: '2026-07-09T22:35:14+09:00'
     root_post_id: '18596410609063182'
-    reply_ids: []
-    completed_replies: 0
+    reply_ids:
+    - '18120488060501975'
+    completed_replies: 1
   image_host: catbox
   image_rehosted_at: '2026-07-09T22:34:43+09:00'
 - date: '2026-07-10'
