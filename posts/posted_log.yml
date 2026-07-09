@@ -293,3 +293,12 @@
   thread_role: reply
   reply_to_id: '18120488060501975'
   posted_at: '2026-07-09T22:35:46+09:00'
+- post_id: '17992199306814226'
+  schedule_id: post_7b63222a07c3
+  date: '2026-07-10'
+  time_slot: morning
+  category: community
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-10T07:52:20+09:00'
