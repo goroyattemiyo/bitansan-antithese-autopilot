@@ -189,10 +189,10 @@
   local_webp: assets/webp/2026-07-09_evening_bitansan_song02.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-09_evening_bitansan_song02.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: posting
+  status: posted
   threads_post_id: '18596410609063182'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-09T22:35:47+09:00'
   error: ''
   id: post_2dbdb5bfdd85
   scheduled_at: '2026-07-09T20:15:00+09:00'
@@ -214,14 +214,16 @@
 
       短くてもいいので教えてください。'
   thread_progress:
-    updated_at: '2026-07-09T22:35:46+09:00'
+    updated_at: '2026-07-09T22:35:47+09:00'
     root_post_id: '18596410609063182'
-    reply_ids:
+    reply_ids: &id004
     - '18120488060501975'
     - '18108988609794051'
     completed_replies: 2
   image_host: catbox
   image_rehosted_at: '2026-07-09T22:34:43+09:00'
+  thread_post_ids: *id004
+  thread_count: 3
 - date: '2026-07-10'
   time_slot: evening
   category: character_netami
@@ -400,9 +402,9 @@
   thread_progress:
     updated_at: '2026-07-06T07:37:26+09:00'
     root_post_id: '18068518289415383'
-    reply_ids: &id004 []
+    reply_ids: &id005 []
     completed_replies: 0
-  thread_post_ids: *id004
+  thread_post_ids: *id005
   thread_count: 1
 - date: '2026-07-07'
   time_slot: morning
@@ -445,9 +447,9 @@
   thread_progress:
     updated_at: '2026-07-07T07:52:40+09:00'
     root_post_id: '17919931836182819'
-    reply_ids: &id005 []
+    reply_ids: &id006 []
     completed_replies: 0
-  thread_post_ids: *id005
+  thread_post_ids: *id006
   thread_count: 1
 - date: '2026-07-08'
   time_slot: morning
@@ -489,9 +491,9 @@
   thread_progress:
     updated_at: '2026-07-08T07:45:18+09:00'
     root_post_id: '18401118754083259'
-    reply_ids: &id006 []
+    reply_ids: &id007 []
     completed_replies: 0
-  thread_post_ids: *id006
+  thread_post_ids: *id007
   thread_count: 1
 - date: '2026-07-09'
   time_slot: morning
@@ -532,9 +534,9 @@
   thread_progress:
     updated_at: '2026-07-09T07:55:15+09:00'
     root_post_id: '18093830201458538'
-    reply_ids: &id007 []
+    reply_ids: &id008 []
     completed_replies: 0
-  thread_post_ids: *id007
+  thread_post_ids: *id008
   thread_count: 1
 - date: '2026-07-10'
   time_slot: morning
