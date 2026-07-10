@@ -256,10 +256,10 @@
   local_webp: assets/webp/2026-07-10_evening_bitansan_netami_deepdive.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-10_evening_bitansan_netami_deepdive.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: posting
+  status: posted
   threads_post_id: '17979068802025338'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-10T21:16:20+09:00'
   error: ''
   id: post_346ab4d0a4c1
   scheduled_at: '2026-07-10T20:15:00+09:00'
@@ -270,12 +270,14 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-10T21:16:19+09:00'
+    updated_at: '2026-07-10T21:16:20+09:00'
     root_post_id: '17979068802025338'
-    reply_ids: []
+    reply_ids: &id005 []
     completed_replies: 0
   image_host: catbox
   image_rehosted_at: '2026-07-10T21:16:09+09:00'
+  thread_post_ids: *id005
+  thread_count: 1
 - date: '2026-07-11'
   time_slot: evening
   category: manager
@@ -409,9 +411,9 @@
   thread_progress:
     updated_at: '2026-07-06T07:37:26+09:00'
     root_post_id: '18068518289415383'
-    reply_ids: &id005 []
+    reply_ids: &id006 []
     completed_replies: 0
-  thread_post_ids: *id005
+  thread_post_ids: *id006
   thread_count: 1
 - date: '2026-07-07'
   time_slot: morning
@@ -454,9 +456,9 @@
   thread_progress:
     updated_at: '2026-07-07T07:52:40+09:00'
     root_post_id: '17919931836182819'
-    reply_ids: &id006 []
+    reply_ids: &id007 []
     completed_replies: 0
-  thread_post_ids: *id006
+  thread_post_ids: *id007
   thread_count: 1
 - date: '2026-07-08'
   time_slot: morning
@@ -498,9 +500,9 @@
   thread_progress:
     updated_at: '2026-07-08T07:45:18+09:00'
     root_post_id: '18401118754083259'
-    reply_ids: &id007 []
+    reply_ids: &id008 []
     completed_replies: 0
-  thread_post_ids: *id007
+  thread_post_ids: *id008
   thread_count: 1
 - date: '2026-07-09'
   time_slot: morning
@@ -541,9 +543,9 @@
   thread_progress:
     updated_at: '2026-07-09T07:55:15+09:00'
     root_post_id: '18093830201458538'
-    reply_ids: &id008 []
+    reply_ids: &id009 []
     completed_replies: 0
-  thread_post_ids: *id008
+  thread_post_ids: *id009
   thread_count: 1
 - date: '2026-07-10'
   time_slot: morning
@@ -584,9 +586,9 @@
   thread_progress:
     updated_at: '2026-07-10T07:52:21+09:00'
     root_post_id: '17992199306814226'
-    reply_ids: &id009 []
+    reply_ids: &id010 []
     completed_replies: 0
-  thread_post_ids: *id009
+  thread_post_ids: *id010
   thread_count: 1
 - date: '2026-07-11'
   time_slot: morning
