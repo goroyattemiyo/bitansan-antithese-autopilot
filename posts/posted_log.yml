@@ -302,3 +302,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-10T07:52:20+09:00'
+- post_id: '17979068802025338'
+  schedule_id: post_346ab4d0a4c1
+  date: '2026-07-10'
+  time_slot: evening
+  category: character_netami
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-10T21:16:19+09:00'
