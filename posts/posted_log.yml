@@ -320,3 +320,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-11T12:40:28+09:00'
+- post_id: '18117468010667902'
+  schedule_id: post_53b3d88d5423
+  date: '2026-07-11'
+  time_slot: evening
+  category: manager
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-11T20:37:05+09:00'
