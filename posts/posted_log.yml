@@ -311,3 +311,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-10T21:16:19+09:00'
+- post_id: '18428972806133636'
+  schedule_id: post_6d4f1965ab55
+  date: '2026-07-11'
+  time_slot: morning
+  category: community
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-11T12:40:28+09:00'
