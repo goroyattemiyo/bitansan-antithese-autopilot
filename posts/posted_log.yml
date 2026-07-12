@@ -329,3 +329,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-11T20:37:05+09:00'
+- post_id: '17917088280199318'
+  schedule_id: post_2355250fce22
+  date: '2026-07-12'
+  time_slot: morning
+  category: community
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-12T10:14:56+09:00'
