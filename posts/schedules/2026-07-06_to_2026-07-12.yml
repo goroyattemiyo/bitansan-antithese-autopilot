@@ -664,10 +664,10 @@
   local_webp: ''
   image_url: ''
   alt: ''
-  status: posting
+  status: posted
   threads_post_id: '17917088280199318'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-12T10:14:57+09:00'
   error: ''
   id: post_2355250fce22
   scheduled_at: '2026-07-12T09:15:00+09:00'
@@ -678,7 +678,9 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-12T10:14:56+09:00'
+    updated_at: '2026-07-12T10:14:57+09:00'
     root_post_id: '17917088280199318'
-    reply_ids: []
+    reply_ids: &id013 []
     completed_replies: 0
+  thread_post_ids: *id013
+  thread_count: 1
