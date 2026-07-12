@@ -347,3 +347,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-12T20:45:28+09:00'
+- post_id: '17880167565673396'
+  schedule_id: post_18776733b4f6
+  date: '2026-07-13'
+  time_slot: morning
+  category: community
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-13T08:02:52+09:00'
