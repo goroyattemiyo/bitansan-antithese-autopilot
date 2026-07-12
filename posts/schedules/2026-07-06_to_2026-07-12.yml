@@ -381,6 +381,8 @@
   thread_delay_max_seconds: 25
   thread_progress:
     updated_at: '2026-07-12T20:45:19+09:00'
+  image_host: catbox
+  image_rehosted_at: '2026-07-12T20:45:19+09:00'
 - date: '2026-07-06'
   time_slot: morning
   category: community
