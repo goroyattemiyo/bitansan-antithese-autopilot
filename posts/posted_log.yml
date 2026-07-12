@@ -338,3 +338,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-12T10:14:56+09:00'
+- post_id: '18082848320263561'
+  schedule_id: post_09efac8f6243
+  date: '2026-07-12'
+  time_slot: evening
+  category: dialogue
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-12T20:45:28+09:00'
