@@ -26,10 +26,10 @@
   local_webp: assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: posting
+  status: posted
   threads_post_id: '17897109171508460'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-14T08:12:49+09:00'
   error: ''
   id: post_035253fac8af
   scheduled_at: '2026-07-13T20:15:00+09:00'
@@ -51,14 +51,16 @@
 
       そっと反応を残してください。'
   thread_progress:
-    updated_at: '2026-07-14T08:12:48+09:00'
+    updated_at: '2026-07-14T08:12:49+09:00'
     root_post_id: '17897109171508460'
-    reply_ids:
+    reply_ids: &id001
     - '18121106794772158'
     - '18142735201557694'
     completed_replies: 2
   image_host: catbox
   image_rehosted_at: '2026-07-14T08:11:32+09:00'
+  thread_post_ids: *id001
+  thread_count: 3
 - date: '2026-07-14'
   time_slot: evening
   category: song_03
@@ -391,9 +393,9 @@
   thread_progress:
     updated_at: '2026-07-13T08:02:53+09:00'
     root_post_id: '17880167565673396'
-    reply_ids: &id001 []
+    reply_ids: &id002 []
     completed_replies: 0
-  thread_post_ids: *id001
+  thread_post_ids: *id002
   thread_count: 1
 - date: '2026-07-14'
   time_slot: morning
