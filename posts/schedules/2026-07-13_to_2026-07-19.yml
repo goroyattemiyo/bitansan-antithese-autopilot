@@ -51,7 +51,9 @@
 
       そっと反応を残してください。'
   thread_progress:
-    updated_at: '2026-07-14T08:11:31+09:00'
+    updated_at: '2026-07-14T08:11:32+09:00'
+  image_host: catbox
+  image_rehosted_at: '2026-07-14T08:11:32+09:00'
 - date: '2026-07-14'
   time_slot: evening
   category: song_03
