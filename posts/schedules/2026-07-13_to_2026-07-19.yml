@@ -114,10 +114,11 @@
 
       ひとつだけ教えてください。'
   thread_progress:
-    updated_at: '2026-07-15T08:10:15+09:00'
+    updated_at: '2026-07-15T08:10:48+09:00'
     root_post_id: '18379763545161078'
-    reply_ids: []
-    completed_replies: 0
+    reply_ids:
+    - '17912005845240113'
+    completed_replies: 1
   image_host: catbox
   image_rehosted_at: '2026-07-15T08:10:04+09:00'
 - date: '2026-07-15'
