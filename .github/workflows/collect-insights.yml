@@ -2,17 +2,26 @@ name: Collect Insights
 
 on:
   schedule:
-    # JST Monday 21:07. GitHub Actions cron is UTC.
-    - cron: "7 12 * * 1"
+    # JST daily 21:07. GitHub Actions cron is UTC.
+    - cron: "7 12 * * *"
   workflow_dispatch:
     inputs:
       limit:
         description: "Number of recent posted logs to inspect"
         required: false
         default: "30"
+      force:
+        description: "Collect again even if today's JST snapshot already exists"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
+
+concurrency:
+  group: bikansan-collect-insights
+  cancel-in-progress: false
 
 jobs:
   collect:
@@ -29,7 +38,11 @@ jobs:
         run: |
           LIMIT="${{ github.event.inputs.limit }}"
           if [ -z "$LIMIT" ]; then LIMIT=30; fi
-          python -m src.collect_insights --limit "$LIMIT"
+          ARGS=(--limit "$LIMIT")
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            ARGS+=(--force)
+          fi
+          python -m src.collect_insights "${ARGS[@]}"
         env:
           BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
           BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
@@ -37,7 +50,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add posts/insights_log.yml
+          git add posts/insights_log.yml posts/insights_latest.yml
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
