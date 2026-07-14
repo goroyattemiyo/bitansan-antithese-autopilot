@@ -383,3 +383,12 @@
   thread_role: reply
   reply_to_id: '18121106794772158'
   posted_at: '2026-07-14T08:12:48+09:00'
+- post_id: '17937027513295696'
+  schedule_id: post_87a8821f9088
+  date: '2026-07-14'
+  time_slot: morning
+  category: community
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-14T21:38:48+09:00'
