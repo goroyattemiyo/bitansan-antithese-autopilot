@@ -114,7 +114,9 @@
 
       ひとつだけ教えてください。'
   thread_progress:
-    updated_at: '2026-07-15T08:10:03+09:00'
+    updated_at: '2026-07-15T08:10:04+09:00'
+  image_host: catbox
+  image_rehosted_at: '2026-07-15T08:10:04+09:00'
 - date: '2026-07-15'
   time_slot: evening
   category: character_sonemi
