@@ -58,33 +58,6 @@
     reply_rate_pct: 200.0
     spread_rate_pct: 0.0
   raw_error: ''
-- post_id: '18053419811540433'
-  collected_at: '2026-07-13T23:48:43+09:00'
-  metrics:
-    views: 3
-    likes: 0
-    replies: 0
-    reposts: 0
-    quotes: 0
-  raw_error: ''
-- post_id: '18159055423462983'
-  collected_at: '2026-07-13T23:48:43+09:00'
-  metrics:
-    views: 16
-    likes: 1
-    replies: 0
-    reposts: 1
-    quotes: 0
-  raw_error: ''
-- post_id: '17866610118580739'
-  collected_at: '2026-07-13T23:48:42+09:00'
-  metrics:
-    views: 7
-    likes: 2
-    replies: 2
-    reposts: 1
-    quotes: 0
-  raw_error: ''
 - post_id: '17880167565673396'
   collected_at: '2026-07-14T11:11:52+09:00'
   schedule_id: post_18776733b4f6
@@ -424,33 +397,6 @@
     engagement_rate_pct: 0.0
     reply_rate_pct: 0.0
     spread_rate_pct: 0.0
-  raw_error: ''
-- post_id: '17892175455377838'
-  collected_at: '2026-07-07T00:47:22+09:00'
-  metrics:
-    views: 2
-    likes: 0
-    replies: 0
-    reposts: 0
-    quotes: 0
-  raw_error: ''
-- post_id: '18122816791782747'
-  collected_at: '2026-07-07T00:47:22+09:00'
-  metrics:
-    views: 7
-    likes: 1
-    replies: 0
-    reposts: 1
-    quotes: 0
-  raw_error: ''
-- post_id: '18020601056726232'
-  collected_at: '2026-07-07T00:47:22+09:00'
-  metrics:
-    views: 3
-    likes: 0
-    replies: 0
-    reposts: 0
-    quotes: 0
   raw_error: ''
 - post_id: '18467936194129124'
   collected_at: '2026-07-14T11:11:56+09:00'
