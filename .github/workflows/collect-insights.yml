@@ -10,6 +10,10 @@ on:
         description: "Number of recent posted logs to inspect"
         required: false
         default: "30"
+      active_days:
+        description: "Collect posts published within this many days"
+        required: false
+        default: "30"
       force:
         description: "Collect again even if today's JST snapshot already exists"
         required: false
@@ -37,8 +41,10 @@ jobs:
       - name: Collect insights
         run: |
           LIMIT="${{ github.event.inputs.limit }}"
+          ACTIVE_DAYS="${{ github.event.inputs.active_days }}"
           if [ -z "$LIMIT" ]; then LIMIT=30; fi
-          ARGS=(--limit "$LIMIT")
+          if [ -z "$ACTIVE_DAYS" ]; then ACTIVE_DAYS=30; fi
+          ARGS=(--limit "$LIMIT" --active-days "$ACTIVE_DAYS")
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             ARGS+=(--force)
           fi
@@ -50,7 +56,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add posts/insights_log.yml posts/insights_latest.yml
+          git add posts/insights/ posts/insights_latest.yml
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
