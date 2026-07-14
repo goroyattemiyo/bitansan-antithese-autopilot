@@ -598,3 +598,23 @@
     reply_rate_pct: 0.0
     spread_rate_pct: 0.0
   raw_error: ''
+- post_id: '17937027513295696'
+  collected_at: '2026-07-14T23:07:21+09:00'
+  schedule_id: post_87a8821f9088
+  scheduled_at: ''
+  posted_at: '2026-07-14T21:38:48+09:00'
+  category: community
+  series_id: ''
+  thread_index: 1
+  thread_role: root
+  metrics:
+    views: 6
+    likes: 0
+    replies: 0
+    reposts: 0
+    quotes: 0
+  rates:
+    engagement_rate_pct: 0.0
+    reply_rate_pct: 0.0
+    spread_rate_pct: 0.0
+  raw_error: ''
