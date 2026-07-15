@@ -1,0 +1,8 @@
+enabled: false
+request_id: ''
+requested_at: ''
+limit: 30
+active_days: 30
+request_delay_seconds: 1.0
+force: false
+note: ChatGPT updates this file only after an explicit user request.
