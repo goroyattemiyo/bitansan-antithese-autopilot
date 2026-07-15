@@ -114,7 +114,7 @@ def select_candidate(items: list[dict[str, Any]], now: datetime, requested_id: s
     due: list[dict[str, Any]] = []
     allowed_statuses = {"ready", "posting"}
     if requested_id:
-        allowed_statuses.add("error")
+        allowed_statuses.update({"error", "held"})
 
     for item in items:
         status = str(item.get("status", "")).lower()
