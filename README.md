@@ -92,7 +92,7 @@ allow_out_of_order: true
 
 ## インサイト取得
 
-インサイトの定期取得は行いません。チャットで明示的に依頼されたときだけ、ChatGPTが `requests/collect_insights.yml` を更新します。その更新を検知した `Collect Insights On Demand` が1回だけ実行されます。
+インサイトの定期取得は行いません。チャットで明示的に依頼されたときだけ、ChatGPTが `control/collect_insights.yml` を更新します。その更新を検知した `Collect Insights On Demand` が1回だけ実行されます。
 
 ```yaml
 enabled: true
@@ -125,18 +125,18 @@ force: false
 - 読み取りGETだけ最大3回再試行
 - 投稿作成・公開APIは呼ばない
 
-`requests/collect_insights_state.yml` には最後に正常処理した `request_id` が保存されます。Actionsの再実行や重複起動があっても、同じ要求によるAPI再取得を防ぎます。
+`control/collect_insights_state.yml` には最後に正常処理した `request_id` が保存されます。Actionsの再実行や重複起動があっても、同じ要求によるAPI再取得を防ぎます。
 
 ## ディレクトリ構成
 
 ```text
 .github/workflows/                 GitHub Actions
 assets/webp/                       投稿画像
+control/collect_insights.yml       チャット要求ファイル
+control/collect_insights_state.yml 処理済み要求ID
 posts/schedules/                   週単位の投稿予定
 posts/posted_log.yml               投稿ログ
 posts/insights/                    月別インサイト履歴
-requests/collect_insights.yml      チャット要求ファイル
-requests/collect_insights_state.yml 処理済み要求ID
 src/                               Python実装
 tests/                             安全機構・スケジューラーテスト
 ```
