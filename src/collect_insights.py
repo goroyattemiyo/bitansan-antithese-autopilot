@@ -1,7 +1,8 @@
-"""Collect daily insights for recently posted Threads posts."""
+"""Collect weekly insights for recently posted Threads posts."""
 from __future__ import annotations
 
 import argparse
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -85,7 +86,7 @@ def _monthly_path(moment: datetime | None = None) -> Path:
 
 
 def _all_history() -> list[Any]:
-    """Load legacy history and month-partitioned logs for latest-index generation."""
+    """Load legacy history and month-partitioned logs."""
     history: list[Any] = []
     if LEGACY_LOG_PATH.exists():
         history.extend(_load_list(LEGACY_LOG_PATH))
@@ -158,10 +159,19 @@ def _build_latest(log: list[Any]) -> list[dict[str, Any]]:
     )
 
 
-def collect(limit: int = 30, force: bool = False, active_days: int = 30) -> int:
+def collect(
+    limit: int = 30,
+    force: bool = False,
+    active_days: int = 30,
+    request_delay_seconds: float = 1.0,
+) -> int:
+    if request_delay_seconds < 0:
+        raise ValueError("request_delay_seconds must be zero or greater")
+
     posted_log = _load_list(repo_path("posts", "posted_log.yml"))
     monthly_path = _monthly_path()
     monthly_log = _load_list(monthly_path)
+    history = _all_history()
 
     api = ThreadsAPI(
         access_token=require_env("BIKANSAN_ACCESS_TOKEN"),
@@ -181,7 +191,7 @@ def collect(limit: int = 30, force: bool = False, active_days: int = 30) -> int:
         if not _is_recent(item, active_days):
             skipped_old += 1
             continue
-        if not force and _already_collected_today(monthly_log, post_id, today):
+        if not force and _already_collected_today(history, post_id, today):
             skipped_today += 1
             continue
 
@@ -196,11 +206,15 @@ def collect(limit: int = 30, force: bool = False, active_days: int = 30) -> int:
             "raw_error": result.get("error", ""),
         }
         monthly_log.append(entry)
+        history.append(entry)
         print(f"collected insights: {post_id}")
         count += 1
 
+        if request_delay_seconds:
+            time.sleep(request_delay_seconds)
+
     save_yaml(monthly_path, monthly_log)
-    save_yaml(LATEST_PATH, _build_latest(_all_history()))
+    save_yaml(LATEST_PATH, _build_latest(history))
     print(
         f"collected count: {count}; skipped today: {skipped_today}; "
         f"skipped older than {active_days} days: {skipped_old}"
@@ -212,13 +226,19 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=30)
     parser.add_argument("--active-days", type=int, default=30)
+    parser.add_argument("--request-delay-seconds", type=float, default=1.0)
     parser.add_argument(
         "--force",
         action="store_true",
-        help="Collect again even when a snapshot already exists for today (JST).",
+        help="Collect again when a snapshot already exists for today (JST).",
     )
     args = parser.parse_args()
-    collect(limit=args.limit, force=args.force, active_days=args.active_days)
+    collect(
+        limit=args.limit,
+        force=args.force,
+        active_days=args.active_days,
+        request_delay_seconds=args.request_delay_seconds,
+    )
 
 
 if __name__ == "__main__":
