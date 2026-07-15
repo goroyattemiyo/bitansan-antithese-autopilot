@@ -1,6 +1,6 @@
 """Process one explicit chat-created Threads insights request.
 
-The workflow is triggered only when requests/collect_insights.yml changes. A
+The workflow is triggered only when control/collect_insights.yml changes. A
 separate state file records the last successful request_id so workflow reruns do
 not repeat API reads.
 """
@@ -13,8 +13,8 @@ from typing import Any, Callable
 from .collect_insights import collect
 from .utils import load_yaml, repo_path, save_yaml, timestamp_jst
 
-REQUEST_PATH = repo_path("requests", "collect_insights.yml")
-STATE_PATH = repo_path("requests", "collect_insights_state.yml")
+REQUEST_PATH = repo_path("control", "collect_insights.yml")
+STATE_PATH = repo_path("control", "collect_insights_state.yml")
 REQUEST_ID_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9._:-]{0,63}")
 MAX_LIMIT = 30
 MAX_ACTIVE_DAYS = 90
