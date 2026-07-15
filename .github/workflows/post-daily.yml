@@ -37,6 +37,9 @@ concurrency:
 
 jobs:
   post:
+    # Scheduled API access stays paused until this repository variable is true.
+    # Manual runs remain available and default to dry_run=true.
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.THREADS_AUTOMATION_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -64,8 +67,8 @@ jobs:
         env:
           BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
           BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
-          CATBOX_USERHASH: ${{ secrets.CATBOX_USERHASH }}
           AUTO_COMMIT_PROGRESS: 'true'
+          MAX_AUTOMATIC_LATENESS_MINUTES: '120'
       - name: Commit remaining schedule changes
         if: always()
         run: |

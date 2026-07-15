@@ -2,8 +2,8 @@ name: Collect Insights
 
 on:
   schedule:
-    # JST daily 21:07. GitHub Actions cron is UTC.
-    - cron: "7 12 * * *"
+    # JST Monday 21:07. GitHub Actions cron is UTC.
+    - cron: "7 12 * * 1"
   workflow_dispatch:
     inputs:
       limit:
@@ -14,6 +14,10 @@ on:
         description: "Collect posts published within this many days"
         required: false
         default: "30"
+      request_delay_seconds:
+        description: "Delay between Threads insight requests"
+        required: false
+        default: "1.0"
       force:
         description: "Collect again even if today's JST snapshot already exists"
         required: false
@@ -29,6 +33,9 @@ concurrency:
 
 jobs:
   collect:
+    # Scheduled API access stays paused until this repository variable is true.
+    # Manual runs remain available for explicit checks.
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.THREADS_AUTOMATION_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,9 +49,11 @@ jobs:
         run: |
           LIMIT="${{ github.event.inputs.limit }}"
           ACTIVE_DAYS="${{ github.event.inputs.active_days }}"
+          REQUEST_DELAY_SECONDS="${{ github.event.inputs.request_delay_seconds }}"
           if [ -z "$LIMIT" ]; then LIMIT=30; fi
           if [ -z "$ACTIVE_DAYS" ]; then ACTIVE_DAYS=30; fi
-          ARGS=(--limit "$LIMIT" --active-days "$ACTIVE_DAYS")
+          if [ -z "$REQUEST_DELAY_SECONDS" ]; then REQUEST_DELAY_SECONDS=1.0; fi
+          ARGS=(--limit "$LIMIT" --active-days "$ACTIVE_DAYS" --request-delay-seconds "$REQUEST_DELAY_SECONDS")
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             ARGS+=(--force)
           fi

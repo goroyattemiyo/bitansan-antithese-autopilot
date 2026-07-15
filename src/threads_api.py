@@ -14,18 +14,27 @@ class ThreadsAPI:
     BASE_URL = "https://graph.threads.net/v1.0"
     MAX_RETRIES = 3
     RETRY_BASE_WAIT = 3
+    RETRYABLE_METHODS = {"GET", "HEAD"}
 
     def __init__(self, access_token: str, user_id: str | None = None):
         self.access_token = access_token
         self.user_id = user_id
 
     def _request_with_retry(self, method: str, url: str, **kwargs: Any) -> dict[str, Any]:
-        """Retry transient failures while preserving actionable 4xx responses."""
+        """Retry only read-only requests.
+
+        POST requests are intentionally attempted once. A network timeout after a
+        successful publish is ambiguous, so automatically sending the same POST
+        again could create a duplicate container or duplicate post.
+        """
+        method_upper = method.upper()
+        retry_allowed = method_upper in self.RETRYABLE_METHODS
+        attempts = self.MAX_RETRIES if retry_allowed else 1
         last_error: Exception | None = None
 
-        for attempt in range(self.MAX_RETRIES):
+        for attempt in range(attempts):
             try:
-                resp = requests.request(method, url, timeout=60, **kwargs)
+                resp = requests.request(method_upper, url, timeout=60, **kwargs)
 
                 try:
                     data = resp.json()
@@ -34,14 +43,18 @@ class ThreadsAPI:
 
                 if resp.status_code >= 400:
                     error = data.get("error", data) if isinstance(data, dict) else data
-                    payload = {
+                    payload: dict[str, Any] = {
                         "error": error,
                         "status_code": resp.status_code,
                     }
 
-                    # Client-side failures will not improve by retrying.
-                    # 429 is transient and may be retried below.
+                    # Ordinary client-side failures are actionable and should not
+                    # be retried. 429 may be retried only for read-only requests.
                     if 400 <= resp.status_code < 500 and resp.status_code != 429:
+                        return payload
+
+                    if not retry_allowed:
+                        payload["retry_skipped"] = "non_idempotent_request"
                         return payload
 
                     message = error.get("message") if isinstance(error, dict) else str(error)
@@ -56,9 +69,19 @@ class ThreadsAPI:
 
             except requests.exceptions.RequestException as exc:
                 last_error = exc
-                if attempt < self.MAX_RETRIES - 1:
+                if not retry_allowed:
+                    return {
+                        "error": {
+                            "message": str(exc),
+                            "type": "transport_error",
+                            "retry_safe": False,
+                        },
+                        "status_code": 0,
+                        "retry_skipped": "non_idempotent_request",
+                    }
+                if attempt < attempts - 1:
                     wait = self.RETRY_BASE_WAIT * (2**attempt)
-                    print(f"Retry {attempt + 1}/{self.MAX_RETRIES} after {wait}s: {exc}")
+                    print(f"Retry {attempt + 1}/{attempts} after {wait}s: {exc}")
                     time.sleep(wait)
 
         return {"error": str(last_error)}
