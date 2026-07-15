@@ -61,6 +61,12 @@ class SchedulerCoreTests(unittest.TestCase):
         self.assertIsNone(select_candidate([item], datetime(2026, 7, 3, 19, 0, tzinfo=JST)))
         self.assertEqual("held", select_candidate([item], datetime(2026, 7, 3, 19, 0, tzinfo=JST), requested_id="held")["id"])
 
+    def test_safety_held_post_requires_explicit_id(self):
+        item = {"id": "safety-held", "status": "held", "scheduled_at": "2026-07-06T07:00:00+09:00", "publish_after": "2026-07-06T07:02:00+09:00"}
+        now = datetime(2026, 7, 6, 12, 0, tzinfo=JST)
+        self.assertIsNone(select_candidate([item], now))
+        self.assertEqual("safety-held", select_candidate([item], now, requested_id="safety-held")["id"])
+
 
 if __name__ == "__main__":
     unittest.main()
