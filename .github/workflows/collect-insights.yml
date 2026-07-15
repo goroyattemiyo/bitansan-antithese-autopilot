@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "requests/collect_insights.yml"
+      - "control/collect_insights.yml"
 
 permissions:
   contents: write
@@ -41,7 +41,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add posts/insights/ posts/insights_latest.yml requests/collect_insights_state.yml
+          git add posts/insights/ posts/insights_latest.yml control/collect_insights_state.yml
           if git diff --cached --quiet; then
             echo "No changes to commit. Request was disabled or already processed."
           else
