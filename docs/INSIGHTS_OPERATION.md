@@ -2,7 +2,7 @@
 
 ## 取得方針
 
-インサイトは定期取得しません。ユーザーがチャットで明示的に依頼したときだけ、ChatGPTが `requests/collect_insights.yml` を更新し、その変更を検知した `Collect Insights On Demand` が1回だけ実行します。
+インサイトは定期取得しません。ユーザーがチャットで明示的に依頼したときだけ、ChatGPTが `control/collect_insights.yml` を更新し、その変更を検知した `Collect Insights On Demand` が1回だけ実行します。
 
 アカウント審査中など、Threads APIへのアクセスを止めたい期間はRepository variable `THREADS_INSIGHTS_ENABLED` を未設定・削除・`false` のいずれかにします。要求ファイルが更新されても、この変数が文字列 `true` でなければAPIへアクセスしません。
 
@@ -30,7 +30,7 @@ force: false
 
 ## 二重実行防止
 
-`requests/collect_insights_state.yml` に、最後に正常処理した `request_id` を保存します。
+`control/collect_insights_state.yml` に、最後に正常処理した `request_id` を保存します。
 
 ```yaml
 last_processed_request_id: '20260715-210000'
