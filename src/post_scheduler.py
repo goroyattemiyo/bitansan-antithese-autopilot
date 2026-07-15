@@ -7,18 +7,18 @@ import random
 import subprocess
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
-from .catbox import upload_file
 from .schedule_store import ScheduleFile, load_active_schedule_files, save_schedule_file
 from .scheduler_core import JST, iso_jst, materialize, parse_dt, select_candidate
 from .threads_api import ThreadsAPI
 from .utils import append_yaml_list, repo_path, require_env
 
-PRIVATE_RAW_PREFIX = "https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/"
+PUBLIC_RAW_PREFIX = "https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/"
+DEFAULT_MAX_AUTOMATIC_LATENESS_MINUTES = 120
 
 
 def now_jst() -> datetime:
@@ -88,23 +88,59 @@ def find_file(files: list[ScheduleFile], item: dict[str, Any]) -> ScheduleFile:
     raise RuntimeError("schedule file not found")
 
 
-def ensure_public_root_image(item: dict[str, Any], sf: ScheduleFile) -> None:
+def prepare_public_root_image(item: dict[str, Any], sf: ScheduleFile) -> None:
+    """Use the repository's public raw image URL without third-party rehosting."""
     image_url = str(item.get("image_url", "")).strip()
-    if not image_url or not image_url.startswith(PRIVATE_RAW_PREFIX):
+    if not image_url or not image_url.startswith(PUBLIC_RAW_PREFIX):
         return
 
-    local_webp = str(item.get("local_webp", "")).strip()
-    if not local_webp:
-        raise RuntimeError("Private GitHub image URL has no local_webp fallback")
+    changed = item.get("image_host") != "github_raw" or "image_rehosted_at" in item
+    item["image_host"] = "github_raw"
+    item.pop("image_rehosted_at", None)
+    if changed:
+        save_checkpoint(sf, item, f"chore: mark public image host for {item['id']}")
+    print(f"Using public GitHub raw image URL: {image_url}")
 
-    local_path = repo_path() / local_webp
-    print(f"Rehosting private image through Catbox: {local_webp}")
-    public_url = upload_file(local_path, os.getenv("CATBOX_USERHASH", ""))
-    item["image_url"] = public_url
-    item["image_host"] = "catbox"
-    item["image_rehosted_at"] = iso_jst(now_jst())
-    save_checkpoint(sf, item, f"chore: rehost image for {item['id']}")
-    print(f"Public image URL ready: {public_url}")
+
+def hold_stale_ready_items(
+    files: list[ScheduleFile],
+    current_time: datetime,
+    max_lateness_minutes: int,
+) -> list[ScheduleFile]:
+    """Hold untouched posts that are too old for safe automatic publishing.
+
+    Posts already in progress are never held because they must be resumed to
+    finish recording an existing root or reply chain safely.
+    """
+    if max_lateness_minutes < 0:
+        raise ValueError("max_lateness_minutes must be zero or greater")
+
+    cutoff = current_time - timedelta(minutes=max_lateness_minutes)
+    changed_files: list[ScheduleFile] = []
+    for sf in files:
+        changed = False
+        for item in sf.entries:
+            if not isinstance(item, dict):
+                continue
+            if str(item.get("status", "")).lower() != "ready":
+                continue
+            progress = item.get("thread_progress")
+            root_id = progress.get("root_post_id") if isinstance(progress, dict) else ""
+            if item.get("threads_post_id") or root_id:
+                continue
+            publish_after = str(item.get("publish_after", "")).strip()
+            if not publish_after or parse_dt(publish_after) >= cutoff:
+                continue
+
+            item["status"] = "held"
+            item["hold_reason"] = f"automatic_lateness_exceeded_{max_lateness_minutes}_minutes"
+            item["held_at"] = iso_jst(current_time)
+            changed = True
+            print(f"Held stale post: {item.get('id')} publish_after={publish_after}")
+
+        if changed:
+            changed_files.append(sf)
+    return changed_files
 
 
 def publish(item: dict[str, Any], sf: ScheduleFile, api: ThreadsAPI, rng: random.Random) -> int:
@@ -123,18 +159,12 @@ def publish(item: dict[str, Any], sf: ScheduleFile, api: ThreadsAPI, rng: random
 
     item["status"] = "posting"
     item["error"] = ""
+    item.pop("hold_reason", None)
+    item.pop("held_at", None)
     save_checkpoint(sf, item, f"chore: mark {item['id']} posting")
 
     if not root_id:
-        try:
-            ensure_public_root_image(item, sf)
-        except Exception as exc:
-            item["status"] = "error"
-            item["error"] = f"Image rehost failed: {str(exc)[:500]}"
-            item["error_at"] = iso_jst(now_jst())
-            save_checkpoint(sf, item, f"chore: record {item['id']} image error")
-            return 1
-
+        prepare_public_root_image(item, sf)
         result = publish_one(api, text, str(item.get("image_url", "")).strip(), str(item.get("alt", "")).strip())
         if "error" in result or not result.get("id"):
             item["status"] = "error"
@@ -191,7 +221,14 @@ def publish(item: dict[str, Any], sf: ScheduleFile, api: ThreadsAPI, rng: random
     return 0
 
 
-def run(dry_run: bool = False, requested_id: str = "", allow_out_of_order: bool = False, current_time: datetime | None = None, seed: int | None = None) -> int:
+def run(
+    dry_run: bool = False,
+    requested_id: str = "",
+    allow_out_of_order: bool = False,
+    current_time: datetime | None = None,
+    seed: int | None = None,
+    max_lateness_minutes: int | None = None,
+) -> int:
     now = (current_time or now_jst()).astimezone(JST)
     rng = random.Random(seed)
     files = load_active_schedule_files(include_past=True)
@@ -202,6 +239,20 @@ def run(dry_run: bool = False, requested_id: str = "", allow_out_of_order: bool 
             save_schedule_file(sf)
         if changed:
             git_checkpoint([sf.path for sf in changed], "chore: materialize immutable publish times")
+
+    if not dry_run and not requested_id:
+        if max_lateness_minutes is None:
+            max_lateness_minutes = int(
+                os.getenv(
+                    "MAX_AUTOMATIC_LATENESS_MINUTES",
+                    str(DEFAULT_MAX_AUTOMATIC_LATENESS_MINUTES),
+                )
+            )
+        held_files = hold_stale_ready_items(files, now, max_lateness_minutes)
+        for sf in held_files:
+            save_schedule_file(sf)
+        if held_files:
+            git_checkpoint([sf.path for sf in held_files], "safety: hold stale scheduled posts")
 
     items = [item for sf in files for item in sf.entries if isinstance(item, dict)]
     candidate = select_candidate(items, now, requested_id, allow_out_of_order)
@@ -225,9 +276,19 @@ def main() -> None:
     parser.add_argument("--allow-out-of-order", action="store_true")
     parser.add_argument("--now", default="")
     parser.add_argument("--seed", type=int, default=None)
+    parser.add_argument("--max-lateness-minutes", type=int, default=None)
     args = parser.parse_args()
     now = parse_dt(args.now) if args.now else None
-    sys.exit(run(args.dry_run, args.id, args.allow_out_of_order, now, args.seed))
+    sys.exit(
+        run(
+            args.dry_run,
+            args.id,
+            args.allow_out_of_order,
+            now,
+            args.seed,
+            args.max_lateness_minutes,
+        )
+    )
 
 
 if __name__ == "__main__":
