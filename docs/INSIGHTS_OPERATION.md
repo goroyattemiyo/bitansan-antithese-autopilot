@@ -2,17 +2,19 @@
 
 ## 自動収集
 
-`Collect Insights` は毎日21:07 JSTに実行します。
+`Collect Insights` は毎週月曜21:07 JSTに実行します。
 
-対象は `posts/posted_log.yml` の直近30件です。同じ投稿について同じJST日付のスナップショットがすでに存在する場合は、通常実行では再取得しません。
+対象は `posts/posted_log.yml` の直近30件かつ投稿後30日以内です。1投稿の取得後に標準1秒待機し、短時間の連続アクセスを避けます。
 
-手動実行時に `force: true` を指定すると、同日でも再取得できます。
+同じ投稿について同じJST日付のスナップショットが旧ログまたは月別ログにすでに存在する場合は、通常実行では再取得しません。
+
+手動実行時に `force: true` を指定すると、同日でも再取得できます。通常運用では使用せず、検証が必要な場合だけ利用します。
 
 ## 保存ファイル
 
-### `posts/insights_log.yml`
+### `posts/insights/YYYY-MM.yml`
 
-時系列の履歴です。投稿ごとの数値推移を確認するときに使います。
+月ごとの時系列履歴です。投稿ごとの数値推移を確認するときに使います。
 
 各レコードには以下を保存します。
 
@@ -21,13 +23,15 @@
 - 予約ID・予約日時・投稿日時
 - カテゴリ・シリーズID
 - ルート投稿／返信の区別
-- 本文冒頭
-- 画像URL
 - views / likes / replies / reposts / quotes
 - engagement_rate_pct
 - reply_rate_pct
 - spread_rate_pct
 - APIエラー
+
+### `posts/insights_log.yml`
+
+月別方式へ移行する前の旧履歴です。同日重複判定と最新一覧生成では引き続き参照しますが、新しい結果は追記しません。
 
 ### `posts/insights_latest.yml`
 
