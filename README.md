@@ -2,6 +2,21 @@
 
 微炭酸アンチテーゼ（ねたみ・そねみ）のThreads投稿を、GitHub ActionsとThreads APIで自動化する専用リポジトリです。
 
+## 緊急停止スイッチ
+
+定期投稿と定期インサイト取得は、Repository variable `THREADS_AUTOMATION_ENABLED` が文字列 `true` のときだけ実行します。
+
+現在のようにThreadsアカウントが審査中、または自動化を一時停止したい場合は、この変数を未設定・削除・`false` のいずれかにします。未設定の初期状態では定期APIアクセスは発生しません。
+
+手動実行は停止中も利用できます。`Post Scheduler` の手動実行は初期値が `dry_run=true` のため、明示的に `false` へ変更しない限り投稿しません。
+
+再開時はGitHubのリポジトリで次を設定します。
+
+```text
+Settings → Secrets and variables → Actions → Variables
+THREADS_AUTOMATION_ENABLED = true
+```
+
 ## 現在の投稿方式
 
 `Post Scheduler` は朝・夜の予約枠ごとに3回だけ予定を確認し、期限を過ぎた候補から親投稿を1件だけ処理します。
@@ -78,6 +93,8 @@ allow_out_of_order: true
 - 旧ログと月別ログを横断して同日重複を防止
 - 手動で `force: true` を指定した場合だけ同日再取得
 
+定期取得にも `THREADS_AUTOMATION_ENABLED=true` が必要です。
+
 ## ディレクトリ構成
 
 ```text
@@ -100,16 +117,18 @@ tests/                   安全機構・スケジューラーテスト
 | `Process Image Zip` | 手動 | 画像のWebP化と週YAML反映 |
 | `Add Song URLs` | 手動 | 曲投稿へのツリー返信追加 |
 
-## 必要なGitHub Secrets
+## 必要なGitHub Secrets / Variables
 
 Secretsはリポジトリへ書かず、GitHub ActionsのRepository secretsで管理します。
 
-- `BIKANSAN_ACCESS_TOKEN`
-- `BIKANSAN_USER_ID`
+- Secret: `BIKANSAN_ACCESS_TOKEN`
+- Secret: `BIKANSAN_USER_ID`
+- Variable: `THREADS_AUTOMATION_ENABLED`（定期実行の再開時だけ `true`）
 - 画像生成など別workflowで必要な既存Secret
 
 ## 安全要件
 
+- 定期APIアクセスは緊急停止スイッチが `true` の場合だけ実行する
 - `posted` は再送しない
 - `error` と `held` は自動投稿しない
 - 定期実行1回につき親投稿は1件だけ
