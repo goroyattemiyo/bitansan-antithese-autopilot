@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import unittest
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 import yaml
@@ -30,11 +30,15 @@ def load_entries() -> list[dict]:
 class JulyPostPlanTests(unittest.TestCase):
     def setUp(self):
         self.entries = load_entries()
-        self.active = [
+        self.in_range = [
             item
             for item in self.entries
             if START <= date.fromisoformat(str(item.get("date"))) <= END
-            and str(item.get("status", "")).lower() in {"ready", "posting"}
+        ]
+        self.active = [
+            item
+            for item in self.in_range
+            if str(item.get("status", "")).lower() in {"ready", "posting"}
         ]
 
     def test_exactly_one_active_post_per_day(self):
@@ -42,7 +46,7 @@ class JulyPostPlanTests(unittest.TestCase):
         for item in self.active:
             counts[str(item["date"])] = counts.get(str(item["date"]), 0) + 1
         expected_dates = {
-            (START.fromordinal(START.toordinal() + offset)).isoformat()
+            (START + timedelta(days=offset)).isoformat()
             for offset in range((END - START).days + 1)
         }
         self.assertEqual(expected_dates, set(counts))
@@ -60,8 +64,11 @@ class JulyPostPlanTests(unittest.TestCase):
         }
         self.assertEqual({"2026-07-20": 1, "2026-07-28": 1}, with_replies)
 
-    def test_no_active_post_uses_draft_status(self):
-        self.assertFalse(any(str(item.get("status")).lower() == "draft" for item in self.active))
+    def test_no_draft_or_morning_entries_remain_in_plan(self):
+        self.assertFalse(
+            any(str(item.get("status", "")).lower() == "draft" for item in self.in_range)
+        )
+        self.assertFalse(any(item.get("time_slot") == "morning" for item in self.in_range))
 
     def test_future_character_alt_text_uses_green_short_hair(self):
         image_posts = [item for item in self.active if item.get("image_url")]
