@@ -7,20 +7,27 @@
   objective: fandom
   hook_type: manager_observation
   cta: 公開前の期待と関係性
-  text: |
-    【マネージャーより】
+  text: '【マネージャーより】
+
 
     05公開前だからか、
+
     今日の二人は妙に本気です。
 
+
     ねたみは客席を煽る練習。
+
     そねみは「ちゃんと来てくれるかな」と確認。
 
+
     向いている方向は違うのに、
+
     同じステージへ行こうとしています。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-27_night_bitansan_manager_backstage.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-27_night_bitansan_manager_backstage.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -44,22 +51,31 @@
   objective: conversion
   hook_type: release_world
   cta: 楽曲公開と参加意識
-  text: |
-    妬みも、嫉みも、
+  text: '妬みも、嫉みも、
+
     承認欲求も。
 
+
     隠してきた感情を、
+
     ライブでは全部叫んでいい。
 
+
     05『共犯者コール』は、
+
     きれいじゃない本音を
+
     客席ごと肯定する歌です。
 
+
     聴いた瞬間から、
+
     あなたも少しだけ共犯者です。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-28_night_bitansan_song05_release.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-28_night_bitansan_song05_release.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -77,10 +93,13 @@
   song_url: https://suno.com/s/WXu10C1NgEBnd1N4
   song_no: '05'
   thread_posts:
-  - text: |
-      聴く：
+  - text: '聴く：
+
       05『共犯者コール』
+
       https://suno.com/s/WXu10C1NgEBnd1N4
+
+      '
 - date: '2026-07-29'
   time_slot: evening
   category: chapter_summary
@@ -90,23 +109,33 @@
   objective: engagement
   hook_type: easy_number_choice
   cta: 5曲を感情で記憶させる
-  text: |
-    最初の5曲が、そろいました。
+  text: '最初の5曲が、そろいました。
+
 
     01　奪いたい
+
     02　一番でいたい
+
     03　選ばれたい
+
     04　離したくない
+
     05　一緒に叫びたい
 
+
     同じ嫉妬でも、
+
     痛む場所は少しずつ違います。
 
+
     今の自分に一番近いのは、
+
     何番ですか。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-29_night_bitansan_five_songs_summary.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-29_night_bitansan_five_songs_summary.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -130,23 +159,32 @@
   objective: retention
   hook_type: chapter_close
   cta: 継続フォローの理由を作る
-  text: |
-    微炭酸アンチテーゼ、
+  text: '微炭酸アンチテーゼ、
+
     最初の5曲を歌い終えました。
 
+
     ねたみとそねみ。
+
     面倒くさくて、痛くて、
+
     ステージでは少しだけ強い二人です。
+
 
     見つけてくれて、ありがとう。
 
+
     第1章は終わりではなく、
+
     ここから始まります。
 
+
     よそ見は、ほどほどに。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-30_night_bitansan_chapter1_beginning.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-30_night_bitansan_chapter1_beginning.webp
   alt: ''
   status: ready
   threads_post_id: ''
