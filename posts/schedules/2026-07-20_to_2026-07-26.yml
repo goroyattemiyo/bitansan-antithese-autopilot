@@ -7,21 +7,29 @@
   objective: conversion
   hook_type: release_world
   cta: 楽曲公開と世界観理解
-  text: |
-    「好き」は、
+  text: '「好き」は、
+
     薬にも毒にもなる。
 
+
     ねたみは奪う。
+
     そねみは縋る。
 
+
     『毒蜜シンドローム』は、
+
     二人の愛し方が同じ檻になる歌です。
 
+
     甘いのに、
+
     逃げ道はありません。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-20_night_bitansan_song04_release.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-20_night_bitansan_song04_release.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -39,10 +47,13 @@
   song_url: https://suno.com/s/1lBRaI56R2ewBbLX
   song_no: '04'
   thread_posts:
-  - text: |
-      聴く：
+  - text: '聴く：
+
       04『毒蜜シンドローム』
+
       https://suno.com/s/1lBRaI56R2ewBbLX
+
+      '
 - date: '2026-07-21'
   time_slot: evening
   category: emotional_scene
@@ -52,19 +63,26 @@
   objective: fandom
   hook_type: emotional_scene
   cta: そねみの人格理解
-  text: |
-    返信が遅いだけなのに、
+  text: '返信が遅いだけなのに、
+
     嫌われた理由を探してしまう。
 
+
     そねみは、
+
     待つのが苦手なんじゃなくて、
+
     置いていかれるのが怖い。
 
+
     だから平気な顔で、
+
     何度も通知を見ています。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-21_night_bitansan_sonemi_anxiety.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-21_night_bitansan_sonemi_anxiety.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -88,19 +106,26 @@
   objective: fandom
   hook_type: dialogue
   cta: 二人の距離感を見せる
-  text: |
-    カフェで作戦会議。
+  text: 'カフェで作戦会議。
+
 
     ねたみ「次はもっと私を目立たせるべき」
+
     そねみ「私も……少しだけ……」
+
     ねたみ「少しだけって言う人ほど重いのよ」
+
     そねみ「ねたみちゃんも十分重いよ」
 
+
     会議は進みません。
+
     でも、席を立つ人もいません。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-22_night_bitansan_cafe_strategy_meeting.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-22_night_bitansan_cafe_strategy_meeting.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -124,20 +149,27 @@
   objective: fandom
   hook_type: design_world
   cta: キャラクターを記憶させる
-  text: |
-    衣装も表情も、
+  text: '衣装も表情も、
+
     曲ごとに変わっていきます。
+
 
     でも、変わらない色があります。
 
+
     ねたみは紫の嫉妬。
+
     そねみは緑の羨望。
 
+
     かわいく着替えても、
+
     面倒くさい感情までは脱げません。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-23_night_bitansan_character_colors.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-23_night_bitansan_character_colors.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -161,18 +193,24 @@
   objective: reach
   hook_type: easy_choice
   cta: すぐ答えられる自己投影
-  text: |
-    負けるのが怖い。
+  text: '負けるのが怖い。
+
     見捨てられるのが怖い。
 
+
     ねたみは前者。
+
     そねみは後者です。
 
+
     自分に近いのは、
+
     どちらの怖さですか。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-24_night_bitansan_fear_contrast.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-24_night_bitansan_fear_contrast.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -196,20 +234,27 @@
   objective: awareness
   hook_type: live_teaser
   cta: 次曲への期待を作る
-  text: |
-    言えなかった嫉妬も、
+  text: '言えなかった嫉妬も、
+
     飲み込んだ悔しさも。
 
+
     ライブなら、
+
     全部まとめて叫べます。
+
 
     05『共犯者コール』
 
+
     準備ができていなくても、
+
     二人が勝手に巻き込みます。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-25_night_bitansan_song05_preview.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-25_night_bitansan_song05_preview.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -235,20 +280,29 @@
   objective: fandom
   hook_type: live_scene
   cta: ライブ参加感を作る
-  text: |
-    コール練習。
+  text: 'コール練習。
+
 
     ね・た・み！
+
     一番は誰？
 
+
     そ・ね・み！
+
     ちゃんと見てる？
 
+
     ねたみは声量を求めます。
+
     そねみは目線を確認します。
 
+
     客席も少しだけ、
+
     微炭酸アンチテーゼの共犯です。
+
+    '
   image_prompt: ''
   local_webp: ''
   image_url: ''

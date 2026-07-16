@@ -7,14 +7,19 @@
   objective: reach
   hook_type: confession
   cta: 言える／言えない
-  text: |
-    「愛されたい」って、
+  text: '「愛されたい」って、
+
     素直に言えますか。
 
+
     そねみは言えません。
+
     だから、歌にします。
 
+
     言える派／言えない派、どちらですか。
+
+    '
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -48,16 +53,22 @@
   objective: conversion
   hook_type: emotional_hook
   cta: 曲を聴いて経験を返信
-  text: |
-    「わたしじゃダメなの？」
+  text: '「わたしじゃダメなの？」
+
 
     笑っているのに、
+
     選ばれないたび少しずつ苦しくなる。
 
+
     言えなかった本音を、
+
     そねみが歌いました。
 
+
     03「わたしじゃダメなの？」
+
+    '
   image_prompt: ''
   local_webp: assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
@@ -78,13 +89,18 @@
   song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
   song_no: '03'
   thread_posts:
-  - text: |
-      聴く：
+  - text: '聴く：
+
       03「わたしじゃダメなの？」
+
       https://suno.com/s/M3w0Mfr6sacsz4QQ
-  - text: |
-      同じ言葉を心の中で言ったことがある人は、
+
+      '
+  - text: '同じ言葉を心の中で言ったことがある人は、
+
       そっと反応を残してください。
+
+      '
   thread_progress:
     updated_at: '2026-07-14T08:12:49+09:00'
     root_post_id: '17897109171508460'
@@ -107,14 +123,19 @@
   objective: reach
   hook_type: choice
   cta: 次へ／待つで返信
-  text: |
-    選ばれなかったとき、
+  text: '選ばれなかったとき、
+
 
     次へ行く？
+
     それでも待つ？
 
+
     ねたみは奪いに行きます。
+
     そねみは、もう少しだけ待ちます。
+
+    '
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -148,16 +169,22 @@
   objective: conversion
   hook_type: pain_point
   cta: 曲を聴いて刺さった箇所を返信
-  text: |
-    愛されたいのに、選ばれない。
+  text: '愛されたいのに、選ばれない。
+
 
     比べられる痛みと、
+
     置いていかれる寂しさを歌にしました。
 
+
     微炭酸アンチテーゼ
+
     03「わたしじゃダメなの？」
 
+
     そねみの本音です。
+
+    '
   image_prompt: ''
   local_webp: assets/webp/2026-07-14_evening_bitansan_song03.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-14_evening_bitansan_song03.webp
@@ -178,13 +205,18 @@
   song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
   song_no: '03'
   thread_posts:
-  - text: |
-      聴く：
+  - text: '聴く：
+
       03「わたしじゃダメなの？」
+
       https://suno.com/s/M3w0Mfr6sacsz4QQ
-  - text: |
-      刺さった歌詞や感情を、
+
+      '
+  - text: '刺さった歌詞や感情を、
+
       ひとつだけ教えてください。
+
+      '
   thread_progress:
     updated_at: '2026-07-15T08:11:23+09:00'
     root_post_id: '18379763545161078'
@@ -207,21 +239,29 @@
   objective: fandom
   hook_type: lyric_scene
   cta: 余韻で楽曲世界へ接続
-  text: |
-    「こんなに見てるのに」は、
+  text: '「こんなに見てるのに」は、
+
     届かない。
 
+
     笑っているのは、
+
     平気だからじゃない。
 
+
     泣いたら本当に、
+
     選ばれなかった気がするから。
 
+
     これは『わたしじゃダメなの？』で、
+
     そねみが隠していた本音です。
+
+    '
   image_prompt: ''
-  local_webp: assets/webp/2026-07-16_evening_bitansan_lyrics01.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-16_evening_bitansan_lyrics01.webp
+  local_webp: assets/webp/2026-07-16_night_bitansan_song03_afterglow.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-16_night_bitansan_song03_afterglow.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
   status: ready
   threads_post_id: ''
@@ -247,20 +287,27 @@
   objective: fandom
   hook_type: scene
   cta: 余韻で関係性を残す
-  text: |
-    雨の日。
+  text: '雨の日。
+
 
     そねみは少しだけ元気がない。
+
     ねたみは「雨でも髪は崩れない」と強がる。
 
+
     帰り道は、
+
     何も言わず同じ傘でした。
 
+
     仲が悪いまま、
+
     離れられない二人です。
+
+    '
   image_prompt: ''
-  local_webp: assets/webp/2026-07-17_evening_bitansan_rainyday01.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-17_evening_bitansan_rainyday01.webp
+  local_webp: assets/webp/2026-07-17_night_bitansan_shared_umbrella.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-17_night_bitansan_shared_umbrella.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
   status: ready
   threads_post_id: ''
@@ -284,20 +331,27 @@
   objective: reach
   hook_type: emotional_question
   cta: 共感と賛否を生む
-  text: |
-    好きな人の幸せなら、
+  text: '好きな人の幸せなら、
+
     心から喜べますか。
+
 
     ねたみは、たぶん無理です。
 
+
     祝いたい気持ちと、
+
     選ばれたかった気持ちは別だから。
 
+
     「よかったね」と笑いながら、
+
     少しだけ悔しがっています。
+
+    '
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
+  local_webp: assets/webp/2026-07-18_night_bitansan_netami_jealousy.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-18_night_bitansan_netami_jealousy.webp
   alt: ''
   status: ready
   threads_post_id: ''
@@ -321,21 +375,29 @@
   objective: awareness
   hook_type: concept_scene
   cta: 楽曲テーマを予告
-  text: |
-    甘い言葉より怖いのは、
+  text: '甘い言葉より怖いのは、
+
     優しさが習慣になること。
 
+
     毎日くれたものが、
+
     ある日急になくなる。
 
+
     そねみは、それを愛と呼びたくて。
+
     ねたみは、それを弱点と呼びます。
 
+
     04『毒蜜シンドローム』
+
     甘さのあとに残る歌です。
+
+    '
   image_prompt: ''
-  local_webp: assets/webp/2026-07-19_evening_bitansan_song04_teaser.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-19_evening_bitansan_song04_teaser.webp
+  local_webp: assets/webp/2026-07-19_night_bitansan_song04_preview.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-19_night_bitansan_song04_preview.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
   status: ready
   threads_post_id: ''
