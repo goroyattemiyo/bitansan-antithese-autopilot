@@ -1,389 +1,20 @@
 - date: '2026-07-13'
-  time_slot: evening
-  category: teaser_03
-  character: netami_sonemi
-  theme: music_teaser_03
-  campaign: fan_growth_test_2026_07
-  content_type: music
-  objective: conversion
-  hook_type: emotional_hook
-  cta: 曲を聴いて経験を返信
-  text: '「わたしじゃダメなの？」
-
-
-    笑っているのに、
-
-    選ばれないたび少しずつ苦しくなる。
-
-
-    言えなかった本音を、
-
-    そねみが歌いました。
-
-
-    03「わたしじゃダメなの？」'
-  image_prompt: ''
-  local_webp: assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
-  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: posted
-  threads_post_id: '17897109171508460'
-  generated_at: ''
-  posted_at: '2026-07-14T08:12:49+09:00'
-  error: ''
-  id: post_035253fac8af
-  scheduled_at: '2026-07-13T20:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 4
-  publish_after: '2026-07-13T20:19:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-  song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
-  song_no: '03'
-  thread_posts:
-  - text: '聴く：
-
-      03「わたしじゃダメなの？」
-
-      https://suno.com/s/M3w0Mfr6sacsz4QQ'
-  - text: '同じ言葉を心の中で言ったことがある人は、
-
-      そっと反応を残してください。'
-  thread_progress:
-    updated_at: '2026-07-14T08:12:49+09:00'
-    root_post_id: '17897109171508460'
-    reply_ids: &id001
-    - '18121106794772158'
-    - '18142735201557694'
-    completed_replies: 2
-  image_host: catbox
-  image_rehosted_at: '2026-07-14T08:11:32+09:00'
-  thread_post_ids: *id001
-  thread_count: 3
-- date: '2026-07-14'
-  time_slot: evening
-  category: song_03
-  character: netami_sonemi
-  theme: music_release_03
-  campaign: fan_growth_test_2026_07
-  content_type: music
-  objective: conversion
-  hook_type: pain_point
-  cta: 曲を聴いて刺さった箇所を返信
-  text: '愛されたいのに、選ばれない。
-
-
-    比べられる痛みと、
-
-    置いていかれる寂しさを歌にしました。
-
-
-    微炭酸アンチテーゼ
-
-    03「わたしじゃダメなの？」
-
-
-    そねみの本音です。'
-  image_prompt: ''
-  local_webp: assets/webp/2026-07-14_evening_bitansan_song03.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-14_evening_bitansan_song03.webp
-  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: posted
-  threads_post_id: '18379763545161078'
-  generated_at: ''
-  posted_at: '2026-07-15T08:11:23+09:00'
-  error: ''
-  id: post_7dce2c2fa80b
-  scheduled_at: '2026-07-14T20:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 6
-  publish_after: '2026-07-14T20:21:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-  song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
-  song_no: '03'
-  thread_posts:
-  - text: '聴く：
-
-      03「わたしじゃダメなの？」
-
-      https://suno.com/s/M3w0Mfr6sacsz4QQ'
-  - text: '刺さった歌詞や感情を、
-
-      ひとつだけ教えてください。'
-  thread_progress:
-    updated_at: '2026-07-15T08:11:23+09:00'
-    root_post_id: '18379763545161078'
-    reply_ids: &id002
-    - '17912005845240113'
-    - '18050667269569107'
-    completed_replies: 2
-  image_host: catbox
-  image_rehosted_at: '2026-07-15T08:10:04+09:00'
-  thread_post_ids: *id002
-  thread_count: 3
-- date: '2026-07-15'
-  time_slot: evening
-  category: character_sonemi
-  character: sonemi
-  theme: character_sonemi_deep
-  campaign: fan_growth_test_2026_07
-  content_type: character
-  objective: fandom
-  hook_type: character_conflict
-  cta: 守りたい／面倒を返信
-  text: 'そねみは、
-
-    誰かに勝ちたいというより、
-
-    誰かみたいに愛されたい子です。
-
-
-    言えないまま待って、
-
-    笑ったまま嫉妬します。
-
-
-    守りたくなりますか。
-
-    少し面倒だと思いますか。'
-  image_prompt: ''
-  local_webp: assets/webp/2026-07-15_evening_bitansan_sonemi_deepdive.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-15_evening_bitansan_sonemi_deepdive.webp
-  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: ready
-  threads_post_id: ''
-  generated_at: ''
-  posted_at: ''
-  error: ''
-  id: post_3986ebcc15d8
-  scheduled_at: '2026-07-15T20:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 14
-  publish_after: '2026-07-15T20:29:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-- date: '2026-07-16'
-  time_slot: evening
-  category: song_03_quote
-  character: sonemi
-  theme: music_quote_03
-  campaign: fan_growth_test_2026_07
-  content_type: music
-  objective: conversion
-  hook_type: lyric_hook
-  cta: 曲を聴いて一言返信
-  text: 'わたしじゃダメなの？
-
-
-    こんなに見てるのに。
-
-    こんなに待ってるのに。
-
-    こんなに笑っているのに。
-
-
-    かわいいだけでは終われない、
-
-    そねみの歌です。'
-  image_prompt: ''
-  local_webp: assets/webp/2026-07-16_evening_bitansan_lyrics01.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-16_evening_bitansan_lyrics01.webp
-  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: ready
-  threads_post_id: ''
-  generated_at: ''
-  posted_at: ''
-  error: ''
-  id: post_9c84b5dd4890
-  scheduled_at: '2026-07-16T20:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 11
-  publish_after: '2026-07-16T20:26:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-  song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
-  song_no: '03'
-  thread_posts:
-  - text: '聴く：
-
-      03「わたしじゃダメなの？」
-
-      https://suno.com/s/M3w0Mfr6sacsz4QQ'
-  - text: 'この曲をひとことで表すなら、
-
-      どんな言葉になりますか。'
-- date: '2026-07-17'
-  time_slot: evening
-  category: daily
-  character: netami_sonemi
-  theme: character_rainy_day
-  campaign: fan_growth_test_2026_07
-  content_type: character
-  objective: fandom
-  hook_type: gap
-  cta: 関係性を返信
-  text: '雨の日の微炭酸アンチテーゼ。
-
-
-    そねみは少し元気がありません。
-
-
-    ねたみは
-
-    「雨でも私の髪は崩れない」
-
-    と言っています。
-
-
-    でも帰り道は、同じ傘でした。
-
-
-    やっぱり仲は悪いと思いますか。'
-  image_prompt: ''
-  local_webp: assets/webp/2026-07-17_evening_bitansan_rainyday01.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-17_evening_bitansan_rainyday01.webp
-  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: ready
-  threads_post_id: ''
-  generated_at: ''
-  posted_at: ''
-  error: ''
-  id: post_ee35e2d4dd36
-  scheduled_at: '2026-07-17T20:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 2
-  publish_after: '2026-07-17T20:17:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-- date: '2026-07-18'
-  time_slot: evening
-  category: dialogue
-  character: netami_sonemi
-  theme: character_dialogue_02
-  campaign: fan_growth_test_2026_07
-  content_type: character
-  objective: fandom
-  hook_type: dialogue
-  cta: 距離感の感想を返信
-  text: 'そねみ「私じゃダメなのかな」
-
-
-    ねたみ「ダメならステージに立ててないでしょ」
-
-
-    そねみ「励ましてる？」
-
-
-    ねたみ「事実を言っただけ」
-
-
-    そねみ「そういうところ、好き」
-
-
-    ねたみ「重い」
-
-
-    この距離感、どう思いますか。'
-  image_prompt: ''
-  local_webp: assets/webp/2026-07-18_evening_bitansan_dialogue02.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-18_evening_bitansan_dialogue02.webp
-  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: ready
-  threads_post_id: ''
-  generated_at: ''
-  posted_at: ''
-  error: ''
-  id: post_9b047be7d2fb
-  scheduled_at: '2026-07-18T20:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 13
-  publish_after: '2026-07-18T20:28:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-- date: '2026-07-19'
-  time_slot: evening
-  category: teaser_04
-  character: netami_sonemi
-  theme: music_teaser_04
-  campaign: fan_growth_test_2026_07
-  content_type: music
-  objective: conversion
-  hook_type: concept_hook
-  cta: 曲を聴いて二択返信
-  text: '甘い言葉ほど、
-
-    あとから毒になることがあります。
-
-
-    優しさ。
-
-    依存。
-
-    好きという言葉の賞味期限。
-
-
-    04「毒蜜シンドローム」
-
-
-    甘い愛と重い愛、
-
-    どちらが怖いですか。'
-  image_prompt: ''
-  local_webp: assets/webp/2026-07-19_evening_bitansan_song04_teaser.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-19_evening_bitansan_song04_teaser.webp
-  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（青髪ツインテール）を描いたダークアイドル風イラスト
-  status: ready
-  threads_post_id: ''
-  generated_at: ''
-  posted_at: ''
-  error: ''
-  id: post_3925f60f9852
-  scheduled_at: '2026-07-19T20:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 3
-  publish_after: '2026-07-19T20:18:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-  song_url: https://suno.com/s/1lBRaI56R2ewBbLX
-  song_no: '04'
-  thread_posts:
-  - text: '聴く：
-
-      04「毒蜜シンドローム」
-
-      https://suno.com/s/1lBRaI56R2ewBbLX'
-  - text: '甘い愛と重い愛。
-
-      怖いのはどちらか、教えてください。'
-- date: '2026-07-13'
   time_slot: morning
   category: community
   character: sonemi
   theme: engagement_vulnerability
-  campaign: fan_growth_test_2026_07
   content_type: engagement
   objective: reach
   hook_type: confession
   cta: 言える／言えない
-  text: '「愛されたい」って、
-
+  text: |
+    「愛されたい」って、
     素直に言えますか。
 
-
     そねみは言えません。
-
     だから、歌にします。
 
-
-    言える派／言えない派、どちらですか。'
+    言える派／言えない派、どちらですか。
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -404,31 +35,86 @@
   thread_progress:
     updated_at: '2026-07-13T08:02:53+09:00'
     root_post_id: '17880167565673396'
-    reply_ids: &id003 []
+    reply_ids: []
     completed_replies: 0
-  thread_post_ids: *id003
+  thread_post_ids: []
   thread_count: 1
+- date: '2026-07-13'
+  time_slot: evening
+  category: teaser_03
+  character: netami_sonemi
+  theme: music_teaser_03
+  content_type: music
+  objective: conversion
+  hook_type: emotional_hook
+  cta: 曲を聴いて経験を返信
+  text: |
+    「わたしじゃダメなの？」
+
+    笑っているのに、
+    選ばれないたび少しずつ苦しくなる。
+
+    言えなかった本音を、
+    そねみが歌いました。
+
+    03「わたしじゃダメなの？」
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
+  status: posted
+  threads_post_id: '17897109171508460'
+  generated_at: ''
+  posted_at: '2026-07-14T08:12:49+09:00'
+  error: ''
+  id: post_035253fac8af
+  scheduled_at: '2026-07-13T20:15:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 4
+  publish_after: '2026-07-13T20:19:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
+  song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
+  song_no: '03'
+  thread_posts:
+  - text: |
+      聴く：
+      03「わたしじゃダメなの？」
+      https://suno.com/s/M3w0Mfr6sacsz4QQ
+  - text: |
+      同じ言葉を心の中で言ったことがある人は、
+      そっと反応を残してください。
+  thread_progress:
+    updated_at: '2026-07-14T08:12:49+09:00'
+    root_post_id: '17897109171508460'
+    reply_ids:
+    - '18121106794772158'
+    - '18142735201557694'
+    completed_replies: 2
+  image_host: catbox
+  image_rehosted_at: '2026-07-14T08:11:32+09:00'
+  thread_post_ids:
+  - '18121106794772158'
+  - '18142735201557694'
+  thread_count: 3
 - date: '2026-07-14'
   time_slot: morning
   category: community
   character: manager_goro
   theme: engagement_choice
-  campaign: fan_growth_test_2026_07
   content_type: engagement
   objective: reach
   hook_type: choice
   cta: 次へ／待つで返信
-  text: '選ばれなかったとき、
-
+  text: |
+    選ばれなかったとき、
 
     次へ行く？
-
     それでも待つ？
 
-
     ねたみは奪いに行きます。
-
-    そねみは、もう少しだけ待ちます。'
+    そねみは、もう少しだけ待ちます。
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -449,141 +135,166 @@
   thread_progress:
     updated_at: '2026-07-14T21:38:49+09:00'
     root_post_id: '17937027513295696'
-    reply_ids: &id004 []
+    reply_ids: []
     completed_replies: 0
-  thread_post_ids: *id004
+  thread_post_ids: []
   thread_count: 1
-- date: '2026-07-15'
-  time_slot: morning
-  category: community
-  character: netami
-  theme: engagement_faction
-  campaign: fan_growth_test_2026_07
-  content_type: engagement
-  objective: reach
-  hook_type: vote
-  cta: 推しと理由を返信
-  text: 'そろそろ聞きます。
+- date: '2026-07-14'
+  time_slot: evening
+  category: song_03
+  character: netami_sonemi
+  theme: music_release_03
+  content_type: music
+  objective: conversion
+  hook_type: pain_point
+  cta: 曲を聴いて刺さった箇所を返信
+  text: |
+    愛されたいのに、選ばれない。
 
+    比べられる痛みと、
+    置いていかれる寂しさを歌にしました。
 
-    ねたみ派ですか。
+    微炭酸アンチテーゼ
+    03「わたしじゃダメなの？」
 
-    そねみ派ですか。
-
-
-    理由まで書いてくれた人は、
-
-    2人ともたぶん何度も読み返します。'
+    そねみの本音です。
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
-  alt: ''
+  local_webp: assets/webp/2026-07-14_evening_bitansan_song03.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-14_evening_bitansan_song03.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
+  status: posted
+  threads_post_id: '18379763545161078'
+  generated_at: ''
+  posted_at: '2026-07-15T08:11:23+09:00'
+  error: ''
+  id: post_7dce2c2fa80b
+  scheduled_at: '2026-07-14T20:15:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 6
+  publish_after: '2026-07-14T20:21:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
+  song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
+  song_no: '03'
+  thread_posts:
+  - text: |
+      聴く：
+      03「わたしじゃダメなの？」
+      https://suno.com/s/M3w0Mfr6sacsz4QQ
+  - text: |
+      刺さった歌詞や感情を、
+      ひとつだけ教えてください。
+  thread_progress:
+    updated_at: '2026-07-15T08:11:23+09:00'
+    root_post_id: '18379763545161078'
+    reply_ids:
+    - '17912005845240113'
+    - '18050667269569107'
+    completed_replies: 2
+  image_host: catbox
+  image_rehosted_at: '2026-07-15T08:10:04+09:00'
+  thread_post_ids:
+  - '17912005845240113'
+  - '18050667269569107'
+  thread_count: 3
+- date: '2026-07-16'
+  time_slot: evening
+  category: song_03_afterglow
+  character: sonemi
+  theme: music_afterglow_03
+  content_type: music
+  objective: fandom
+  hook_type: lyric_scene
+  cta: 余韻で楽曲世界へ接続
+  text: |
+    「こんなに見てるのに」は、
+    届かない。
+
+    笑っているのは、
+    平気だからじゃない。
+
+    泣いたら本当に、
+    選ばれなかった気がするから。
+
+    これは『わたしじゃダメなの？』で、
+    そねみが隠していた本音です。
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-16_evening_bitansan_lyrics01.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-16_evening_bitansan_lyrics01.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
   status: ready
   threads_post_id: ''
   generated_at: ''
   posted_at: ''
   error: ''
-  id: post_1ea5fd7e3129
-  scheduled_at: '2026-07-15T07:15:00+09:00'
+  id: post_9c84b5dd4890
+  scheduled_at: '2026-07-16T20:15:00+09:00'
+  delay_min_minutes: 2
+  delay_max_minutes: 14
+  delay_minutes: 11
+  publish_after: '2026-07-16T20:26:00+09:00'
+  thread_delay_min_seconds: 8
+  thread_delay_max_seconds: 25
+  song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
+  song_no: '03'
+- date: '2026-07-17'
+  time_slot: evening
+  category: daily_scene
+  character: netami_sonemi
+  theme: character_rainy_day
+  content_type: character
+  objective: fandom
+  hook_type: scene
+  cta: 余韻で関係性を残す
+  text: |
+    雨の日。
+
+    そねみは少しだけ元気がない。
+    ねたみは「雨でも髪は崩れない」と強がる。
+
+    帰り道は、
+    何も言わず同じ傘でした。
+
+    仲が悪いまま、
+    離れられない二人です。
+  image_prompt: ''
+  local_webp: assets/webp/2026-07-17_evening_bitansan_rainyday01.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-17_evening_bitansan_rainyday01.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
+  status: ready
+  threads_post_id: ''
+  generated_at: ''
+  posted_at: ''
+  error: ''
+  id: post_ee35e2d4dd36
+  scheduled_at: '2026-07-17T20:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 2
-  publish_after: '2026-07-15T07:17:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-- date: '2026-07-16'
-  time_slot: morning
-  category: community
-  character: sonemi
-  theme: engagement_music_taste
-  campaign: fan_growth_test_2026_07
-  content_type: engagement
-  objective: reach
-  hook_type: choice
-  cta: 好みを返信
-  text: '刺さるのは、どちらですか。
-
-
-    かわいいのに毒がある曲。
-
-    静かなのに痛い曲。
-
-
-    微炭酸アンチテーゼは、両方やります。'
-  image_prompt: ''
-  local_webp: ''
-  image_url: ''
-  alt: ''
-  status: ready
-  threads_post_id: ''
-  generated_at: ''
-  posted_at: ''
-  error: ''
-  id: post_ac4bbec69bb5
-  scheduled_at: '2026-07-16T07:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 6
-  publish_after: '2026-07-16T07:21:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-- date: '2026-07-17'
-  time_slot: morning
-  category: community
-  character: manager_goro
-  theme: engagement_mood
-  campaign: fan_growth_test_2026_07
-  content_type: engagement
-  objective: reach
-  hook_type: choice
-  cta: 曲の気分を返信
-  text: '雨の日に聴きたくなるのは、
-
-
-    元気を出す曲？
-
-    もっと沈める曲？
-
-
-    ねたみとそねみで意見が割れています。'
-  image_prompt: ''
-  local_webp: ''
-  image_url: ''
-  alt: ''
-  status: ready
-  threads_post_id: ''
-  generated_at: ''
-  posted_at: ''
-  error: ''
-  id: post_ae4b0a475bab
-  scheduled_at: '2026-07-17T07:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 13
-  publish_after: '2026-07-17T07:28:00+09:00'
+  publish_after: '2026-07-17T20:17:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-18'
-  time_slot: morning
-  category: community
+  time_slot: evening
+  category: emotional_opinion
   character: netami
-  theme: engagement_relationship
-  campaign: fan_growth_test_2026_07
+  theme: jealousy_conflict
   content_type: engagement
   objective: reach
-  hook_type: choice
-  cta: 仲良し／ライバル
-  text: '推し同士の関係は、
+  hook_type: emotional_question
+  cta: 共感と賛否を生む
+  text: |
+    好きな人の幸せなら、
+    心から喜べますか。
 
+    ねたみは、たぶん無理です。
 
-    仲良しが好き？
+    祝いたい気持ちと、
+    選ばれたかった気持ちは別だから。
 
-    ライバルが好き？
-
-
-    微炭酸アンチテーゼは、
-
-    本人たちもまだ決めていません。'
+    「よかったね」と笑いながら、
+    少しだけ悔しがっています。
   image_prompt: ''
   local_webp: ''
   image_url: ''
@@ -593,51 +304,51 @@
   generated_at: ''
   posted_at: ''
   error: ''
-  id: post_0a3550af720f
-  scheduled_at: '2026-07-18T09:15:00+09:00'
+  id: post_9b047be7d2fb
+  scheduled_at: '2026-07-18T20:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
-  delay_minutes: 6
-  publish_after: '2026-07-18T09:21:00+09:00'
+  delay_minutes: 13
+  publish_after: '2026-07-18T20:28:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
 - date: '2026-07-19'
-  time_slot: morning
-  category: community
-  character: sonemi
-  theme: engagement_love
-  campaign: fan_growth_test_2026_07
-  content_type: engagement
-  objective: reach
-  hook_type: open_question
-  cta: 境界線を返信
-  text: '重い愛は、ありですか。
+  time_slot: evening
+  category: teaser_04
+  character: netami_sonemi
+  theme: music_teaser_04
+  content_type: music
+  objective: awareness
+  hook_type: concept_scene
+  cta: 楽曲テーマを予告
+  text: |
+    甘い言葉より怖いのは、
+    優しさが習慣になること。
 
-    なしですか。
+    毎日くれたものが、
+    ある日急になくなる。
 
+    そねみは、それを愛と呼びたくて。
+    ねたみは、それを弱点と呼びます。
 
-    毎日会いたい。
-
-    ずっと見ていてほしい。
-
-    誰にも渡したくない。
-
-
-    どこから重いと思いますか。'
+    04『毒蜜シンドローム』
+    甘さのあとに残る歌です。
   image_prompt: ''
-  local_webp: ''
-  image_url: ''
-  alt: ''
+  local_webp: assets/webp/2026-07-19_evening_bitansan_song04_teaser.webp
+  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-19_evening_bitansan_song04_teaser.webp
+  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
   status: ready
   threads_post_id: ''
   generated_at: ''
   posted_at: ''
   error: ''
-  id: post_feb43f628e10
-  scheduled_at: '2026-07-19T09:15:00+09:00'
+  id: post_3925f60f9852
+  scheduled_at: '2026-07-19T20:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
-  delay_minutes: 8
-  publish_after: '2026-07-19T09:23:00+09:00'
+  delay_minutes: 3
+  publish_after: '2026-07-19T20:18:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
+  song_url: https://suno.com/s/1lBRaI56R2ewBbLX
+  song_no: '04'
