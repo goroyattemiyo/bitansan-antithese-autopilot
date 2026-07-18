@@ -1,235 +1,3 @@
-- date: '2026-07-13'
-  time_slot: morning
-  category: community
-  character: sonemi
-  theme: engagement_vulnerability
-  content_type: engagement
-  objective: reach
-  hook_type: confession
-  cta: 言える／言えない
-  text: '「愛されたい」って、
-
-    素直に言えますか。
-
-
-    そねみは言えません。
-
-    だから、歌にします。
-
-
-    言える派／言えない派、どちらですか。
-
-    '
-  image_prompt: ''
-  local_webp: ''
-  image_url: ''
-  alt: ''
-  status: posted
-  threads_post_id: '17880167565673396'
-  generated_at: ''
-  posted_at: '2026-07-13T08:02:53+09:00'
-  error: ''
-  id: post_18776733b4f6
-  scheduled_at: '2026-07-13T07:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 2
-  publish_after: '2026-07-13T07:17:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-  thread_progress:
-    updated_at: '2026-07-13T08:02:53+09:00'
-    root_post_id: '17880167565673396'
-    reply_ids: []
-    completed_replies: 0
-  thread_post_ids: []
-  thread_count: 1
-- date: '2026-07-13'
-  time_slot: evening
-  category: teaser_03
-  character: netami_sonemi
-  theme: music_teaser_03
-  content_type: music
-  objective: conversion
-  hook_type: emotional_hook
-  cta: 曲を聴いて経験を返信
-  text: '「わたしじゃダメなの？」
-
-
-    笑っているのに、
-
-    選ばれないたび少しずつ苦しくなる。
-
-
-    言えなかった本音を、
-
-    そねみが歌いました。
-
-
-    03「わたしじゃダメなの？」
-
-    '
-  image_prompt: ''
-  local_webp: assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-13_evening_bitansan_song03_teaser.webp
-  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
-  status: posted
-  threads_post_id: '17897109171508460'
-  generated_at: ''
-  posted_at: '2026-07-14T08:12:49+09:00'
-  error: ''
-  id: post_035253fac8af
-  scheduled_at: '2026-07-13T20:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 4
-  publish_after: '2026-07-13T20:19:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-  song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
-  song_no: '03'
-  thread_posts:
-  - text: '聴く：
-
-      03「わたしじゃダメなの？」
-
-      https://suno.com/s/M3w0Mfr6sacsz4QQ
-
-      '
-  - text: '同じ言葉を心の中で言ったことがある人は、
-
-      そっと反応を残してください。
-
-      '
-  thread_progress:
-    updated_at: '2026-07-14T08:12:49+09:00'
-    root_post_id: '17897109171508460'
-    reply_ids:
-    - '18121106794772158'
-    - '18142735201557694'
-    completed_replies: 2
-  image_host: catbox
-  image_rehosted_at: '2026-07-14T08:11:32+09:00'
-  thread_post_ids:
-  - '18121106794772158'
-  - '18142735201557694'
-  thread_count: 3
-- date: '2026-07-14'
-  time_slot: morning
-  category: community
-  character: manager_goro
-  theme: engagement_choice
-  content_type: engagement
-  objective: reach
-  hook_type: choice
-  cta: 次へ／待つで返信
-  text: '選ばれなかったとき、
-
-
-    次へ行く？
-
-    それでも待つ？
-
-
-    ねたみは奪いに行きます。
-
-    そねみは、もう少しだけ待ちます。
-
-    '
-  image_prompt: ''
-  local_webp: ''
-  image_url: ''
-  alt: ''
-  status: posted
-  threads_post_id: '17937027513295696'
-  generated_at: ''
-  posted_at: '2026-07-14T21:38:49+09:00'
-  error: ''
-  id: post_87a8821f9088
-  scheduled_at: '2026-07-14T07:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 9
-  publish_after: '2026-07-14T07:24:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-  thread_progress:
-    updated_at: '2026-07-14T21:38:49+09:00'
-    root_post_id: '17937027513295696'
-    reply_ids: []
-    completed_replies: 0
-  thread_post_ids: []
-  thread_count: 1
-- date: '2026-07-14'
-  time_slot: evening
-  category: song_03
-  character: netami_sonemi
-  theme: music_release_03
-  content_type: music
-  objective: conversion
-  hook_type: pain_point
-  cta: 曲を聴いて刺さった箇所を返信
-  text: '愛されたいのに、選ばれない。
-
-
-    比べられる痛みと、
-
-    置いていかれる寂しさを歌にしました。
-
-
-    微炭酸アンチテーゼ
-
-    03「わたしじゃダメなの？」
-
-
-    そねみの本音です。
-
-    '
-  image_prompt: ''
-  local_webp: assets/webp/2026-07-14_evening_bitansan_song03.webp
-  image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-14_evening_bitansan_song03.webp
-  alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
-  status: posted
-  threads_post_id: '18379763545161078'
-  generated_at: ''
-  posted_at: '2026-07-15T08:11:23+09:00'
-  error: ''
-  id: post_7dce2c2fa80b
-  scheduled_at: '2026-07-14T20:15:00+09:00'
-  delay_min_minutes: 2
-  delay_max_minutes: 14
-  delay_minutes: 6
-  publish_after: '2026-07-14T20:21:00+09:00'
-  thread_delay_min_seconds: 8
-  thread_delay_max_seconds: 25
-  song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
-  song_no: '03'
-  thread_posts:
-  - text: '聴く：
-
-      03「わたしじゃダメなの？」
-
-      https://suno.com/s/M3w0Mfr6sacsz4QQ
-
-      '
-  - text: '刺さった歌詞や感情を、
-
-      ひとつだけ教えてください。
-
-      '
-  thread_progress:
-    updated_at: '2026-07-15T08:11:23+09:00'
-    root_post_id: '18379763545161078'
-    reply_ids:
-    - '17912005845240113'
-    - '18050667269569107'
-    completed_replies: 2
-  image_host: catbox
-  image_rehosted_at: '2026-07-15T08:10:04+09:00'
-  thread_post_ids:
-  - '17912005845240113'
-  - '18050667269569107'
-  thread_count: 3
 - date: '2026-07-16'
   time_slot: evening
   category: song_03_afterglow
@@ -263,10 +31,10 @@
   local_webp: assets/webp/2026-07-16_night_bitansan_song03_afterglow.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-16_night_bitansan_song03_afterglow.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
-  status: ready
+  status: posted
   threads_post_id: ''
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-17T18:00:00+09:00'
   error: ''
   id: post_9c84b5dd4890
   scheduled_at: '2026-07-16T20:15:00+09:00'
@@ -278,7 +46,7 @@
   thread_delay_max_seconds: 25
   song_url: https://suno.com/s/M3w0Mfr6sacsz4QQ
   song_no: '03'
-- date: '2026-07-17'
+- date: '2026-07-18'
   time_slot: evening
   category: daily_scene
   character: netami_sonemi
@@ -315,14 +83,14 @@
   posted_at: ''
   error: ''
   id: post_ee35e2d4dd36
-  scheduled_at: '2026-07-17T20:15:00+09:00'
+  scheduled_at: '2026-07-18T20:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 2
-  publish_after: '2026-07-17T20:17:00+09:00'
+  publish_after: '2026-07-18T20:17:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
-- date: '2026-07-18'
+- date: '2026-07-19'
   time_slot: evening
   category: emotional_opinion
   character: netami
@@ -359,14 +127,14 @@
   posted_at: ''
   error: ''
   id: post_9b047be7d2fb
-  scheduled_at: '2026-07-18T20:15:00+09:00'
+  scheduled_at: '2026-07-19T20:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 13
-  publish_after: '2026-07-18T20:28:00+09:00'
+  publish_after: '2026-07-19T20:28:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
-- date: '2026-07-19'
+- date: '2026-07-20'
   time_slot: evening
   category: teaser_04
   character: netami_sonemi
@@ -405,11 +173,11 @@
   posted_at: ''
   error: ''
   id: post_3925f60f9852
-  scheduled_at: '2026-07-19T20:15:00+09:00'
+  scheduled_at: '2026-07-20T20:15:00+09:00'
   delay_min_minutes: 2
   delay_max_minutes: 14
   delay_minutes: 3
-  publish_after: '2026-07-19T20:18:00+09:00'
+  publish_after: '2026-07-20T20:18:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   song_url: https://suno.com/s/1lBRaI56R2ewBbLX
