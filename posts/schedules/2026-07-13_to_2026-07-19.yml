@@ -77,7 +77,7 @@
   local_webp: assets/webp/2026-07-17_night_bitansan_shared_umbrella.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-17_night_bitansan_shared_umbrella.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
-  status: ready
+  status: posting
   threads_post_id: ''
   generated_at: ''
   posted_at: ''
@@ -90,6 +90,8 @@
   publish_after: '2026-07-18T20:17:00+09:00'
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
+  thread_progress:
+    updated_at: '2026-07-20T22:16:06+09:00'
 - date: '2026-07-19'
   time_slot: evening
   category: emotional_opinion
