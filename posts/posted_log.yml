@@ -428,3 +428,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-20T22:16:28+09:00'
+- post_id: '18346002760219981'
+  schedule_id: post_9b047be7d2fb
+  date: '2026-07-19'
+  time_slot: evening
+  category: emotional_opinion
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-21T08:12:04+09:00'
