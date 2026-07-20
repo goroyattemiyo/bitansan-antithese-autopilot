@@ -419,3 +419,12 @@
   thread_role: reply
   reply_to_id: '17912005845240113'
   posted_at: '2026-07-15T08:11:22+09:00'
+- post_id: '17934155670343743'
+  schedule_id: post_ee35e2d4dd36
+  date: '2026-07-18'
+  time_slot: evening
+  category: daily_scene
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-20T22:16:28+09:00'
