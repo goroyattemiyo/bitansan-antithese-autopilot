@@ -68,7 +68,8 @@ jobs:
           BIKANSAN_ACCESS_TOKEN: ${{ secrets.BIKANSAN_ACCESS_TOKEN }}
           BIKANSAN_USER_ID: ${{ secrets.BIKANSAN_USER_ID }}
           AUTO_COMMIT_PROGRESS: 'true'
-          MAX_AUTOMATIC_LATENESS_MINUTES: '120'
+          # Keep overdue ready posts eligible so the scheduler resumes from the oldest unposted item.
+          MAX_AUTOMATIC_LATENESS_MINUTES: '52560000'
       - name: Commit remaining schedule changes
         if: always()
         run: |
