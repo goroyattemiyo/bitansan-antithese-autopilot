@@ -32,7 +32,7 @@
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-20_night_bitansan_song04_release.webp
   alt: ''
   status: posting
-  threads_post_id: ''
+  threads_post_id: '18081638945664209'
   generated_at: ''
   posted_at: ''
   error: ''
@@ -55,7 +55,10 @@
 
       '
   thread_progress:
-    updated_at: '2026-07-22T08:08:33+09:00'
+    updated_at: '2026-07-22T08:08:48+09:00'
+    root_post_id: '18081638945664209'
+    reply_ids: []
+    completed_replies: 0
   image_host: github_raw
 - date: '2026-07-22'
   time_slot: evening
