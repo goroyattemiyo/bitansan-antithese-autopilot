@@ -55,7 +55,8 @@
 
       '
   thread_progress:
-    updated_at: '2026-07-22T08:08:32+09:00'
+    updated_at: '2026-07-22T08:08:33+09:00'
+  image_host: github_raw
 - date: '2026-07-22'
   time_slot: evening
   category: emotional_scene
