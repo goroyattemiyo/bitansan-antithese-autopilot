@@ -183,10 +183,10 @@
   local_webp: assets/webp/2026-07-19_night_bitansan_song04_preview.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-19_night_bitansan_song04_preview.webp
   alt: 微炭酸アンチテーゼのねたみ（紫髪ツインテール）とそねみ（緑髪ショート）を描いたダークアイドル風イラスト
-  status: posting
+  status: posted
   threads_post_id: '18114390878484573'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-21T21:43:04+09:00'
   error: ''
   id: post_3925f60f9852
   scheduled_at: '2026-07-20T20:15:00+09:00'
@@ -199,8 +199,10 @@
   song_url: https://suno.com/s/1lBRaI56R2ewBbLX
   song_no: '04'
   thread_progress:
-    updated_at: '2026-07-21T21:43:03+09:00'
+    updated_at: '2026-07-21T21:43:04+09:00'
     root_post_id: '18114390878484573'
-    reply_ids: []
+    reply_ids: &id003 []
     completed_replies: 0
   image_host: github_raw
+  thread_post_ids: *id003
+  thread_count: 1
