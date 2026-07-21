@@ -437,3 +437,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-21T08:12:04+09:00'
+- post_id: '18114390878484573'
+  schedule_id: post_3925f60f9852
+  date: '2026-07-20'
+  time_slot: evening
+  category: teaser_04
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-21T21:43:03+09:00'
