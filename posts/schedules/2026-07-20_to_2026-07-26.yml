@@ -31,10 +31,10 @@
   local_webp: assets/webp/2026-07-20_night_bitansan_song04_release.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-20_night_bitansan_song04_release.webp
   alt: ''
-  status: posting
+  status: posted
   threads_post_id: '18081638945664209'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-22T08:09:29+09:00'
   error: ''
   id: post_b6cc5b614453
   scheduled_at: '2026-07-21T20:15:00+09:00'
@@ -55,12 +55,14 @@
 
       '
   thread_progress:
-    updated_at: '2026-07-22T08:09:28+09:00'
+    updated_at: '2026-07-22T08:09:29+09:00'
     root_post_id: '18081638945664209'
-    reply_ids:
+    reply_ids: &id001
     - '18112661743939893'
     completed_replies: 1
   image_host: github_raw
+  thread_post_ids: *id001
+  thread_count: 2
 - date: '2026-07-22'
   time_slot: evening
   category: emotional_scene
