@@ -199,4 +199,5 @@
   song_url: https://suno.com/s/1lBRaI56R2ewBbLX
   song_no: '04'
   thread_progress:
-    updated_at: '2026-07-21T21:42:50+09:00'
+    updated_at: '2026-07-21T21:42:51+09:00'
+  image_host: github_raw
