@@ -446,3 +446,21 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-21T21:43:03+09:00'
+- post_id: '18081638945664209'
+  schedule_id: post_b6cc5b614453
+  date: '2026-07-21'
+  time_slot: evening
+  category: song_04
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-22T08:08:48+09:00'
+- post_id: '18112661743939893'
+  schedule_id: post_b6cc5b614453
+  date: '2026-07-21'
+  time_slot: evening
+  category: song_04
+  thread_index: 2
+  thread_role: reply
+  reply_to_id: '18081638945664209'
+  posted_at: '2026-07-22T08:09:28+09:00'
