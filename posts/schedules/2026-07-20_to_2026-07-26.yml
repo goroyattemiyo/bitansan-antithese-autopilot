@@ -107,7 +107,8 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-22T21:45:10+09:00'
+    updated_at: '2026-07-22T21:45:11+09:00'
+  image_host: github_raw
 - date: '2026-07-23'
   time_slot: evening
   category: daily_dialogue
