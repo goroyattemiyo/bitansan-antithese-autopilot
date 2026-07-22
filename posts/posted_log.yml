@@ -464,3 +464,12 @@
   thread_role: reply
   reply_to_id: '18081638945664209'
   posted_at: '2026-07-22T08:09:28+09:00'
+- post_id: '17959862208170242'
+  schedule_id: post_34606e219ad5
+  date: '2026-07-22'
+  time_slot: evening
+  category: emotional_scene
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-22T21:45:22+09:00'
