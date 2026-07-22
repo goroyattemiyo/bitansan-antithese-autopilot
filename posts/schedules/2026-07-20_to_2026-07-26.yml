@@ -93,10 +93,10 @@
   local_webp: assets/webp/2026-07-21_night_bitansan_sonemi_anxiety.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-21_night_bitansan_sonemi_anxiety.webp
   alt: ''
-  status: posting
+  status: posted
   threads_post_id: '17959862208170242'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-22T21:45:23+09:00'
   error: ''
   id: post_34606e219ad5
   scheduled_at: '2026-07-22T20:15:00+09:00'
@@ -107,11 +107,13 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-22T21:45:22+09:00'
+    updated_at: '2026-07-22T21:45:23+09:00'
     root_post_id: '17959862208170242'
-    reply_ids: []
+    reply_ids: &id002 []
     completed_replies: 0
   image_host: github_raw
+  thread_post_ids: *id002
+  thread_count: 1
 - date: '2026-07-23'
   time_slot: evening
   category: daily_dialogue
