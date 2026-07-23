@@ -473,3 +473,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-22T21:45:22+09:00'
+- post_id: '17886436818436176'
+  schedule_id: post_9a9889abf479
+  date: '2026-07-23'
+  time_slot: evening
+  category: daily_dialogue
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-23T21:47:28+09:00'
