@@ -196,10 +196,10 @@
   local_webp: assets/webp/2026-07-23_night_bitansan_character_colors.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-23_night_bitansan_character_colors.webp
   alt: ''
-  status: posting
+  status: posted
   threads_post_id: '18110216305966205'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-24T21:44:01+09:00'
   error: ''
   id: post_5129898a63c3
   scheduled_at: '2026-07-24T20:15:00+09:00'
@@ -210,11 +210,13 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-24T21:44:00+09:00'
+    updated_at: '2026-07-24T21:44:01+09:00'
     root_post_id: '18110216305966205'
-    reply_ids: []
+    reply_ids: &id004 []
     completed_replies: 0
   image_host: github_raw
+  thread_post_ids: *id004
+  thread_count: 1
 - date: '2026-07-25'
   time_slot: evening
   category: easy_question
