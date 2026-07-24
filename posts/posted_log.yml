@@ -482,3 +482,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-23T21:47:28+09:00'
+- post_id: '18110216305966205'
+  schedule_id: post_5129898a63c3
+  date: '2026-07-24'
+  time_slot: evening
+  category: design_note
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-24T21:44:00+09:00'
