@@ -245,10 +245,10 @@
   local_webp: assets/webp/2026-07-24_night_bitansan_fear_contrast.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-24_night_bitansan_fear_contrast.webp
   alt: ''
-  status: posting
+  status: posted
   threads_post_id: '17939508039275372'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-25T21:08:48+09:00'
   error: ''
   id: post_23daf166cf94
   scheduled_at: '2026-07-25T20:15:00+09:00'
@@ -259,11 +259,13 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-25T21:08:47+09:00'
+    updated_at: '2026-07-25T21:08:48+09:00'
     root_post_id: '17939508039275372'
-    reply_ids: []
+    reply_ids: &id005 []
     completed_replies: 0
   image_host: github_raw
+  thread_post_ids: *id005
+  thread_count: 1
 - date: '2026-07-26'
   time_slot: evening
   category: teaser_05
