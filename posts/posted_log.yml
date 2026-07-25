@@ -491,3 +491,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-24T21:44:00+09:00'
+- post_id: '17939508039275372'
+  schedule_id: post_23daf166cf94
+  date: '2026-07-25'
+  time_slot: evening
+  category: easy_question
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-25T21:08:47+09:00'
