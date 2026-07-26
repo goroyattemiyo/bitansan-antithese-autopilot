@@ -500,3 +500,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-25T21:08:47+09:00'
+- post_id: '17926825542143256'
+  schedule_id: post_a4779e652388
+  date: '2026-07-26'
+  time_slot: evening
+  category: teaser_05
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-26T21:14:45+09:00'
