@@ -313,7 +313,8 @@
   song_url: https://suno.com/s/WXu10C1NgEBnd1N4
   song_no: '05'
   thread_progress:
-    updated_at: '2026-07-26T21:14:34+09:00'
+    updated_at: '2026-07-26T21:14:35+09:00'
+  image_host: github_raw
 - date: '2026-07-27'
   time_slot: evening
   category: call_practice
