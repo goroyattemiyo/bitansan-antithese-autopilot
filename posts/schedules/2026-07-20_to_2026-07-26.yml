@@ -298,7 +298,7 @@
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-25_night_bitansan_song05_preview.webp
   alt: ''
   status: posting
-  threads_post_id: ''
+  threads_post_id: '17926825542143256'
   generated_at: ''
   posted_at: ''
   error: ''
@@ -313,7 +313,10 @@
   song_url: https://suno.com/s/WXu10C1NgEBnd1N4
   song_no: '05'
   thread_progress:
-    updated_at: '2026-07-26T21:14:35+09:00'
+    updated_at: '2026-07-26T21:14:45+09:00'
+    root_post_id: '17926825542143256'
+    reply_ids: []
+    completed_replies: 0
   image_host: github_raw
 - date: '2026-07-27'
   time_slot: evening
