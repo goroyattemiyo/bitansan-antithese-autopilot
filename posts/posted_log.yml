@@ -509,3 +509,12 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-26T21:14:45+09:00'
+- post_id: '18115859308902716'
+  schedule_id: post_6c97dad0fca4
+  date: '2026-07-27'
+  time_slot: evening
+  category: call_practice
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-27T22:44:33+09:00'
