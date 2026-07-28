@@ -30,7 +30,7 @@
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-27_night_bitansan_manager_backstage.webp
   alt: ''
   status: posting
-  threads_post_id: ''
+  threads_post_id: '18087836237160991'
   generated_at: ''
   posted_at: ''
   error: ''
@@ -43,7 +43,10 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-28T22:01:32+09:00'
+    updated_at: '2026-07-28T22:01:44+09:00'
+    root_post_id: '18087836237160991'
+    reply_ids: []
+    completed_replies: 0
   image_host: github_raw
 - date: '2026-07-29'
   time_slot: evening
