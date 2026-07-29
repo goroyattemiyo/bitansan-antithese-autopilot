@@ -109,10 +109,11 @@
 
       '
   thread_progress:
-    updated_at: '2026-07-29T22:06:34+09:00'
+    updated_at: '2026-07-29T22:07:05+09:00'
     root_post_id: '18121538114503972'
-    reply_ids: []
-    completed_replies: 0
+    reply_ids:
+    - '17951182536017821'
+    completed_replies: 1
   image_host: github_raw
 - date: '2026-07-30'
   time_slot: evening
