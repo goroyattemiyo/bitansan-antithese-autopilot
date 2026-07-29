@@ -527,3 +527,21 @@
   thread_role: root
   reply_to_id: ''
   posted_at: '2026-07-28T22:01:43+09:00'
+- post_id: '18121538114503972'
+  schedule_id: post_f2d291460aca
+  date: '2026-07-29'
+  time_slot: evening
+  category: song_05
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-29T22:06:34+09:00'
+- post_id: '17951182536017821'
+  schedule_id: post_f2d291460aca
+  date: '2026-07-29'
+  time_slot: evening
+  category: song_05
+  thread_index: 2
+  thread_role: reply
+  reply_to_id: '18121538114503972'
+  posted_at: '2026-07-29T22:07:05+09:00'
