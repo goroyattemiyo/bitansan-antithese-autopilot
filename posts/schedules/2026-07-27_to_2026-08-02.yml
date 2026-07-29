@@ -85,7 +85,7 @@
   local_webp: assets/webp/2026-07-28_night_bitansan_song05_release.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-28_night_bitansan_song05_release.webp
   alt: ''
-  status: ready
+  status: posting
   threads_post_id: ''
   generated_at: ''
   posted_at: ''
@@ -108,6 +108,8 @@
       https://suno.com/s/WXu10C1NgEBnd1N4
 
       '
+  thread_progress:
+    updated_at: '2026-07-29T22:06:21+09:00'
 - date: '2026-07-30'
   time_slot: evening
   category: chapter_summary
