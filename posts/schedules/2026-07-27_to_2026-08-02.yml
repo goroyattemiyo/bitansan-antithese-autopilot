@@ -154,10 +154,10 @@
   local_webp: assets/webp/2026-07-29_night_bitansan_five_songs_summary.webp
   image_url: https://raw.githubusercontent.com/goroyattemiyo/bitansan-antithese-autopilot/main/assets/webp/2026-07-29_night_bitansan_five_songs_summary.webp
   alt: ''
-  status: posting
+  status: posted
   threads_post_id: '17925024522390350'
   generated_at: ''
-  posted_at: ''
+  posted_at: '2026-07-30T21:53:21+09:00'
   error: ''
   id: post_ee0a251a6d27
   scheduled_at: '2026-07-30T20:15:00+09:00'
@@ -168,11 +168,13 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-30T21:53:19+09:00'
+    updated_at: '2026-07-30T21:53:21+09:00'
     root_post_id: '17925024522390350'
-    reply_ids: []
+    reply_ids: &id003 []
     completed_replies: 0
   image_host: github_raw
+  thread_post_ids: *id003
+  thread_count: 1
 - date: '2026-07-31'
   time_slot: evening
   category: chapter_01
