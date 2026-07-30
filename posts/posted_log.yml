@@ -545,3 +545,12 @@
   thread_role: reply
   reply_to_id: '18121538114503972'
   posted_at: '2026-07-29T22:07:05+09:00'
+- post_id: '17925024522390350'
+  schedule_id: post_ee0a251a6d27
+  date: '2026-07-30'
+  time_slot: evening
+  category: chapter_summary
+  thread_index: 1
+  thread_role: root
+  reply_to_id: ''
+  posted_at: '2026-07-30T21:53:19+09:00'
