@@ -168,7 +168,8 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-30T21:53:05+09:00'
+    updated_at: '2026-07-30T21:53:06+09:00'
+  image_host: github_raw
 - date: '2026-07-31'
   time_slot: evening
   category: chapter_01
