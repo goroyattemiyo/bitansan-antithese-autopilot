@@ -225,4 +225,5 @@
   thread_delay_min_seconds: 8
   thread_delay_max_seconds: 25
   thread_progress:
-    updated_at: '2026-07-31T22:04:56+09:00'
+    updated_at: '2026-07-31T22:04:57+09:00'
+  image_host: github_raw
