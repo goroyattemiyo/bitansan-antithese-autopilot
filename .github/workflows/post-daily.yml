@@ -1,14 +1,7 @@
 name: Post Scheduler
 
 on:
-  schedule:
-    # GitHub Actions cron uses UTC.
-    # Weekday morning posts: 07:15 JST -> checks at 07:10, 07:20, 07:35 JST.
-    - cron: '10,20,35 22 * * 0-4'
-    # Weekend morning posts: 09:15 JST -> checks at 09:10, 09:20, 09:35 JST.
-    - cron: '10,20,35 0 * * 5,6'
-    # Evening posts: 20:15 JST -> checks at 20:10, 20:20, 20:35 JST.
-    - cron: '10,20,35 11 * * *'
+  # Scheduled execution paused to avoid unused Actions minutes.
   workflow_dispatch:
     inputs:
       post_id:
